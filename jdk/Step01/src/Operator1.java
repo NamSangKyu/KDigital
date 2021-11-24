@@ -5,8 +5,14 @@ public class Operator1 {
 	 * 	모든 사칙연산의 결과를 출력 
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int n1 = 10, n2 = 6;
+		
+		System.out.println(n1 + n2);
+		System.out.println(n1 - n2);
+		System.out.println(n1 * n2);
+		System.out.println(n1 / n2);
+		System.out.println(n1 % n2);
+		
 	}
 
 }
