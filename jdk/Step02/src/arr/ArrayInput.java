@@ -1,3 +1,4 @@
+package arr;
 import java.util.Scanner;
 
 public class ArrayInput {
