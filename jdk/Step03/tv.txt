@@ -11,6 +11,22 @@ TV는 채널을 올리고 내리고 하는 기능,
 위에 기능들과 데이터를 가지고 있는 클래스를 작성
 TV
 	필드
-		
+		전원 - boolean
+		채널 - int
+		음량 - int
+	   음소거 - boolean 
 	메서드
+		전원OnOff() - void
+		음소거OnOff() - void
+		채널Up() - void
+		채널Down() - void
+		음량Up() - void
+		음량Down() - void
+		
+		
+		
+		
+		
+		
+		
 		
