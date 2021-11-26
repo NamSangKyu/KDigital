@@ -8,7 +8,8 @@ public class CalculatorMain {
 		int n1 = cal.inputNumber();
 		int n2 = cal.inputNumber();
 		System.out.println(cal.sum(n1, n2));
-		
+		System.out.println(cal.maxNumber(n1, n2));
+		System.out.println(cal.celToFah(23.7));
 	}
 
 }

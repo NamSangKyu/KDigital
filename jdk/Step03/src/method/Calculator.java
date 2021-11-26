@@ -16,4 +16,44 @@ public class Calculator {
 		int num = sc.nextInt();
 		return num;
 	}
+	
+	//이 메서드는 정수값 두개를 받아서 두 정수 중에 큰 숫자를 되돌려주는 메서드
+	int maxNumber(int a, int b) {
+		return a > b ? a : b;
+	}
+	
+	//이 메서드는 정수값 한개를 받아서 이 정수가 홀수면 true, 짝수면 false를 되돌려주는 메서드
+	boolean checkOdd(int num) {
+		return num % 2 == 1;		
+	}
+	
+	//이 메서드는 섭씨 온도를 하나 받아서 받아온 섭씨 온도를 화씨 온도로 변환해서 리턴하는 메서드를 작성
+	//섭시 * 1.8 + 32
+	double celToFah(double cel) {
+		return cel * 1.8 + 32;
+	}
+	
+	//이 메서드는 정수 하나 받아서, 받아온 정수가 소수면 true, 소수가 아니면 false를 리턴하는 메서드를 작성
+	boolean isPrimeNumber(int num) {
+		int i = 0;
+		if(num < 2) return false;
+		for(i = 2; i<num;i++) {
+			if(num % i == 0) 
+				return false;
+		}
+		return true;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
