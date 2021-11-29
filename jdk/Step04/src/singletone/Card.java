@@ -10,8 +10,8 @@ public class Card {
 
 	// 생성자 - 소유주
 	public Card(String name) {
-		super();
 		this.name = name;
+		cardNo = cardSequence++;
 	}
 	// printCardInfo
 	public void printCardInfo() {
