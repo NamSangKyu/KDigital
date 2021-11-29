@@ -17,13 +17,9 @@ public class Person {
 		return name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 
 	public void setAge(int a) {
 		if(a > 0) //데이터가 정상인지 체크
