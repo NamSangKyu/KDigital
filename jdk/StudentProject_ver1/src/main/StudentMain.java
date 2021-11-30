@@ -19,10 +19,17 @@ public class StudentMain {
 			System.out.println("0. 프로그램 종료");
 			System.out.println("원하시는 메뉴 번호를 입력하세요 :");
 			int no = sc.nextInt();
+			sc.nextLine();//줄바꿈 문자 제거
 			
 			switch(no) {
 			case 1:
 				service.insertStudent(sc);
+				break;
+			case 2:
+				service.selectStudent(sc);
+				break;
+			case 5:
+				service.printAllStudent();
 				break;
 			}
 			

@@ -12,6 +12,9 @@ public class StudentService {
 	
 	private StudentService() {
 		arr = new StudentVO[5];
+		arr[idx++] = new StudentVO("A0001", "홍길동", "경제", 3.5);
+		arr[idx++] = new StudentVO("A0002", "김철수", "게임", 4.5);
+		arr[idx++] = new StudentVO("A0003", "이영희", "체육", 2.4);
 	}
 
 	public static StudentService getInstance() {
@@ -39,10 +42,37 @@ public class StudentService {
 		String major = sc.nextLine();
 		System.out.println("평점 : ");
 		double score = sc.nextDouble();
+		sc.nextLine();
+		
 		StudentVO vo = new StudentVO(studentNo, name, major, score);
 		//3. 배열에 추가 후 idx 증가
 		arr[idx++] = vo;
 		System.out.println("학생정보 등록 완료.");
+	}
+
+	public void printAllStudent() {
+		System.out.println("전체 학생정보 출력");
+		for(int i=0;i<idx;i++) {
+			arr[i].printStudentInfo();
+		}
+	}
+
+	public void selectStudent(Scanner sc) {
+		if(idx == 0) {
+			System.out.println("저장된 데이터가 없습니다.");
+			return;
+		}
+		System.out.println("학생 정보 검색을 시작합니다......");
+		System.out.print("검색할 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentNo().equals(studentNo)) {
+				arr[i].printStudentInfo();
+				return;
+			}
+		}
+		System.out.println("조회 결과 해당 학생정보가 없습니다.");
 	}
 
 	
