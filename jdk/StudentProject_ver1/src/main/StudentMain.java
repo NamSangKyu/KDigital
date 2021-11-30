@@ -28,6 +28,12 @@ public class StudentMain {
 			case 2:
 				service.selectStudent(sc);
 				break;
+			case 3:
+				service.updateStudent(sc);
+				break;
+			case 4:
+				service.deleteStudent(sc);
+				break;
 			case 5:
 				service.printAllStudent();
 				break;

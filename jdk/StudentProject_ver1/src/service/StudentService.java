@@ -75,6 +75,56 @@ public class StudentService {
 		System.out.println("조회 결과 해당 학생정보가 없습니다.");
 	}
 
+	public void updateStudent(Scanner sc) {
+		if(idx == 0) {
+			System.out.println("저장된 데이터가 없습니다.");
+			return;
+		}
+		System.out.println("학생 수정 검색을 시작합니다......");
+		System.out.print("수정할 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentNo().equals(studentNo)) {
+				arr[i].printStudentInfo();
+				//이름, 학과, 평점 입력 받아서 변경
+				System.out.print("이름 : ");
+				String name = sc.nextLine();
+				arr[i].setName(name);
+				System.out.print("학과 : ");
+				String major = sc.nextLine();
+				arr[i].setMajor(major);
+				System.out.println("평점 : ");
+				double score = sc.nextDouble();
+				sc.nextLine();
+				arr[i].setScore(score);
+				return;
+			}
+		}
+		System.out.println("수정할 해당 학생정보가 없습니다.");
+	}
+
+	public void deleteStudent(Scanner sc) {
+		if(idx == 0) {
+			System.out.println("저장된 데이터가 없습니다.");
+			return;
+		}
+		System.out.println("학생 정보 검색을 시작합니다......");
+		System.out.print("삭제할 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentNo().equals(studentNo)) {
+				for(int j=i;j<idx-1;j++)
+					arr[j] = arr[j+1];
+				idx--;
+				System.out.println("학생데이터 삭제 성공");
+				return;
+			}
+		}
+		System.out.println("삭제할 해당 학생정보가 없습니다.");
+	}
+
 	
 }
 
