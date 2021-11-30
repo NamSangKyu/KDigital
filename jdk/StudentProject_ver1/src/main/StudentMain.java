@@ -11,16 +11,23 @@ public class StudentMain {
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
-			/*
-			 *	1. 학생정보 추가 
-			 *	2. 학생정보 검색
-			 *	3. 학생정보 수정
-			 *	4. 학생정보 삭제
-			 *	5. 전체 학생정보 조회
-			 *	0. 프로그램 종료
-			 *  원하시는 메뉴 번호를 입력하세요 :  
-			 */
+			System.out.println("1. 학생정보 추가");
+			System.out.println("2. 학생정보 검색");
+			System.out.println("3. 학생정보 수정");
+			System.out.println("4. 학생정보 삭제");
+			System.out.println("5. 전체 학생정보 조회");
+			System.out.println("0. 프로그램 종료");
+			System.out.println("원하시는 메뉴 번호를 입력하세요 :");
+			int no = sc.nextInt();
 			
+			switch(no) {
+			case 1:
+				service.insertStudent(sc);
+				break;
+			}
+			
+			
+			if(no == 0) break;
 		}
 		
 	}
