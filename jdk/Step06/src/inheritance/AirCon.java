@@ -5,6 +5,12 @@ public class AirCon {
 	protected int mode;
 	protected int wind;
 	
+	public AirCon() {
+		temp = 20;
+		mode = 1;
+		wind = 1;
+	}
+
 	public void tempUp() {
 		if(temp < 32)
 			temp++;
