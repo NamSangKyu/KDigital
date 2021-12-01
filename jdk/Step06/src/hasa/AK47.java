@@ -11,6 +11,8 @@ public class AK47 extends Gun{
 	public void shot() {
 		bullet -= 3;
 		System.out.println("Bang! Bang! Bang! - " + bullet );
+		if(bullet <= 0)
+			reload();
 	}
 	
 	@Override
