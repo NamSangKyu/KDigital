@@ -14,6 +14,11 @@ public class InstanceOf {
 //		dog = (Dog) animal;
 		Person p = (Person)animal;
 		p.eat();
+
+		//형변환이 되는지 체크
+		System.out.println(animal instanceof Person);
+		System.out.println(animal instanceof Dog);
+		
 		
 		eat(new Animal());
 		eat(p);
