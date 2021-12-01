@@ -10,7 +10,12 @@ public class HandlerMapping {
 			instance = new HandlerMapping();
 		return instance;
 	}
-
+	
+	public Controller createController(int no) {
+		Controller controller = null;
+		
+		return controller;
+	}
 	
 	
 }
