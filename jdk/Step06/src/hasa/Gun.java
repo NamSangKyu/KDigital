@@ -10,7 +10,7 @@ public class Gun {
 	public void shot() {
 		if(bullet>0) {
 			bullet--;
-			System.out.println("BBang!!");
+			System.out.println("BBang!! - "+bullet);
 		}else {
 			reload();
 		}
