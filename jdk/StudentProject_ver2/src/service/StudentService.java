@@ -18,7 +18,14 @@ public class StudentService {
 
 	public boolean registerStudent(StudentVO vo) {
 		if(idx == list.length) {
-			//배열을 재할당
+			//임시 배열 생성			
+			StudentVO[] temp = new StudentVO[list.length+3];
+			//임시 배열에 기존 배열에 있는 값을 복사
+			for(int i=0;i<list.length;i++) {
+				temp[i] = list[i];
+			}
+			//기존 배열에 임시 배열을 저장
+			list = temp;
 		}
 		list[idx++]=vo;
 		return true;
