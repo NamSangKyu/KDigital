@@ -26,6 +26,10 @@ public class EmployeeService {
 		index++;
 		System.out.println("사원 정보 등록이 완료 되었습니다.");
 	}
+
+	public void printAllEmployee() {
+		
+	}
 	
 }
 
