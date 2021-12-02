@@ -27,8 +27,23 @@ public class StudentService {
 			//기존 배열에 임시 배열을 저장
 			list = temp;
 		}
+		//---------------
+		//	학번 중복 체크
+		if(searchStudent(vo.getStudentNo())!=null) {
+			System.out.println("중복된 학생 정보가 있습니다.");
+			return false;
+		}
+		//---------------
 		list[idx++]=vo;
 		return true;
+	}
+
+	public StudentVO searchStudent(String studntNo) {
+		for(int i=0;i<idx;i++) {
+			if(list[i].getStudentNo().equals(studntNo))
+				return list[i];
+		}
+		return null;
 	}
 }
 
