@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import service.EmployeeService;
 import vo.DispatchEmployeeVO;
 import vo.EmployeeVO;
 import vo.PartTimeEmployeeVO;
@@ -57,7 +58,7 @@ public class RegisterController extends Controller {
 			employee = new DispatchEmployeeVO(employeeNo, name, department, basicPay, grade);
 			break;
 		}
-		
+		EmployeeService.getInstance().insertEmployee(employee);
 	}
 }
 
