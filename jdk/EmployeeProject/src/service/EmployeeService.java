@@ -56,6 +56,16 @@ public class EmployeeService {
 		}
 		return false;
 	}
+
+	public void updateEmployee(EmployeeVO employee) {
+		for(int i=0;i<index;i++) {
+			//일치하는 사원번호 검색
+			if(list[i].getEmployeeNo().equals(employee.getEmployeeNo())) {
+				list[i] = employee;//새로운 객체 저장
+				return;
+			}
+		}
+	}
 	
 }
 
