@@ -28,7 +28,19 @@ public class EmployeeService {
 	}
 
 	public void printAllEmployee() {
-		
+		System.out.println("전체 사원 정보를 출력합니다.........");
+		for(int i=0;i<index;i++) {
+			list[i].printEmployeeInfo();
+			System.out.println();
+		}
+	}
+
+	public EmployeeVO searchEmployee(String employeeNo) {
+		for(int i=0;i<index;i++) {
+			if(list[i].getEmployeeNo().equals(employeeNo))//사원번호가 일치?
+				return list[i];//일치하는 해당 사원 객체를 리턴
+		}
+		return null; //일치하는 사원번호가 없을 때
 	}
 	
 }
