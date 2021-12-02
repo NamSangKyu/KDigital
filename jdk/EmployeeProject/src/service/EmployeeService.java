@@ -42,6 +42,20 @@ public class EmployeeService {
 		}
 		return null; //일치하는 사원번호가 없을 때
 	}
+
+	public boolean deleteEmployee(String employeeNo) {
+		for(int i=0;i<index;i++) {
+			if(list[i].getEmployeeNo().equals(employeeNo)){//사원번호가 일치?
+				//한칸씩 땡겨오는 부분
+				for(int j=i;j<index-1;j++) {
+					list[j] = list[j+1];
+				}
+				index--;
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }
 
