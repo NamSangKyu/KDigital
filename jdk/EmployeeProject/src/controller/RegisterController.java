@@ -2,6 +2,11 @@ package controller;
 
 import java.util.Scanner;
 
+import vo.DispatchEmployeeVO;
+import vo.EmployeeVO;
+import vo.PartTimeEmployeeVO;
+import vo.SalaryEmployeeVO;
+
 public class RegisterController extends Controller {
 	@Override
 	public void execute(Scanner sc) {
@@ -15,6 +20,8 @@ public class RegisterController extends Controller {
 		int no = sc.nextInt();
 		sc.nextLine();
 		
+		EmployeeVO employee = null;
+		
 		System.out.print("사번 : ");
 		String employeeNo = sc.nextLine();
 		System.out.print("이름 : ");
@@ -26,24 +33,28 @@ public class RegisterController extends Controller {
 		case 1:
 			System.out.print("기본급 : ");
 			basicPay = sc.nextInt();sc.nextLine();
+			employee = new EmployeeVO(employeeNo, name, department, basicPay);
 			break;
 		case 2:
 			System.out.print("기본급 : ");
 			basicPay = sc.nextInt();sc.nextLine();
 			System.out.print("영업포인트 : ");
 			int point = sc.nextInt();sc.nextLine();
+			employee = new SalaryEmployeeVO(employeeNo, name, department, basicPay, point);
 			break;
 		case 3:
 			System.out.print("근무시간: ");
 			int time = sc.nextInt();sc.nextLine();
 			System.out.print("시급 : ");
 			int hourPay = sc.nextInt();sc.nextLine();
+			employee = new PartTimeEmployeeVO(employeeNo, name, department, time, hourPay);
 			break;
 		case 4:
 			System.out.print("기본급 : ");
 			basicPay = sc.nextInt();sc.nextLine();
 			System.out.print("파견지 등급 : ");
 			char grade = sc.nextLine().charAt(0);
+			employee = new DispatchEmployeeVO(employeeNo, name, department, basicPay, grade);
 			break;
 		}
 		
