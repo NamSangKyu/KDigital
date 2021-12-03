@@ -15,6 +15,9 @@ public class ObjectMain {
 		//메모리 주소 비교
 		System.out.println(p1 == p2);
 		System.out.println(p1.equals(p2));
+		Person p3 = null;
+		System.out.println(p1.equals(p3));
+		
 	}
 
 }
