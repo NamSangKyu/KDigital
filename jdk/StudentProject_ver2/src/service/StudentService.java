@@ -58,6 +58,11 @@ public class StudentService {
 		}
 		return false;
 	}// deleteStudent
+
+	public void printAllStudent() {
+		for(int i=0;i<idx;i++)
+			list[i].printStudentInfo();
+	}
 }
 
 
