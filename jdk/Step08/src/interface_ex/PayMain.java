@@ -10,7 +10,8 @@ public class PayMain {
 		Pay[] arr = {
 				new Cooker("김철수"),
 				new Player("홍길동", 10),
-				new Employee("노예", "인턴")				
+				new Employee("노예", "인턴"),
+				new FootBallPlayer("이영희", 10)
 		};
 		//pay 메서드 호출
 		pay(arr,2500);
