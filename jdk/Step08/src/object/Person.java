@@ -21,8 +21,8 @@ public class Person {
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		// 객체가 가지고 있는 데이터를 수학적인 수식을 이용해서 숫자로 변경
+		return name.hashCode() + age;
 	}
 	
 	
