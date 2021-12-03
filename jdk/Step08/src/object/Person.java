@@ -25,6 +25,23 @@ public class Person {
 		return name.hashCode() + age;
 	}
 	
+	//obj는 현재 객체와 동일한 지 비교할 객체
+	//obj의 내용이 this 객체와 내용이 동일한지 판단 - equals
+	@Override
+	public boolean equals(Object obj) {
+		//1. obj가 null 인지?
+		if(obj == null) return false;
+		//2. 메모리 주소 비교
+		if(obj == this) return true;
+		//3. obj 클래스가 Person 클래스로 형변환 되는지 체크
+		if(obj instanceof Person) {
+			Person temp = (Person) obj;
+			//필드값이 전부 동일한 비교
+			return temp.age == age && name.equals(temp.name);
+		}
+		return false;
+	}
+	
 	
 	
 }

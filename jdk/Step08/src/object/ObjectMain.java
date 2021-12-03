@@ -14,6 +14,7 @@ public class ObjectMain {
 		System.out.println(p2.hashCode());
 		//메모리 주소 비교
 		System.out.println(p1 == p2);
+		System.out.println(p1.equals(p2));
 	}
 
 }
