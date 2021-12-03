@@ -1,4 +1,7 @@
 package vo;
+
+import java.util.Objects;
+
 /*
  * 학생 클래스
  * 	학번, 이름, 학과, 평점을 가지고 있음
@@ -53,6 +56,33 @@ public class StudentVO {
 	public void printStudentInfo() {
 		System.out.println(studentNo + "\t" + name + "\t" + major + "\t" + score);
 	}
+
+	//hashCode
+	@Override
+	public int hashCode() {
+		return Objects.hash(major, name, studentNo);
+	}
+
+	//equals
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StudentVO other = (StudentVO) obj;
+		return Objects.equals(major, other.major) && Objects.equals(name, other.name)
+				&& Objects.equals(studentNo, other.studentNo);
+	}
+
+	//toString
+	@Override
+	public String toString() {
+		return "StudentVO [studentNo=" + studentNo + ", name=" + name + ", major=" + major + ", score=" + score + "]";
+	}
+	
 	
 }
 
