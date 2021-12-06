@@ -14,7 +14,23 @@ public class HandlerMapping {
 	public Controller createController(int no) {
 		Controller controller = null;
 		
+		switch(no) {
+		case 1:
+			controller = new RegisterController();
+			break;
+		case 2:
+			controller = new SearchController();
+			break;
+		}
+		
 		return controller;
 	}
 	
 }
+
+
+
+
+
+
+
