@@ -1,6 +1,7 @@
 package map;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 
 public class HashMapTest {
@@ -45,6 +46,11 @@ public class HashMapTest {
 		System.out.println(key);
 		
 		//키값을 모를때 맵이 가지고 있는 모든 값을 출력
+		Iterator<String> it = key.iterator();
+		while(it.hasNext()) {
+			String k = it.next();
+			System.out.println(k + " - " + map.get(k));
+		}
 	}
 
 }
