@@ -41,6 +41,9 @@ public class HashMapTest {
 		//map.clear();
 		System.out.println(map.isEmpty());
 		
+		//데이터 삭제 - 키값으로 삭제
+		map.remove("Jsp");
+		
 		//keySet ---> 맵에 있는 키값을 set 객체로 리턴
 		Set<String> key = map.keySet();
 		System.out.println(key);
