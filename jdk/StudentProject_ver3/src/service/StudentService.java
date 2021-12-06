@@ -11,6 +11,10 @@ public class StudentService {
 	private StudentService() {
 		list = new ArrayList<StudentVO>();
 	}
+	
+	public ArrayList<StudentVO> getList() {
+		return list;
+	}
 
 	public static StudentService getInstance() {
 		if (instance == null)
