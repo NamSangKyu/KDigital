@@ -30,11 +30,11 @@ public class StudentService {
 		list.add(studentVO);
 	}
 
-	public StudentVO searchStudent(String studentNo) {
+	public StudentVO searchStudent(String studentNo) throws StudentException {
 		StudentVO vo = new StudentVO(studentNo, null, null, 0);
 		int no = list.indexOf(vo);
 		if (no == -1)
-			return null;
+			throw new StudentException("검색결과 학번에 해당하는 학생이 없습니다.");
 		return list.get(no);
 	}
 
