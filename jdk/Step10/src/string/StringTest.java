@@ -23,6 +23,16 @@ public class StringTest {
 		String[] arr = str1.split(" ");
 		for(int i=0;i<arr.length;i++)
 			System.out.println(arr[i]);
+		//특정 문자를 구분자로 하여 문자열 합치기 
+		System.out.println(String.join("-", arr));
+		
+		//String과는 달리 기존 값에 내용을 붙이거나 수정할수 있다.
+		StringBuffer string  = new StringBuffer("Hello World");
+		string.append("TEST");
+		System.out.println(string);
+		string.insert(6, "FLOAT");
+		System.out.println(string);
+		
 	}
 
 }
