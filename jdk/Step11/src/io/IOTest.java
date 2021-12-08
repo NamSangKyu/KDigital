@@ -19,10 +19,12 @@ public class IOTest {
 				buffer[idx] = (char) isr.read();// 한글자씩 입력 받음
 				idx++;
 			} while (buffer[idx - 1] != '\n');
-			//System.out.println(Arrays.toString(buffer));
-			for(int i=0;i<idx;i++) {
-				System.out.print((int)buffer[i] + " ");
+			// System.out.println(Arrays.toString(buffer));
+
+			for (int i = 0; i < idx; i++) {
+				System.out.print((int) buffer[i] + " ");
 			}
+
 			System.out.println();
 			message = String.copyValueOf(buffer, 0, idx - 2);
 		} catch (IOException e) {
