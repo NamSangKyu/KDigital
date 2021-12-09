@@ -29,6 +29,9 @@ public class UpdateController implements Controller {
 			vo.setName(name);
 			vo.setMajor(major);
 			vo.setScore(score);
+			
+			StudentService.getInstance().updateFile();
+			
 		} catch (StudentException e) {
 			PrintLog.getInstance().printLog(e.getMessage());
 			System.out.println(e.getMessage());

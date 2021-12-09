@@ -11,6 +11,7 @@ public class StudentMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		//서비스 클래스 초기화
 		StudentService.getInstance().init();
 		while(true) {
 			System.out.println("--- 학적 관리 프로그램 ---");

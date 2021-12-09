@@ -102,10 +102,46 @@ public class StudentService {
 			throw new StudentException("검색결과 학번에 해당하는 학생이 없습니다.");
 		return list.get(no);
 	}
-
+	public void updateFile() {
+		File file = new File("student.dat");
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		try {
+			fos = new FileOutputStream(file);
+			oos = new ObjectOutputStream(fos);
+			
+			for(int i=0;i<list.size();i++) {
+				oos.writeObject(list.get(i));
+				oos.flush();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(oos != null)oos.close();
+				if(fos != null)fos.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}				
+		}
+	}
 	public boolean deleteStudent(String studentNo) {
 		StudentVO vo = new StudentVO(studentNo, null, null, 0);
-		return list.remove(vo);
+		boolean result = list.remove(vo);
+		if(result) {
+			updateFile();			
+		}
+		return result;
 	}
 
 }
+
+
+
+
+
+
+
+

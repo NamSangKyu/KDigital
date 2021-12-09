@@ -14,7 +14,7 @@ public class PrintLog {
 	
 	private PrintLog() {
 		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd");
 		File file = new File(sdf.format(cal.getTime())+".txt");
 		try {
 			fw = new FileWriter(file,true);
