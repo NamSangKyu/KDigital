@@ -1,8 +1,9 @@
 package vo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class StudentVO {
+public class StudentVO implements Serializable{
 	private String studentNo;
 	private String name;
 	private String major;
