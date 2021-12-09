@@ -1,6 +1,9 @@
 package io;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,6 +22,29 @@ public class DefaultNotepad {
 		if(!file.getParentFile().exists()){
 			file.getParentFile().mkdirs();
 		}
+		
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			String str;
+			while((str=br.readLine())!= null) {
+				System.out.println(str);
+			}
+		} catch (FileNotFoundException e1) {
+			System.out.println("해당 파일이 없습니다.");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				fr.close();
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 		FileWriter fw = null;
 		PrintWriter pw = null;
 		try {
