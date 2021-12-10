@@ -37,10 +37,10 @@ public class ServerWorker extends Thread {
 				if(br != null) br.close();
 				if(pw != null) pw.close();
 				if(client != null) client.close();
-				MultiEchoServerMain.list.remove(this);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			MultiEchoServerMain.list.remove(this);
 		}
 
 	}
