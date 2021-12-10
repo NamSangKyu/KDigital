@@ -4,22 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class OneChatServerMain {
+public class OneChatClientMain {
 
 	public static void main(String[] args) {
-		ServerSocket server = null;
+		Socket server = null;
 		PrintWriter pw = null;
 		Scanner sc = new Scanner(System.in);
+		
 		try {
-			server = new ServerSocket(1234);
-			Socket client = server.accept();
-			System.out.println(client.getInetAddress()+"님이 접속하셨습니다.");
-			pw = new PrintWriter(client.getOutputStream());
-			Worker worker = new Worker(client);
+			server = new Socket("192.168.1.58", 1234);
+			pw = new PrintWriter(server.getOutputStream());
+			
+			Worker worker = new Worker(server);
 			worker.start();
 			
 			while(true) {
@@ -29,6 +29,9 @@ public class OneChatServerMain {
 				pw.flush();
 				if(str.equals("exit")) break;
 			}
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally {
@@ -39,8 +42,9 @@ public class OneChatServerMain {
 				e.printStackTrace();
 			}
 		}
+		
+		
 	}
-
 	private static class Worker extends Thread {
 		private Socket client;
 		private BufferedReader br;
