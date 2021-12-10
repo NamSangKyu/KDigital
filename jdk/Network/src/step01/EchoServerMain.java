@@ -25,7 +25,9 @@ public class EchoServerMain {
 				String str = br.readLine();
 				if(str == null || str.equals("exit"))
 					break;
-				System.out.println(str);
+				//System.out.println(str);
+				pw.println("서버 : "+str);
+				pw.flush();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
