@@ -43,13 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SwitchEx.cs" />
     <EmbeddedResource Include="ScoreIf.cs" />
     <EmbeddedResource Include="Operator1.cs" />
     <EmbeddedResource Include="IfEx.cs" />
     <EmbeddedResource Include="Operator2.cs" />
     <EmbeddedResource Include="ElseEx.cs" />
     <EmbeddedResource Include="ElseIfEx.cs" />
-    <Compile Include="IfIf.cs" />
+    <EmbeddedResource Include="IfIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
