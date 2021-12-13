@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SwitchEx.cs" />
+    <Compile Include="Quest2.cs" />
+    <EmbeddedResource Include="ScoreSwitch.cs" />
+    <EmbeddedResource Include="Loop.cs" />
+    <EmbeddedResource Include="SwitchEx.cs" />
     <EmbeddedResource Include="ScoreIf.cs" />
     <EmbeddedResource Include="Operator1.cs" />
     <EmbeddedResource Include="IfEx.cs" />
@@ -51,6 +54,8 @@
     <EmbeddedResource Include="ElseEx.cs" />
     <EmbeddedResource Include="ElseIfEx.cs" />
     <EmbeddedResource Include="IfIf.cs" />
+    <EmbeddedResource Include="LoopInLoop.cs" />
+    <EmbeddedResource Include="BreakContinue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
