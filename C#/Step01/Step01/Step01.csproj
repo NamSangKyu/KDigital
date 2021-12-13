@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Quest1.cs" />
+    <EmbeddedResource Include="StringFunction.cs" />
+    <EmbeddedResource Include="VarType.cs" />
     <EmbeddedResource Include="String.cs" />
     <EmbeddedResource Include="Variable.cs" />
     <EmbeddedResource Include="Hello.cs" />
     <EmbeddedResource Include="Object.cs" />
-    <Compile Include="ConstEum.cs" />
+    <EmbeddedResource Include="ConstEum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
