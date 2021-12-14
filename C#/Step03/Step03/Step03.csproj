@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Method.cs" />
-    <Compile Include="Overloading.cs" />
+    <EmbeddedResource Include="Overloading.cs" />
+    <Compile Include="DefaultParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Reference.cs" />
   </ItemGroup>
