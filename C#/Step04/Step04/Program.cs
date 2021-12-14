@@ -89,6 +89,23 @@ namespace Step04
             Console.WriteLine("--------------------------");
             Child child = new Child();
             child.PrintParentInfo();
+            Child child2 = new Child("홍길동");
+            child2.PrintParentInfo();
+            Console.WriteLine("--------------------------");
+            //추상 클래스는 생성 안됨
+            //Gun gun = new Gun();
+            M16 m16 = new M16();
+            m16.shot();
+            //자바의 instanceof 동일한 연산
+            Console.WriteLine(m16 is Gun);
+            Gun gun = m16;
+            gun.shot();
+            Console.WriteLine("--------------------------");
+            Power power = new Aircon();
+            power.PowerOn();
+            UpDown upDown = new Aircon();
+            upDown.Up();
+
 
         }
     }

@@ -14,6 +14,11 @@ namespace Step04
         {
             Console.WriteLine("Parent()");
         }
+
+        public Parent(string name)
+        {
+            this.name = name;
+        }
         ~Parent()
         {
             Console.WriteLine("~Parent()");
@@ -31,6 +36,12 @@ namespace Step04
         {
             Console.WriteLine("Child()");
         }
+        //                          부모 생성자 호출
+        public Child(string name) : base(name)
+        {
+
+        }
+
         //소멸자는 자식부터 호출
         ~Child()
         {
