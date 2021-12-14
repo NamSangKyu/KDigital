@@ -77,6 +77,10 @@ namespace Step04
 
             Student std1 = new Student("20001111", "홍길동", "경제학과", 3.24);
             std1.PrintInfo();
+
+            TV tv = new TV();
+            for(int i = 0; i < 30; i++)
+                tv.ChDown();
         }
     }
 }

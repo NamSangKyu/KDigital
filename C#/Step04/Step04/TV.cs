@@ -13,6 +13,10 @@ namespace Step04
         private int ch;
         private int vol;
         private bool mute;
+        //선언 후 초기화하는 상수
+        private const int MAX_CH = 455;
+        //생성자에서 자유롭게 초기화가 가능함
+        private readonly int MIN_CH;
 
         public TV()
         {
@@ -20,6 +24,8 @@ namespace Step04
             ch = 24;
             vol = 10;
             mute = false;
+            MIN_CH = 0;
+            MIN_CH = 10;
         }
         //전원OnOff
         public void PowerOnOff()
@@ -35,14 +41,14 @@ namespace Step04
         public void ChUp()
         {
             ch++;
-            if (ch > 455) ch = 1;
+            if (ch > MAX_CH) ch = 1;
             Console.WriteLine($"현재 채널 : {ch}");
         }
         //채널Down
         public void ChDown()
         {
             ch--;
-            if (ch < 1) ch = 455;
+            if (ch < MIN_CH) ch = 455;
             Console.WriteLine($"현재 채널 : {ch}");
         }
         //음량Up
