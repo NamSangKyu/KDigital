@@ -86,6 +86,10 @@ namespace Step04
             Console.WriteLine(Number.GetInstance().GetNum());
             Console.WriteLine(Number.GetInstance().GetNum());
             Console.WriteLine(Number.GetInstance().GetNum());
+            Console.WriteLine("--------------------------");
+            Child child = new Child();
+            child.PrintParentInfo();
+
         }
     }
 }
