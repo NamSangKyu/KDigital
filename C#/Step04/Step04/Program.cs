@@ -81,6 +81,11 @@ namespace Step04
             TV tv = new TV();
             for(int i = 0; i < 30; i++)
                 tv.ChDown();
+
+            Console.WriteLine(Number.GetInstance().GetNum());
+            Console.WriteLine(Number.GetInstance().GetNum());
+            Console.WriteLine(Number.GetInstance().GetNum());
+            Console.WriteLine(Number.GetInstance().GetNum());
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Step04
         private bool mute;
         //선언 후 초기화하는 상수
         private const int MAX_CH = 455;
-        //생성자에서 자유롭게 초기화가 가능함
+        //생성자에서만 자유롭게 초기화가 가능함
         private readonly int MIN_CH;
 
         public TV()
