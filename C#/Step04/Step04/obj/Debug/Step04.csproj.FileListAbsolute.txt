@@ -1,0 +1,8 @@
+C:\jdk\workspace\C#\Step04\Step04\bin\Debug\Step04.exe.config
+C:\jdk\workspace\C#\Step04\Step04\bin\Debug\Step04.exe
+C:\jdk\workspace\C#\Step04\Step04\bin\Debug\Step04.pdb
+C:\jdk\workspace\C#\Step04\Step04\obj\Debug\Step04.csproj.AssemblyReference.cache
+C:\jdk\workspace\C#\Step04\Step04\obj\Debug\Step04.csproj.SuggestedBindingRedirects.cache
+C:\jdk\workspace\C#\Step04\Step04\obj\Debug\Step04.csproj.CoreCompileInputs.cache
+C:\jdk\workspace\C#\Step04\Step04\obj\Debug\Step04.exe
+C:\jdk\workspace\C#\Step04\Step04\obj\Debug\Step04.pdb
