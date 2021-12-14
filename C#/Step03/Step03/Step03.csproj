@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Method.cs" />
+    <Compile Include="Overloading.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reference.cs" />
+    <EmbeddedResource Include="Reference.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

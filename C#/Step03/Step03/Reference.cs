@@ -40,6 +40,10 @@ namespace Step03
             q = n1 / n2;
             m = n1 % n2;
         }
+        static void CircleArea(int r,out double area)
+        {
+            area = r * r * 3.1415;
+        }
         static void Main(string[] args)
         {
             int n1 = 10, n2 = 20;
@@ -55,6 +59,10 @@ namespace Step03
             int q=0, m=0;
             Divide(10,3,ref q, ref m);
             Console.WriteLine($"{q},{m}");
+            Console.WriteLine("--------------------");
+            //double area = 0;
+            CircleArea(5, out double area);
+            Console.WriteLine(area);
 
         }
     }
