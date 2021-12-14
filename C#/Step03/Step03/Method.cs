@@ -82,6 +82,24 @@ namespace Step03
          *  
          *  메서드명 : GetGcd
          */
+        public static int GetGcd(int n1, int n2)
+        {
+            int gcd = 0;
+
+            if (n1 > n2)
+            {
+                int temp = n1;
+                n1 = n2;
+                n2 = temp;
+            }
+            for(int i = 1; i <= n1; i++)
+            {
+                if (n1 % i == 0 && n2 % i == 0)
+                    gcd = i;
+            }
+            return gcd;
+        }
+
         static void Main(string[] args)
         {
             /*
@@ -93,6 +111,7 @@ namespace Step03
             */
             VendiMachine(3000);
             Console.WriteLine(CheckPerfectNumber(4));
+            Console.WriteLine(GetGcd(10, 25));
         }
     }
 }
