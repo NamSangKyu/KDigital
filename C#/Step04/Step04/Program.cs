@@ -34,15 +34,23 @@ namespace Step04
     {
         private string name;
         private int age;
-
+        //생성자 - 메모리에서 할당 될때 실행
         public Person(string name, int age)
         {
             this.name = name;
             this.age = age;
         }
+        //소멸자(종료자) - 메모리에서 해제 될때 실행
         ~Person()
         {
             Console.WriteLine("~Person()");
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Person person &&
+                   name == person.name &&
+                   age == person.age;
         }
 
         public void PrintPersonInfo()
@@ -62,6 +70,13 @@ namespace Step04
 
             Person p = new Person("홍길동", 30);
             p.PrintPersonInfo();
+
+            Person s = new Person("홍길동", 30);
+            //Console.WriteLine(p == s);
+            Console.WriteLine(p.Equals(s));
+
+            Student std1 = new Student("20001111", "홍길동", "경제학과", 3.24);
+            std1.PrintInfo();
         }
     }
 }
