@@ -14,6 +14,17 @@ namespace StudentProject
         {
             list = new List<StudentVO>();
         }
+
+        internal StudentVO searchStudent(string name)
+        {
+            foreach (StudentVO student in list)
+            {
+                if (student.Name.Contains(name))
+                    return student;
+            }
+            return null;
+        }
+
         public static StudentService Instance { get { return instance; } }
 
         public bool insertStudent(StudentVO studentVO)
