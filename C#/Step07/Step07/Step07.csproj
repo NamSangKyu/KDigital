@@ -46,7 +46,8 @@
     <EmbeddedResource Include="ExceptionTest.cs" />
     <EmbeddedResource Include="AnonymousMethod.cs" />
     <EmbeddedResource Include="DelegateTest.cs" />
-    <Compile Include="Event.cs" />
+    <EmbeddedResource Include="Event.cs" />
+    <Compile Include="Lamda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ThrowTest.cs" />
   </ItemGroup>
