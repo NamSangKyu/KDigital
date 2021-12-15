@@ -38,6 +38,13 @@ namespace Step07
             customDelegate = calculator.mul;
             Console.WriteLine(customDelegate(10,20));
 
+            Console.WriteLine("-------------");
+
+            CustomDelegate c = null;
+            c += calculator.sum;
+            c += calculator.mul;
+
+            Console.WriteLine(c(10,20));
         }
     }
 }
