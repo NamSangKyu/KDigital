@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StackTest.cs" />
+    <Compile Include="QueueTest.cs" />
+    <EmbeddedResource Include="StackTest.cs" />
     <EmbeddedResource Include="Array.cs" />
     <EmbeddedResource Include="Indexer.cs" />
     <EmbeddedResource Include="ArrayListTest.cs" />
