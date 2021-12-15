@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Array.cs" />
-    <Compile Include="Indexer.cs" />
+    <EmbeddedResource Include="Indexer.cs" />
+    <Compile Include="ArrayListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
