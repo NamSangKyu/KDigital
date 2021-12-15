@@ -21,6 +21,14 @@ namespace StudentProject
         public Controller CreateController(int no)
         {
             Controller controller = null;
+
+            switch (no)
+            {
+                case 1:
+                    controller = new InsertController();
+                    break;
+            }
+
             return controller;
         }
     }

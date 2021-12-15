@@ -15,5 +15,12 @@ namespace StudentProject
             list = new List<StudentVO>();
         }
         public static StudentService Instance { get { return instance; } }
+
+        public bool insertStudent(StudentVO studentVO)
+        {
+            if(list.Contains(studentVO)) return false;
+            list.Add(studentVO);
+            return true;
+        }
     }
 }
