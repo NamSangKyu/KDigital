@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StackTest.cs" />
     <EmbeddedResource Include="Array.cs" />
     <EmbeddedResource Include="Indexer.cs" />
-    <Compile Include="ArrayListTest.cs" />
+    <EmbeddedResource Include="ArrayListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
