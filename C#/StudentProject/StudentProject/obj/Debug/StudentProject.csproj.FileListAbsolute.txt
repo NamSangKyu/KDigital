@@ -1,0 +1,8 @@
+C:\jdk\workspace\C#\StudentProject\StudentProject\bin\Debug\StudentProject.exe.config
+C:\jdk\workspace\C#\StudentProject\StudentProject\bin\Debug\StudentProject.exe
+C:\jdk\workspace\C#\StudentProject\StudentProject\bin\Debug\StudentProject.pdb
+C:\jdk\workspace\C#\StudentProject\StudentProject\obj\Debug\StudentProject.csproj.AssemblyReference.cache
+C:\jdk\workspace\C#\StudentProject\StudentProject\obj\Debug\StudentProject.csproj.SuggestedBindingRedirects.cache
+C:\jdk\workspace\C#\StudentProject\StudentProject\obj\Debug\StudentProject.csproj.CoreCompileInputs.cache
+C:\jdk\workspace\C#\StudentProject\StudentProject\obj\Debug\StudentProject.exe
+C:\jdk\workspace\C#\StudentProject\StudentProject\obj\Debug\StudentProject.pdb
