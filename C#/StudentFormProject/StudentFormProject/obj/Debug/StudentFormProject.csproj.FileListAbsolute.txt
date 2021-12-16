@@ -1,0 +1,11 @@
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\bin\Debug\StudentFormProject.exe.config
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\bin\Debug\StudentFormProject.exe
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\bin\Debug\StudentFormProject.pdb
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.csproj.AssemblyReference.cache
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.csproj.SuggestedBindingRedirects.cache
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.Properties.Resources.resources
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.csproj.GenerateResource.cache
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.csproj.CoreCompileInputs.cache
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.exe
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.pdb
+C:\jdk\workspace\C#\StudentFormProject\StudentFormProject\obj\Debug\StudentFormProject.MainForm.resources
