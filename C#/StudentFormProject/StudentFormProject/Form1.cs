@@ -77,5 +77,19 @@ namespace StudentFormProject
             ListStudent.Items[idx].SubItems[2].Text = cbx_major.SelectedItem.ToString();
             ListStudent.Items[idx].SubItems[3].Text = txt_score.Text;
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            int count = ListStudent.Items.Count;
+            for(int i = 0; i < count; i++)
+            {
+                if (ListStudent.Items[i].SubItems[1].Text.Contains(txt_search.Text))
+                {
+                    ListStudent.Items[i].Focused = true;
+                    ListStudent.Items[i].Selected = true;
+                }
+
+            }
+        }
     }
 }

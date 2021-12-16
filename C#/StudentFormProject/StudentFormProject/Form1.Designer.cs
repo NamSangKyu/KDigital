@@ -165,6 +165,7 @@
             this.btn_search.TabIndex = 8;
             this.btn_search.Text = "검색";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // txt_search
             // 
