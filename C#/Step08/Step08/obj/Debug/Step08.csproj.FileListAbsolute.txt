@@ -1,0 +1,8 @@
+C:\jdk\workspace\C#\Step08\Step08\bin\Debug\Step08.exe.config
+C:\jdk\workspace\C#\Step08\Step08\bin\Debug\Step08.exe
+C:\jdk\workspace\C#\Step08\Step08\bin\Debug\Step08.pdb
+C:\jdk\workspace\C#\Step08\Step08\obj\Debug\Step08.csproj.AssemblyReference.cache
+C:\jdk\workspace\C#\Step08\Step08\obj\Debug\Step08.csproj.SuggestedBindingRedirects.cache
+C:\jdk\workspace\C#\Step08\Step08\obj\Debug\Step08.csproj.CoreCompileInputs.cache
+C:\jdk\workspace\C#\Step08\Step08\obj\Debug\Step08.exe
+C:\jdk\workspace\C#\Step08\Step08\obj\Debug\Step08.pdb

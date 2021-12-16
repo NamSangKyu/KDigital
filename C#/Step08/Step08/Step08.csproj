@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F3F593B-868F-41FB-99FA-BF538BB2857E}</ProjectGuid>
+    <ProjectGuid>{A6C313E1-4656-42E4-8E8B-7531E20B369C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StudentProject</RootNamespace>
-    <AssemblyName>StudentProject</AssemblyName>
+    <RootNamespace>Step08</RootNamespace>
+    <AssemblyName>Step08</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
-    <Compile Include="DeleteController.cs" />
-    <Compile Include="HandlerMapping.cs" />
-    <Compile Include="InsertController.cs" />
-    <Compile Include="PrintAllController.cs" />
-    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="LINQ_1.cs" />
+    <Compile Include="LINQ_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchController.cs" />
-    <Compile Include="StudentService.cs" />
-    <Compile Include="StudentVO.cs" />
-    <Compile Include="UpdateController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
