@@ -27,7 +27,7 @@ namespace Step08
             };
 
             var profiles = from profile in arrProfile
-                           where profile.Height < 175
+                           where profile.Name.Contains("김") || profile.Name.Contains("이")
                            orderby profile.Height
                            select new Profile { 
                                Name=profile.Name, 
