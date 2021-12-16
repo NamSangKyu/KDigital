@@ -45,7 +45,8 @@
   <ItemGroup>
     <EmbeddedResource Include="LINQ_1.cs" />
     <EmbeddedResource Include="LINQ_2.cs" />
-    <Compile Include="LINQ_3.cs" />
+    <EmbeddedResource Include="LINQ_3.cs" />
+    <Compile Include="LINQ_4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

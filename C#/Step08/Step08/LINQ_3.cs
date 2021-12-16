@@ -24,7 +24,7 @@ namespace Step08
             };
             var classes = from c in arrClass
                           from s in c.Score
-                          where s < 750
+                          where s < 75
                           orderby s
                           select new { Name = c.Name, Lowset = s };
             foreach (var c in classes)
