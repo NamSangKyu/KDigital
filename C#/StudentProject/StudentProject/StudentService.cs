@@ -15,6 +15,12 @@ namespace StudentProject
             list = new List<StudentVO>();
         }
 
+        internal bool deleteStudent(string studentNo)
+        {
+            StudentVO studentVO = new StudentVO(studentNo, null, null, 0);
+            return list.Remove(studentVO);
+        }
+
         internal StudentVO searchStudent(string name)
         {
             foreach (StudentVO student in list)
