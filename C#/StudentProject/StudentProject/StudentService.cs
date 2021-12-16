@@ -10,9 +10,22 @@ namespace StudentProject
     {
         private static readonly StudentService instance = new StudentService();
         private List<StudentVO> list;
+
+        public List<StudentVO> List { get { return list; } }
+
         private StudentService()
         {
             list = new List<StudentVO>();
+        }
+
+        internal StudentVO searchNoStudent(string studentNo)
+        {
+            foreach (StudentVO student in list)
+            {
+                if (student.StudentNo.Equals(studentNo))
+                    return student;
+            }
+            return null;
         }
 
         internal bool deleteStudent(string studentNo)

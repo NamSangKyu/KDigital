@@ -33,6 +33,13 @@ namespace StudentProject
                 case 3:
                     controller = new DeleteController();
                     break;
+                case 4:
+                    controller = new UpdateController();
+                    break;
+                case 5:
+                    controller = new PrintAllController();
+                    break;
+
             }
 
             return controller;
