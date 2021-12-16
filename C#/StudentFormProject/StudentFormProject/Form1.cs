@@ -66,5 +66,16 @@ namespace StudentFormProject
             txt_score.Text = ListStudent.Items[idx].SubItems[3].Text;
 
         }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (ListStudent.SelectedItems.Count == 0) return;
+            if (ListStudent.FocusedItem == null) return;
+            int idx = ListStudent.FocusedItem.Index;
+            ListStudent.Items[idx].SubItems[0].Text = txt_no.Text;
+            ListStudent.Items[idx].SubItems[1].Text = txt_name.Text;
+            ListStudent.Items[idx].SubItems[2].Text = cbx_major.SelectedItem.ToString();
+            ListStudent.Items[idx].SubItems[3].Text = txt_score.Text;
+        }
     }
 }
