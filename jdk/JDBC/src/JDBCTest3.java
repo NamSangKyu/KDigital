@@ -21,7 +21,7 @@ public class JDBCTest3 {
 			int count = stmt.executeUpdate(sql);
 			
 			System.out.println(count + "건 추가 되었습니다.");
-			conn.commit();
+			conn.commit();//commit 실행
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
