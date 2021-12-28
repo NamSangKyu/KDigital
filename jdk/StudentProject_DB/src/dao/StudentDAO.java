@@ -104,6 +104,31 @@ public class StudentDAO {
 		
 		return result;
 	}
+
+	public int updateStudent(StudentVO studentVO) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update student set name=?,score=?,major_no=? "
+				+ "where student_no like ?";
+		
+		try {
+			pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			pstmt.setString(1, studentVO.getName());
+			pstmt.setDouble(2, studentVO.getScore());
+			pstmt.setInt(3, studentVO.getMajor());
+			pstmt.setString(4, studentVO.getStudentNo());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return 0;
+	}
 	
 	
 }
