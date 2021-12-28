@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import config.DBManager;
 import oracle.jdbc.driver.DBConversion;
@@ -42,6 +43,25 @@ public class StudentDAO {
 			e.printStackTrace();
 		}
 		return vo;
+	}
+
+	public ArrayList<StudentVO> selectAllStudent() {
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		PreparedStatement pstmt = null;
+		String sql = "select * from student";
+		ResultSet rs = null;
+		try {
+			pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new StudentVO(rs.getString(1), rs.getString(2), 
+						rs.getInt(3), rs.getDouble(4)));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 	

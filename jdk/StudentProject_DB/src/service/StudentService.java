@@ -1,5 +1,7 @@
 package service;
 
+import java.util.ArrayList;
+
 import dao.StudentDAO;
 import vo.StudentVO;
 
@@ -26,6 +28,10 @@ public class StudentService {
 
 	public boolean deleteStudent(String studentNo) {
 		return true;
+	}
+
+	public ArrayList<StudentVO> selectAllStudent() {
+		return StudentDAO.getInstance().selectAllStudent();
 	}
 
 }
