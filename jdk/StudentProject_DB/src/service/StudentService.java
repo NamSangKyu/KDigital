@@ -18,8 +18,8 @@ public class StudentService {
 		return instance;
 	}
 
-	public boolean insertStudent(StudentVO studentVO) {
-		return true;
+	public int insertStudent(StudentVO studentVO) {
+		return StudentDAO.getInstance().insertStudent(studentVO);
 	}
 
 	public StudentVO searchStudent(String studentNo) {

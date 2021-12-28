@@ -19,6 +19,13 @@ public class RegisterController implements Controller {
 		System.out.print("평점 : ");
 		double score = sc.nextDouble(); sc.nextLine();
 		
+		int result = StudentService.getInstance().insertStudent(
+				new StudentVO(stduentNo, name, major, score));
+		
+		if(result == 1)
+			System.out.println("학생 정보 추가 완료");
+		else
+			System.out.println("학생 정보 추가에 실패하였습니다.");
 		
 	}
 
