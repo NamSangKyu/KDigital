@@ -63,6 +63,27 @@ public class StudentDAO {
 		}
 		return list;
 	}
+
+	public int deleteStudent(String studentNo) {
+		int result = 0;
+		/*
+		 * sql 문 delete 실행 결과를 result에 저장
+		 */
+		PreparedStatement pstmt = null;
+		String sql = "delete from student where student_no like ?";
+		
+		try {
+			pstmt= DBManager.getInstance().getConn().prepareStatement(sql);
+			pstmt.setString(1, studentNo);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return result;
+	}
 	
 	
 }

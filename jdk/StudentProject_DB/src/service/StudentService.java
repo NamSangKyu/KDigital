@@ -26,8 +26,8 @@ public class StudentService {
 		return StudentDAO.getInstance().selectStudent(studentNo);
 	}
 
-	public boolean deleteStudent(String studentNo) {
-		return true;
+	public int deleteStudent(String studentNo) {
+		return StudentDAO.getInstance().deleteStudent(studentNo);
 	}
 
 	public ArrayList<StudentVO> selectAllStudent() {
