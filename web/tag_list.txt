@@ -8,3 +8,5 @@
 글꼴 두껍게 <b></b> <strong></strong>
 밑줄 <u></u>
 기울임꼴 <i></i> <em></em>
+순번 목록태그 <ol> <li></li> </ol>
+순번이 없는 목록 태그 <ul> <li></li> </ul>
