@@ -5,3 +5,6 @@
 띄워 쓰기 &nbsp;
 카피라이트 &copy;
 수평선  <hr>
+글꼴 두껍게 <b></b> <strong></strong>
+밑줄 <u></u>
+기울임꼴 <i></i> <em></em>
