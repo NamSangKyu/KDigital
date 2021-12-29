@@ -11,3 +11,4 @@
 순번 목록태그 <ol> <li></li> </ol>
 순번이 없는 목록 태그 <ul> <li></li> </ul>
 이미지 태그 <img src="경로" alt="대체문자열" title="툴팁">
+비디오 태그 <video src="경로" controls loop poster="이미지경로"></video>
