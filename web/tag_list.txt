@@ -15,3 +15,12 @@
 오디오 태그 <audio src="경로" controls loop></audio>
 하이퍼링크 태그 <a href="이동할 페이지 주소" target="_blank"></a>
 아이프레임 태그 <iframe src="경로" frameboarder="0"></iframe>
+테이블 <table></table>
+    <tr></tr> 테이블의 행 영역 (줄 영역)
+	<td></td> 테이블의 열 영역(열 영역) --> 한칸 --> 셀
+    <th></th> 제목 셀 : 가운데 정렬, 폰트 두껍게
+    <caption></caption> 표 제목, 자동으로 가운데 정렬
+폼태그 <form></form>
+input 태그 <input type="text"> type에 따라 입력받는 형태가 달라짐
+    text, password, checkbox, submit
+label태그 <label for="아이디 속성값"></label>
