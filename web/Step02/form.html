@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>폼 태그</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <form action="" method="get">
+    <!--
+                value : input 태그에 미리 입력할 내용, 기본값
+                placeholder : 입력할 내용의 힌트, 입력하면 힌트은 사라짐 >> 안드로이드에서 동일한 속성이 hint
+                autofocus : 해당 태그에 입력가능한 상태로 만들어줌
+                required : 서버로 전송시 반드시 입력을 해야되는 태그로 설정
+                readonly : 읽기 전용, 수정 및 데이터를 입력할 수 없음
+                maxlength : 최대 입력 가능한 글자 개수
+                minlength : 최소 입력 해야되는 글자 개수
+                disabled : 해당 input tag 비활성화, 서버로 전송 X
+            -->
+    <input type="text" name="txt" placeholder="텍스트 입력" value="테스트" autofocus>
+    <button>전송</button><br>
+    <label for="pass">암호 :</label>
+    <input type="password" id="pass" name="pass" placeholder="암호 입력"><br>
+    <input type="text" name="txt2" required maxlength="10" minlength="5"><br>
+    <input type="text" value="test" disabled><br>
+    <input type="checkbox" name="hobby" value="game" id="chk1" checked>
+    <label for="chk1">게임</label><br>
+    <input type="checkbox" name="hobby" value="cook" id="chk2">
+    <label for="chk2">요리</label><br>
+    <input type="checkbox" name="hobby" value="book" id="chk3">
+    <label for="chk3">독서</label><br>
+
+  </form>
+</body>
+</html>
