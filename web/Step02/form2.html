@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>폼 태그</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <form action="" method="get">
+    가입약관 동의 여부 : <input type="radio" name="agree" id="yes" value="yes" checked> 
+    <label for="yes">예</label>
+    <input type="radio" name="agree" id="no" value="no">
+    <label for="no">아니오</label><br>
+    날짜 : <input type="date" name="now"><br>
+    수량 : <input type="number" min="0" max="20" step="2"><br>
+    슬라이더 : <input type="range" value="20"><br>
+    color picker : <input type="color"><br>
+    <select name="sel">
+      <option value="1">--선택--</option>
+      <option value="2">선택1</option>
+      <option value="3" selected>선택2</option>
+      <option value="4">선택3</option>
+      <option value="5">선택4</option>
+    </select><br>
+    <!--
+            input 태그의 텍스트 상자에서 쓰던 속성을 전부 사용이 가능
+            cols : 컬럼 개수, rows : 라인수
+            textarea 태그에서는 태그안에 내용을 넣으면
+            넣은 내용이 그대로 미리 입력되어 있음
+        -->
+    <textarea name="content" cols="30" rows="10"></textarea><br>
+      <!--
+          버튼
+            submit : 서버에 전송
+            reset : 폼이 처음인 상태로 초기화
+            button : 아무런 기능이 없는 버튼
+      -->
+      <button>submit</button>
+      <button type="reset">reset</button>
+      <button type="button">button</button>
+  </form>  
+</body>
+</html>
