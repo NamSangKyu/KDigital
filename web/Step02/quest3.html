@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1>글 작성하기</h1>  
+  <table>
+    <tr>
+      <th>
+        <label for="writer">작성자</label>
+      </th>
+      <td><input type="text" name="writer" id="writer"></td>
+    </tr>
+    <tr>
+      <th>
+        <label for="id">아이디</label>
+      </th>
+      <td><input type="text" name="id" id="id"></td>
+    </tr>
+    <tr>
+      <th>
+        <label for="email">이메일</label>
+      </th>
+      <td>
+        <input type="text" name="email" id="email">@<input type="text" name="host" id="host"> 
+      </td>
+    </tr>
+    <tr>
+      <th>휴대폰</th>
+      <td>
+        <select name="tel1" id="tel1">
+          <option value="010">010</option>
+          <option value="011">011</option>
+          <option value="016">016</option>
+          <option value="019">019</option>
+        </select>-<input type="text" name="tel2">-<input type="text" name="tel3">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <label for="title">글제목</label>
+      </th>
+      <td>
+        <input type="text" name="title" id="title">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <label for="content">내용</label>
+      </th>
+      <td>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>제출</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
