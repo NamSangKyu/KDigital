@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    p{
+      width: 200px;
+      border:1px solid black;
+      /* 
+        pre-line : 연속 공백 X, 엔터와 <br>로 줄바꿈, 가로길이에 따라 줄바꿈 O
+        pre : 연속 공백 O, 엔터와 <br>로 줄바꿈, 가로길이에 따라 줄바꿈 X
+        pre-wrap : 연속 공백 O, 엔터와 <br>로 줄바꿈, 가로길이에 따라 줄바꿈 O
+        break-space : pre-wrap과 동일, 연속 공백의 줄 끝 이상이 되면 줄바꿈
+      */
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <p>모든 국민은 그 보호하는 자녀에게            적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다.
+  국가원로자문회의의 의장은 직전대통령이 된다.   
+  다만, 직전대통령이 없을 때에는 대통령이 지명한다.</p>
+</body>
+</html>
