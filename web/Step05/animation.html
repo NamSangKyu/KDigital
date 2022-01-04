@@ -28,14 +28,15 @@
       animation-name: ani;
       animation-duration: 5s;
       /* 반복횟수 */
-      animation-iteration-count: infinite;
+      animation-iteration-count: 1;
       /* 진행 방향 
         alternate : 처음 끝을 왕복
         alternate-reverse : 끝 처음을 왕복
         reverse : 거꾸로 재생
         normal : 일반재생
       */
-      animation-direction: alternate-reverse;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
     }
     @keyframes ani{
       from{
