@@ -4,7 +4,115 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>선택자</title>
-  
+  <style>
+    /* 
+      자식 선택자      선택자 > 선택자
+    */
+    p > span {
+      text-decoration: underline;
+    }
+    h2 > span{
+      color : blueviolet;
+    }
+    /*
+      자손 선택자       선택자 선택자
+    */
+    .container li{
+      color: red;
+    }
+    /* 형제 요소 */
+    .brother1+li{
+      text-decoration: underline;
+    }
+    .brother2~li{
+      text-decoration: line-through;
+    }
+    /* 가상클래스 */
+    /* 하이퍼 링크가 걸려있을때 */
+    a:link{
+      color:cornflowerblue;
+      text-decoration: none;
+    }
+    /* 방문한 적이 있는 페이지 */
+    a:visited{
+      color: crimson;
+    }
+    /* 마우스를 올렸을때 */
+    a:hover{
+      background-color: darkgoldenrod;
+    }
+    /* 마우스를 클릭했을때 */
+    a:active{
+      color:yellow;
+    }
+    /* 해당 태그가 선택된 상태 */
+    input:focus{
+      background-color: yellowgreen;
+    }
+    input:disabled{
+      background-color: gold;
+    }
+    input:read-only{
+      background-color: green;
+    }
+    input:required{
+      border:2px solid blue;
+    }
+    input:required:invalid{
+      border:2px solid red;
+    }
+    #chk:checked+label{
+      background-color: cadetblue;
+      color: darkblue;
+    }
+    /* 첫번째 요소 선택 */
+    .container1 > p:first-child {
+      color:red;
+    }
+    /* 마지막 요소 선택 */
+    .container1 > p:last-child{
+      text-decoration: underline;
+    }
+    /* 원하는 n번째 요소 선택 */
+    .container1 > p:nth-child(3){
+      font-weight: bold ;
+    }
+    /* 짝수번째 선택 */
+    .container1 > p:nth-child(2n){
+      background-color: darkkhaki;
+    }
+    /* 홀수번째 선택 */
+    .container1 > p:nth-child(2n+1){
+      background-color: darkslateblue;
+    }
+    .container1 > p:nth-child(3n){
+      font-style: italic;
+    }
+    /* placeholer css */
+    input::placeholder{
+      color:deeppink;
+    }
+    /* 
+      드래그 했을때 강조되는 요소
+      color, background-color, text-decoration, text-shadow 사용 가능
+    */
+    p::selection{
+      background-color: gold;
+      color: crimson;
+    }
+    /* 선택한 요소의 마지막에 내용을 추가하는 CSS */
+    .after li::after{
+      content: "<--- 다음 줄로";
+      color:crimson;
+      text-decoration: underline;
+    }
+    /* 선택한 요소의 맨처음에 내용을 추가하는 CSS */
+    .after li::before{
+      content : "시작 내용 : ";
+      color: darkmagenta;
+      font-weight: bold;
+    }
+  </style>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
