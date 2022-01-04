@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .container{
+      width: 1200px;
+      border:1px solid black;
+      display: grid;
+      margin:0 auto;
+      grid-template-columns: repeat(3,1fr) ;
+      grid-auto-rows: minmax(100px,auto);
+      grid-template-areas: 
+        "box2 box1 box4"
+        "box2 box3 box3"
+        "box2 box3 box3"
+        "box5 box5 box5";
+    }
+    .item{
+      text-align: center;
+      border:1px solid red;
+    }
+    .box1{
+      background-color: chartreuse;
+      grid-area: box1;
+    }
+    .box2{
+      background-color: coral;
+      grid-area: box2;
+    }
+    .box3{
+      background-color: darkgreen;
+      grid-area: box3;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-auto-rows: 100px;
+    }
+    .box4{
+      background-color: darkmagenta;
+      grid-area: box4;
+    }
+    .box5{
+      background-color: goldenrod;
+      grid-area: box5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item box1">1</div>
+    <div class="item box2">2</div>
+    <div class="item box3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <div class="item box4">4</div>
+    <div class="item box5">5</div>
+  </div>
+</body>
+</html>
