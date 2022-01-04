@@ -1,66 +1,139 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <style>
-    *{
-      margin:0;
-      padding:0;
-    }
-    .container{
-      width: 1200px;
-      margin:0 auto;
-      display: grid;
-      grid-template-columns: repeat(7,1fr);
-      grid-auto-rows: auto;
-      grid-template-areas: 
-        "header header header header header header header"
-        "nav nav nav nav nav nav nav "
-        "section section section section section section aside"
-        "footer footer footer footer footer footer footer"
-      ;
-    }
-    header{
-      grid-area: header;
-      border:1px solid black;
-      padding:50px 20px;
-    }
-    nav{
-      grid-area: nav;
-      border:1px solid black;
-      padding:10px 0px;
-    }
-    ul{
-      list-style-type: none ;
-    }
-    li{
-      display: inline-block;
-    }
-    a:link,a:visited{
-      width: 150px;
-      text-align: center;
-      display: inline-block;
-      padding: 15px 0px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>헤더 영역</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#">메뉴1</a></li>
-        <li><a href="#">메뉴2</a></li>
-        <li><a href="#">메뉴3</a></li>
-        <li><a href="#">메뉴4</a></li>
-        <li><a href="#">메뉴5</a></li>
-      </ul>
-    </nav>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas:
+          "header header header header header header header"
+          "nav nav nav nav nav nav nav "
+          "section section section section section section aside"
+          "footer footer footer footer footer footer footer";
+      }
+      header {
+        grid-area: header;
+        border: 1px solid black;
+        padding: 50px 20px;
+      }
+      nav {
+        grid-area: nav;
+        border: 1px solid black;
+        padding: 10px 0px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        display: inline-block;
+      }
+      a:link,
+      a:visited {
+        width: 150px;
+        text-align: center;
+        display: inline-block;
+        padding: 15px 0px;
+      }
+      section {
+        grid-area: section;
+        border: 1px solid black;
+      }
+      .article_container {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      article {
+        border: 1px solid black;
+        height: 300px;
+      }
+      h2,h3{
+        padding:10px;
+      }
+      aside{
+        grid-area: aside;
+        border: 1px solid black;
+      }
+      footer{
+        grid-area: footer;
+        border: 1px solid black;
+        padding: 20px 0px;
+      }
+      .logo{
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+        float: left;
+      }
+      .company{
+        width: 400px;
+        height: 100px;
+        border: 1px solid black;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>헤더 영역</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+          <li><a href="#">메뉴5</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2>섹션 제목 영역</h2>
+        <div class="article_container">
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+          <article>
+            <h3>article 제목</h3>
+            article 내용
+          </article>
+        </div>
+      </section>
+      <aside>
+        <h2>aside 영역</h2>
+      </aside>
+      <footer>
+        <div class="logo">로고</div>
+        <div class="company">회사정보</div>
+      </footer>
+    </div>
+  </body>
 </html>
