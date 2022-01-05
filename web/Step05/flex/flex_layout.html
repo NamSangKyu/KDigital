@@ -42,6 +42,50 @@
       text-align: center;
       padding: 20px 0px;
     }
+    .main_container{
+      display: flex;
+      flex-direction: row;
+      border:1px solid black;
+    }
+    section{
+      width:75%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 20px 0px;
+      justify-content: flex-start;
+      border:1px solid black;
+    }
+    aside{
+      width: 25%;
+      border:1px solid black;
+    }
+    h2{
+      width: 100%;
+      padding:10px;
+    }
+    article{
+      width: calc(100% / 3);
+      height: 300px;
+      border:1px solid black;
+      box-sizing: border-box;
+    }
+    footer{
+      border: 1px solid black;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0px;
+    }
+    .logo{
+      width: 200px;
+      height: 100px;
+      border:1px solid black;
+    }
+    .company{
+      width: 400px;
+      height: 100px;
+      border:1px solid black;
+    }
   </style>
 </head>
 <body>
@@ -58,7 +102,42 @@
         <li><a href="#">menu5</a></li>
       </ul>
     </nav>
-
+    <div class="main_container">
+      <section>
+        <h2>section 제목영역</h2>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+        <article>
+          <h3>article 제목 영역</h3>
+          <p>article 내용 영역</p>
+        </article>
+      </section>
+      <aside>
+        <h2>aside 제목영역</h2>        
+      </aside>
+    </div>
+    <footer>
+      <div class="logo">로고</div>
+      <div class="company">회사정보</div>
+    </footer>
   </div>  
 </body>
 </html>
