@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .red{
+      color:red;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    //숫자하나 입력 - 해당 숫자의 factorial 값을 출력
+    let n = Number(prompt('숫자 하나 입력',"0"));
+
+    let total = 1;
+    for(i=1;i<=n;i++)
+      total *= i;
+    //단 값이 100000보다 크면 해당 숫자를 빨간색, 글꼴을 두껍게 처리해서 출력
+    let className = total >= 100000 ? 'red' : '';
+    document.write(`<p class="${className}">${total}</p>`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
