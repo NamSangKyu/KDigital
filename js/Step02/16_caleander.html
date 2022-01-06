@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>달력</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script>
+    //달력의 첫번째 날짜
+    let start = new Date();
+    start.setDate(1);
+    start.setHours(0);
+    start.setMinutes(0);
+    start.setSeconds(0);
+    start.setDate(start.getDate()-start.getDay());
+
+    //달력의 마지막 날짜
+    let end = new Date();
+    end.setMonth(end.getMonth()+1);
+    end.setDate(0);
+    end.setDate(end.getDate() + 6 - end.getDay());
+    end.setHours(0);
+    end.setMinutes(0);
+    end.setSeconds(0);
+    //달력 줄수
+    let line = (end.getTime()-start.getTime()) / (1000 * 60 * 60 * 24 * 7);
+    console.log(line);
+    let today = new Date();
+    let tag = `<h1>${today.getMonth() + 1}월</h1>`;
+    tag += "<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>";
+
+      for(i=0;i<line;i++){
+        tag += `<tr>`;
+          for(j=0;j<7;j++){
+            tag += `<td>${start.getDate()}</td>`;
+            start.setDate(start.getDate()+1);
+          }
+          tag += `</tr>`;
+      }
+      tag+="</table>";
+      document.write(tag);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
