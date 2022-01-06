@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>배열</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script>
+    //배열 생성 방법 - 1
+    let arr1 = [10,20,true,3.1415,"TEST"];
+    //배열 생성 방법 - 2
+    let arr2 = new Array();
+
+    for(i=0;i<arr1.length;i++)
+      document.write(arr1[i],"<br>");
+    for(i in arr1)
+      document.write(arr1[i],"<br>");
+
+    //데이터 추가
+    arr2.push(10);
+    arr2.push(true);
+    arr2.push("TEST");
+    arr2.push(1011);
+
+    document.write(arr2,"<br>");
+
+    //데이터 검색
+    document.write("값이 TEST에 해당하는 인덱스 번호 : ",arr1.indexOf("TEST"),"<br>");
+
+    //데이터 삭제
+    //3번 인덱스부터 데이터 2개를 추출
+    document.write(arr1.splice(3,2),"<br>");
+    document.write(arr1);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
