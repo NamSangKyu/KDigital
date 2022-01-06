@@ -5,6 +5,30 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>달력</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    td, th{
+      border:1px solid black;
+      width: 100px;
+    }
+    td{
+      height: 100px;
+      padding:5px;
+      text-align: right;
+      vertical-align: top;
+    }
+    td:nth-child(7n+1),th:nth-child(1){
+     color:red; 
+    }
+    td:nth-child(7n),th:nth-child(7){
+     color:blue; 
+    }
+    .disable{
+      color:gray !important;
+    }
+  </style>
   <script>
     //달력의 첫번째 날짜
     let start = new Date();
@@ -32,7 +56,10 @@
       for(i=0;i<line;i++){
         tag += `<tr>`;
           for(j=0;j<7;j++){
-            tag += `<td>${start.getDate()}</td>`;
+            if(today.getMonth() == start.getMonth())
+              tag += `<td>${start.getDate()}</td>`;
+            else
+              tag += `<td class="disable">${start.getDate()}</td>`;
             start.setDate(start.getDate()+1);
           }
           tag += `</tr>`;
