@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>반복문 중첩</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      table{
+        border-collapse: collapse;
+      }
+      td{
+        border:1px solid black;
+        padding:50px;
+      }
+    </style>
+    <script>
+      let table = "<table>";
+      let count = 1;
+      for(i=0;i<5;i++){
+        table += "<tr>";
+        for(j=0;j<5;j++){
+          table += `<td>${count}</td>`;
+          count++;
+        }
+        table += "</tr>";
+      }
+      table += "</table>";
+      document.write(table);
+    </script>
+  </head>
+  <body></body>
+</html>
