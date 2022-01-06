@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script>
+    //점수 5번 입력을 받아서 입력한 점수들의 평균을 구하고
+    let score = 0;
+    for(i=0;i<5;i++){
+      score += Number(prompt("점수 입력","0"));
+    }
+    score /= 5;
+    //평균에 따른 성적 등급을 출력
+    if(score >= 90)
+      document.write('성적 등급 : A');
+    else if(score >= 80)
+      document.write('성적 등급 : B');
+    else if(score >= 70)
+      document.write('성적 등급 : C');
+    else if(score >= 60)
+      document.write('성적 등급 : D');
+    else
+      document.write('성적 등급 : F');
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
