@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script>
+    //오늘부터 2022 수능까지 몇일 남았는지 d-day를 출력
+    let today = new Date();
+    today.setHours(0);
+    today.setMinutes(0);
+    today.setSeconds(0);
+
+    let soo = new Date("2022-11-17 00:00:00");
+    let d_day = (soo.getTime()-today.getTime()) / (1000 * 60 * 60 * 24);
+    document.write(`앞으로 수능까지 ${d_day}일 남았습니다.`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
