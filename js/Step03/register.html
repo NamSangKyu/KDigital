@@ -90,7 +90,25 @@
           background-color: #ffe606;
         }
     </style>
-   
+    <script>
+      function checkId(){
+        let id = document.querySelector("#id");
+        let idResult = document.querySelector(".id_result");
+
+        if(id.value.length < 8 || id.value.length > 20){
+          idResult.innerHTML = "아이디는 글자수가 8~20글자 사이로 사용하세요";
+        }else if(!isNaN(id.value)){
+          idResult.innerHTML = "아이디는 숫자로만 구성할수 없습니다.";
+        }else{
+          idResult.innerHTML = "아이디가 올바르게 입력되었습니다.";
+        }
+      }
+      window.onload = function(){
+        let id = document.querySelector("#id");
+
+        id.onkeyup = checkId;
+      }
+    </script>
 </head>
 
 <body>
