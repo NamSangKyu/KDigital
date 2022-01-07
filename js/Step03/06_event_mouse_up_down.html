@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>mouse up/down</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script>
+    window.onload = function(){
+      //content, btn 선택
+      let btn = document.getElementById("btn");
+      let content = document.querySelector("#content");
+
+      btn.onmousedown = function(e){
+        //innerHTML = 선택한 태그에 html 태그 및 내용을 넣을때
+        content.innerHTML = e.button + " 누름";
+      }
+      
+      btn.onmouseup = function(e){
+        content.innerHTML = e.button + " 뗌";
+      }
+    }
+  </script>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <div id="content"></div>
+</body>
+</html>
