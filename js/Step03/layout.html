@@ -72,10 +72,12 @@
           position:absolute;
           z-index: 1000;
           background-color: #e9e9e9c2;
+          transition-property: all;
+          transition-duration: 1s;
         }
         .sub_menu{
           width: 200px;
-          padding-top: 20px;
+          margin-top: 20px;
           text-align: center;
         }
         .sub_menu li{
@@ -146,7 +148,16 @@
         }
     </style>
     <script>
-      
+      window.onload = function(){
+        let nav = document.querySelector("nav");
+        let sub_menu_container = document.querySelector(".sub_menu_container");
+        nav.onmouseenter = function(){
+          sub_menu_container.style.height = "180px";
+        }
+        nav.onmouseleave = function(){
+          sub_menu_container.style.height = "0px";
+        }
+      }
     </script>
 </head>
 <body>
