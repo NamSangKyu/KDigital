@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      window.onload = function(){
+        let frm = document.querySelector("#frm");
+        let id = document.querySelector("#id");
+        let pass = document.querySelector("#pass");
+
+        frm.onsubmit = function(e){
+          //객체.속성 ---> 선택한 태그의 원하는 속성을 선택하고 값을 지정
+          //alert(id.value + " " + pass.value);
+          //아이디와 암호를 입력했는지 체크
+          if(id.value.length == 0){
+            alert("아이디를 입력하세요");
+            e.preventDefault();//기본적으로 설정된 이벤트 행동을 취소
+            id.focus();//선택한 태그 선택
+          }else if(pass.value.length == 0){
+            alert("암호를 입력하세요");
+            e.preventDefault();
+            pass.focus();
+          }
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" id="frm">
+      <input type="text" id="id" name="id"><br>
+      <input type="password" id="pass" name="pass"><br>
+      <button>로그인</button>
+    </form>
+  </body>
+</html>
