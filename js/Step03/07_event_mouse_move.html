@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    body{
+      height: 5000px;
+    }
+    .result {
+      width: 100px;
+      height: 50px;
+      position: fixed;
+      border : 1px solid black;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      let body = document.querySelector("body");
+      body.onmousemove = function(e){
+        document.querySelector(".result").innerHTML = e.clientX + " " + e.clientY;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="result"></div>
+</body>
+</html>
