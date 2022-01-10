@@ -8,7 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        //.txt1의 부모를 선택
+        $(".txt1").parent().css("border","1px solid black");
+        $(".txt1").parent().parent().css("border","1px solid red");
+        //.txt2의 모든 부모를 선택
+        $(".txt2").parents().css("border","5px dashed blue");
+        $(".txt2").parents("div").css("background-color","green");
       });
     </script>
     <style>
