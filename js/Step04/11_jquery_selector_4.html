@@ -8,7 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        //선택된 전체 li들중 첫번째 요소를 선택
+        $("ul li:first").css("color", "red");
+        //선택된 전체 li들중 마지막 요소를 선택
+        $("ul li:last").css("color", "blue");
+        //선택된 전체 li들중 무리별 첫번째 요소 선택
+        $("ul li:first-of-type").css("font-weight", "bold");
+        //선택된 전체 li들중 무리별 마지막 요소 선택 - 기울임꼴 적용
+        $("ul li:last-of-type").css("font-style", "italic");
       });
     </script>
   </head>
