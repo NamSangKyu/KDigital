@@ -8,6 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $("button").click(function(){
+        //아이디에 입력된 값을 읽어옴 --> value 속성값(입력된값)을 읽어옴
+        let id = $("#id").val();
+        alert(id);
+        let pass = $("#password").val();
+        //.innerHTML = `입력하신 암호는 ${pass}입니다.`
+        $("#result").html(`입력하신 암호는 ${pass}입니다.`);
+      });
     });
   </script>
 </head>
