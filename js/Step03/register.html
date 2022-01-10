@@ -102,34 +102,33 @@
       function checkId(){
         let id = document.querySelector("#id");
         let idResult = document.querySelector(".id_result");
-
+        let result = false;
         if(id.value.length < 8 || id.value.length > 20){
           idResult.innerHTML = "아이디는 글자수가 8~20글자 사이로 사용하세요";
           // idResult.style.color = "red";
           // idResult.style.fontWeight = "bold";
-          if(idResult.classList.contains("true"))
-            idResult.classList.remove("true");
-          if(!idResult.classList.contains("false"))
-            idResult.classList.add("false");
         }else if(!isNaN(id.value)){
           idResult.innerHTML = "아이디는 숫자로만 구성할수 없습니다.";
-          if(idResult.classList.contains("true"))
-            idResult.classList.remove("true");
-          if(!idResult.classList.contains("false"))
-            idResult.classList.add("false");
         }else{
           idResult.innerHTML = "아이디가 올바르게 입력되었습니다.";
-          if(idResult.classList.contains("false"))
-            idResult.classList.remove("false");
+          result = true;
+        }
+        if(result){
+          idResult.classList.remove("false");
           if(!idResult.classList.contains("true"))
             idResult.classList.add("true");
+        }else{
+          idResult.classList.remove("true");
+          if(!idResult.classList.contains("false"))
+            idResult.classList.add("false");
         }
+        return result;
       }
       function checkPass(){
         let pass = document.querySelector("#pass");
         let passChk = document.querySelector("#pass_chk");
         let passCheck = document.querySelector(".pass_check");
-
+        let result = false;
         if(pass.value.length < 8 || pass.value.length > 32){
           passCheck.innerHTML = "암호는 글자수가 8~32글자 사이로 사용하세요";
         }else if(!isNaN(pass.value)){
@@ -140,14 +139,34 @@
           passCheck.innerHTML = "입력하신 암호가 동일하지 않습니다.";
         }else{
           passCheck.innerHTML = "암호가 올바르게 입력되었습니다.";
+          result = true;
         }
+        if(result){
+          passCheck.classList.remove("false");
+          if(!passCheck.classList.contains("true"))
+            passCheck.classList.add("true");
+        }else{
+          passCheck.classList.remove("true");
+          if(!passCheck.classList.contains("false"))
+            passCheck.classList.add("false");
+        }
+        return result;
       }
       window.onload = function(){
         let id = document.querySelector("#id");
         let pass = document.querySelector("#pass");
         let passChk = document.querySelector("#pass_chk");
+        let frm = document.querySelector("#frm");
         id.onkeyup = checkId;
         pass.onkeyup = passChk = checkPass;
+        //폼이 submit 이벤트가 발생 했을때 아이디와 암호가 올바르지 않으면
+        //서버로 내용이 전송되지 않게 처리
+        frm.onsubmit = function(e){
+          if(!checkId())
+            e.preventDefault();
+          if(!checkPass())
+            e.preventDefault();
+        }
       }
     </script>
 </head>
