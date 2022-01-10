@@ -8,7 +8,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
-      
+      //자식 선택자
+      //아이디가 wrap의 자식인 h1 제목태그를 선택해서, 배경색은 노랑색, 글자는 밑줄
+      // $("#wrap > h1").css("background-color","yellow");
+      // $("#wrap > h1").css("text-decoration","underline");
+      $("#wrap > h1").css({
+        "background-color":"yellow",
+        "text-decoration":"underline"
+      });
+      //하위 선택자
+      //아이디가 wrap 내부에 있는 #wrap 내부에 있는 모든 p태그 글자색을 녹색
+      $("#wrap p").css("color","green");
     });
   </script>
 </head>
