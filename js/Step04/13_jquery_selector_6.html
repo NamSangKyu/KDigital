@@ -8,7 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        //인덱스 번호가 2인 요소를 선택
+        $("ul li").eq(2).css("color", "red");
+        //인덱스 번호가 2보다 작은 요소들을 선택
+        $("ul li:lt(2)").css("color", "green");
+        //인덱스 번호가 2보다 큰은 요소들을 선택
+        $("ul li:gt(2)").css("color", "yellow");
       });
     </script>
   </head>
