@@ -6,6 +6,15 @@
   <title>태그 선택자</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      //선택자 사용방법 $("선택자") --> 해당 html 요소들을 선택
+      //태그 선택자
+      $("p").css("background-color","red");
+      //h2 태그 선택해서 글자색을 파랑색으로 변경
+      $("h2").css("color","blue");
+    });
+  </script>
 </head>
 <body>
   <h2>제목</h2>
