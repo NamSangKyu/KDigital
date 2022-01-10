@@ -8,7 +8,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        //선택한 요소 다음위치에 있는 요소
+        // $(".txt + p").css("background-color","yellow");
+        $(".txt").next().css("background-color","green");
+        $(".txt").next().next().css("background-color","red");
+        //선택한 요소 이전위치에 있는 요소
+        $(".txt").prev().css("color","green");
+        $(".txt").prev().prev().css("color","red");
+        //선택한 요소의 모든 형요소 선택
+        $(".tit").prevAll().css("text-decoration","underline");
+        //선택한 요소의 모든 동생요소 선택
+        $(".tit").nextAll().css("text-decoration","line-through");
+        //선택한 요소를 제외한 모든 형제 요소를 선택
+        $(".tit").siblings().css("color","red");
       });
     </script>
   </head>
