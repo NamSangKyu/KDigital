@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        //css("속성")--> 현재 설정된 css 값을 읽어옴
+        console.log($("p").css('background-color'));
+        console.log($("div").css('color'));
+
+        //div 태그에 글자색을 흰색으로 바꾸고, 글꼴을 두껍게 처리
+        // $("div").css({
+        //   "color" : "white", 
+        //   "font-weight" : "bold"
+        // });
+        //체인 함수
+        $("div").css("color","white").css("font-weight","bold");
+      });
+    </script>
+    <style>
+      p {
+        background-color: cornflowerblue;
+        font-size: 20px;
+        color: white;
+      }
+      .back {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="back">내용</p>
+    <div class="back">내용</div>
+  </body>
+</html>
