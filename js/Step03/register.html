@@ -165,10 +165,14 @@
         let pass = document.querySelector("#pass");
         let passChk = document.querySelector("#pass_chk");
         let nick = document.querySelector("#nick");
+        let tel = document.querySelector("#tel");
         let frm = document.querySelector("#frm");
         id.onkeyup = checkId;
         pass.onkeyup = passChk = checkPass;
         nick.onkeyup = checkNick;
+        tel.onkeyup = function(){
+          this.value = this.value.replaceAll("-","");
+        }
         //폼이 submit 이벤트가 발생 했을때 아이디와 암호가 올바르지 않으면
         //서버로 내용이 전송되지 않게 처리
         frm.onsubmit = function(e){
