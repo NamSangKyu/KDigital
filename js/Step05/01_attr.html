@@ -8,12 +8,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        //a태그 선택
+        console.log($("a").attr("href"));
+        //a태그 링크 주소변경
+        $("a").attr("href", "https://www.naver.com");
+        //input 태그에 값 지정
+        $("input").attr("value","테스트값");
+        console.log($("input").attr("value"));
+        $("button").click(function(){
+            alert($("input").attr("value"));
+        });
+        //속성을 제거
+        $("a").removeAttr("target");
       });
     </script>
   </head>
   <body>
-    <a href="#">구글로 이동</a><br />
-    <form action=""><input type="text" name="txt" /><button>전송</button></form>
+    <a href="https://www.google.co.kr" target="_blank">구글로 이동</a><br>
+    <form action="">
+      <input type="text" name="txt">
+      <button>전송</button>
+    </form>
   </body>
 </html>
