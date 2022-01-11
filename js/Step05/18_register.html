@@ -98,29 +98,25 @@
           color:red;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       function checkId(){
-        let id = document.querySelector("#id");
-        let idResult = document.querySelector(".id_result");
+        let id = $("#id").val();
         let result = false;
-        if(id.value.length < 8 || id.value.length > 20){
-          idResult.innerHTML = "아이디는 글자수가 8~20글자 사이로 사용하세요";
-          // idResult.style.color = "red";
-          // idResult.style.fontWeight = "bold";
-        }else if(!isNaN(id.value)){
-          idResult.innerHTML = "아이디는 숫자로만 구성할수 없습니다.";
+        if(id.length < 8 || id.length > 20){
+          $(".id_result").html("아이디는 글자수가 8~20글자 사이로 사용하세요");
+        }else if(!isNaN(id)){
+          $(".id_result").html("아이디는 숫자로만 구성할수 없습니다.");
         }else{
-          idResult.innerHTML = "아이디가 올바르게 입력되었습니다.";
+          $(".id_result").html("아이디가 올바르게 입력되었습니다.");
           result = true;
         }
         if(result){
-          idResult.classList.remove("false");
-          if(!idResult.classList.contains("true"))
-            idResult.classList.add("true");
+          $(".id_result").removeClass("false");
+          $(".id_result").addClass("true");
         }else{
-          idResult.classList.remove("true");
-          if(!idResult.classList.contains("false"))
-            idResult.classList.add("false");
+          $(".id_result").removeClass("true");
+          $(".id_result").addClass("false");
         }
         return result;
       }
