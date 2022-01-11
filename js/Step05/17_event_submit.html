@@ -7,7 +7,23 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    function loginCheck(e){
+      //아이디와 비번을 입력을 안했는지 체크
+      let id = $("#id").val();
+      let pass = $("#pass").val();
+      if(id.length == 0 || pass.length == 0){
+        alert("아이디 또는 비번을 입력하세요");
+        e.preventDefault();
+      }else{
+        alert("로그인을 수행합니다.")
+      }
+    }
     $(function(){
+      $("#frm").submit(loginCheck);
+      //a 태그가 클릭했을때 페이지 이동하는 행동을 취소
+      $("a").click(function(e){
+        e.preventDefault();
+      });
     });
   </script>
 </head>
