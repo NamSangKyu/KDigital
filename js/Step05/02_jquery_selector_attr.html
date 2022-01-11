@@ -8,12 +8,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
+        //속성 선택자
+        //속성이 있는 경우
+        $("a[download]").css("background-color","coral");
+        //속성값이 http로 시작하는 경우 --> 시작하는 속성값으로 선택
+        $("a[href^=http]").css("text-decoration","none");
+        //끝나는 속성값으로 선택
+        $("a[href$=jpg]").css("text-decoration","line-through");
+        //포함하는 속성값으로 선택
+        $("a[href*=lib]").css("border","1px solid black");
+        //일치하는 속성값으로 선택
+        $("a[target=_blank]").css("background-color","yellow");
       });
     </script>
   </head>
   <body>
     <a href="http://www.google.co.kr" target="_blank">구글로 이동</a><br />
-    <a href="/resource/img/grill1.jpg" download>첨부파일 다운로드</a><br />
-    <a href="/resource/lib/jquery-3.6.0.min.js" download>제이쿼리 다운로드</a>
+    <a href="/resource/image/main_4.jpg" download>첨부파일 다운로드</a><br />
+    <a href="/resource/lib/jquery-3.6.0.js" download>제이쿼리 다운로드</a>
   </body>
 </html>
