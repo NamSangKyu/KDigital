@@ -8,7 +8,32 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $("button").click(function(){
+        let n1 = Number($("#n1").val());
+        let n2 = Number($("#n2").val());
+        let op = $("#op").val();
 
+        let result = 0;
+
+        switch(op){
+          case "+":
+            result = n1 + n2;
+            break;
+          case "-":
+            result = n1 - n2;
+            break;
+          case "*":
+            result = n1 * n2;
+            break;
+          case "/":
+            result = n1 / n2;
+            break;       
+        }
+        
+        $("#result").val(result);
+        let today = new Date();
+        $("#history").append(`${n1} ${op} ${n2} = ${result} ${today.toLocaleString()}<br>`);
+      });
     });
   </script>
 </head>
