@@ -8,6 +8,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      //현재 적용된 클래스 조회
+      console.log($("p").attr("class"));
+      //선택된 요소에 클래스를 추가
+      $("p").addClass("bold");
+      $("p").addClass("bold");//중복 추가는 안됨
+      $("p").removeClass("underline");//클래스 삭제
+      $("p").toggleClass("underline");//기존 클래스가 없으면 클래스를 추가
+      $("p").toggleClass("underline");//기존 클래스가 있으면 클래스를 제거
+      console.log($("p").attr("class"));
+      console.log($("p").hasClass("bold"));
+      console.log($("p").hasClass("underline"));
 
     });
   </script>
