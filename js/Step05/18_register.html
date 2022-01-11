@@ -151,7 +151,7 @@
         }
         $("#nick_length").html(`${nick.length}/20`);
       }
-      window.onload = function(){
+      $(document).ready(function(){
         $("#id").keyup(checkId);
         $("#pass,#pass_chk").keyup(checkPass);
         $("#nick").keyup(checkNick);
@@ -164,7 +164,7 @@
           if(!checkPass())
             e.preventDefault();
         });
-      }
+      });
     </script>
 </head>
 
