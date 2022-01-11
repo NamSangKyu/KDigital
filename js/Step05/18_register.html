@@ -121,62 +121,49 @@
         return result;
       }
       function checkPass(){
-        let pass = document.querySelector("#pass");
-        let passChk = document.querySelector("#pass_chk");
-        let passCheck = document.querySelector(".pass_check");
+        let pass = $("#pass").val();
+        let passChk = $("#pass_chk").val();
         let result = false;
-        if(pass.value.length < 8 || pass.value.length > 32){
-          passCheck.innerHTML = "암호는 글자수가 8~32글자 사이로 사용하세요";
-        }else if(!isNaN(pass.value)){
-          passCheck.innerHTML = "암호는 숫자로만 구성할수 없습니다.";
-        }else if(pass.value.indexOf(" ") != -1){
-          passCheck.innerHTML = "암호에는 띄워쓰기를 할수 없습니다.";
-        }else if(pass.value != passChk.value){
-          passCheck.innerHTML = "입력하신 암호가 동일하지 않습니다.";
+        if(pass.length < 8 || pass.length > 32){
+          $(".pass_check").html("암호는 글자수가 8~32글자 사이로 사용하세요");
+        }else if(!isNaN(pass)){
+          $(".pass_check").html("암호는 숫자로만 구성할수 없습니다.");
+        }else if(pass.indexOf(" ") != -1){
+          $(".pass_check").html("암호에는 띄워쓰기를 할수 없습니다.");
+        }else if(pass != passChk){
+          $(".pass_check").html("입력하신 암호가 동일하지 않습니다.");
         }else{
-          passCheck.innerHTML = "암호가 올바르게 입력되었습니다.";
+          $(".pass_check").html("암호가 올바르게 입력되었습니다.");
           result = true;
         }
         if(result){
-          passCheck.classList.remove("false");
-          if(!passCheck.classList.contains("true"))
-            passCheck.classList.add("true");
+          $(".pass_check").addClass("true").removeClass("false");
         }else{
-          passCheck.classList.remove("true");
-          if(!passCheck.classList.contains("false"))
-            passCheck.classList.add("false");
+          $(".pass_check").addClass("false").removeClass("true");
         }
         return result;
       }
       function checkNick(){
-        let nick = document.querySelector("#nick");
-        let nickLength = document.querySelector("#nick_length");
-        if(nick.value.length > 20){
-          nick.value = nick.value.substr(0,20);
+        let nick = $("#nick").val();
+        
+        if(nick.length > 20){
+          $("#nick").val(nick.substr(0,20));
         }
-        nickLength.innerHTML = `${nick.value.length}/20`;
+        $("#nick_length").html(`${nick.length}/20`);
       }
       window.onload = function(){
-        let id = document.querySelector("#id");
-        let pass = document.querySelector("#pass");
-        let passChk = document.querySelector("#pass_chk");
-        let nick = document.querySelector("#nick");
-        let tel = document.querySelector("#tel");
-        let frm = document.querySelector("#frm");
-        id.onkeyup = checkId;
-        pass.onkeyup = passChk = checkPass;
-        nick.onkeyup = checkNick;
-        tel.onkeyup = function(){
-          this.value = this.value.replaceAll("-","");
-        }
-        //폼이 submit 이벤트가 발생 했을때 아이디와 암호가 올바르지 않으면
-        //서버로 내용이 전송되지 않게 처리
-        frm.onsubmit = function(e){
+        $("#id").keyup(checkId);
+        $("#pass,#pass_chk").keyup(checkPass);
+        $("#nick").keyup(checkNick);
+        $("#tel").keyup(function(){
+          $(this).val($(this).val().replaceAll("-",""));
+        });
+        $("#frm").submit(function(e){
           if(!checkId())
             e.preventDefault();
           if(!checkPass())
             e.preventDefault();
-        }
+        });
       }
     </script>
 </head>
