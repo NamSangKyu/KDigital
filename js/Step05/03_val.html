@@ -8,7 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
-      alert('제이쿼리 셋팅 완료');
+      //val() value 값을 읽어옴
+      console.log($("#txt").val());
+      console.log($("#txt").attr("value"));
+      $("#btn").click(function(){
+        $("#txt").val("1111");//값을 입력
+        console.log($("#txt").val());//현재 입력된 값 기준으로 읽어옴
+        console.log($("#txt").attr("value"));//태그에 설정된 속성값을 읽어옴
+      });
     });
   </script>
 </head>
