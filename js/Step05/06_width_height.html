@@ -8,6 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
+        console.log($("#d1").width(),$("#d2").width());//내용 영역까지 길이
+        console.log($("#d1").innerWidth(),$("#d2").innerWidth());//padding 영역까지 길이
+        console.log($("#d1").outerWidth(),$("#d2").outerWidth());//border 영역까지 길이
+
       });
     </script>
     <style>
