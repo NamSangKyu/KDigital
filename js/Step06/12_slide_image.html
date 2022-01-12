@@ -20,12 +20,22 @@
         $(".slide_img_container > img:first-child").animate({"margin-left":"-1200px"},1000,function(){
           ani = true;
           $(this).appendTo(".slide_img_container").css("margin-left","0px");
-
+          
           $(".radio_bar li").removeClass("select");
           $(`.radio_bar li:eq(${index})`).addClass("select")
         });
       });
-
+      $(".left_arrow").click(function(){
+        if(!ani) return;
+        ani = false;
+        index--;
+        if(index < 0 ) index = 3;
+        $(".slide_img_container > img:last-child").css("margin-left","-1200px").prependTo(".slide_img_container").animate({"margin-left":"0px"},1000,function(){
+          ani = true;
+          $(".radio_bar li").removeClass("select");
+          $(`.radio_bar li:eq(${index})`).addClass("select")
+        });
+      });
     });
   </script>
   <style>
