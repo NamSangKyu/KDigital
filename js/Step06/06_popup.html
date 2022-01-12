@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .popup{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      border:1px solid black;
+      top:100px;
+      left: 100px;
+    }
+    .popup a{
+      padding: 5px 8px;
+      position: absolute;
+      display: inline-block;
+      top:0px;
+      right: 0px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+    .popup img{
+      width: 100%;
+      height: 100%;
+    }
+    .pop_nav{
+      background-color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      padding-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup">
+    <a href="#">X</a><img src="/resource/image/profile.png">
+    <div class="pop_nav">
+      <input type="checkbox" class="chk">다시보지 않기
+    </div>
+  </div>
+</body>
+</html>
