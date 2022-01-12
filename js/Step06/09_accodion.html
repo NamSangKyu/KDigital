@@ -8,6 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $("h2").click(function(){
+        $(this).addClass("select").next().slideDown(500);
+        $("h2").not($(this)).removeClass("select").next().slideUp(500);
+
+        // $("h2").removeClass("select");
+        // $(this).addClass("select");
+        // $("p").slideUp(500);
+        // $(this).next().slideDown(500);
+      });
     });
   </script>
   <style>
