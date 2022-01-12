@@ -8,6 +8,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
+        console.log($("#ul1 li").length);
+        //첫번째 객체부터 마지막 객체까지 하나씩 접근
+        //i - 인덱스 번호, obj - index에 해당하는 배열 요소
+        $("#ul1 li").each(function(i,obj){
+          console.log(`${i} - ${$(obj).html()}`);
+        });
+
+        $("#ul1 li").each(function(i){
+          console.log(`${i} - ${$(this).html()}`);
+        });
       });
     </script>
   </head>
