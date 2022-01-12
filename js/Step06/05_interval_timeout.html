@@ -8,7 +8,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
-      
+        let inter_id = setInterval(function(){
+          console.log(`1초 마다 실행 - ${new Date().toLocaleString()}`);
+        },1000);
+        $(".inter").click(function(){
+          //해당 interval 멈춤
+          clearInterval(inter_id);
+        });
+
+        let time_id = setTimeout(function(){
+          console.log("setTimeout run");
+        },5000);
+        $(".out").click(function(){
+          //해당 timeout 멈춤
+          clearTimeout(time_id);
+        });
     });
   </script>
 </head>
