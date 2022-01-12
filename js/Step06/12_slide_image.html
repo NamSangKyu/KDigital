@@ -36,6 +36,21 @@
           $(`.radio_bar li:eq(${index})`).addClass("select")
         });
       });
+
+      let id = setInterval(function(){
+        $(".right_arrow").click();
+      },3000);
+
+      $(".play").click(function(){
+        if(id != 0) return;
+        id = setInterval(function(){
+          $(".right_arrow").click();
+        },3000);
+      });
+      $(".pause").click(function(){
+        clearInterval(id);
+        id=0;
+      });
     });
   </script>
   <style>
