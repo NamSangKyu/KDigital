@@ -8,6 +8,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $(".pop p:hidden").each(function(i){
+        console.log($(this).html());
+      });
+
+      $(".pop p").each(function(i){
+        console.log($(this).html(), " - ", $(this).is(":hidden"));
+      });
+      $("input:checked").each(function(i){
+          console.log($(this).val());
+      });
+      $("input").each(function(i){
+          console.log($(this).is(":checked"));
+      });
     });
   </script>
 </head>
