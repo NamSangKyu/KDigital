@@ -40,9 +40,44 @@
       padding-left: 5px;
     }
   </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script>
+     //쿠키 생성
+     function cookieInit(name, value, endDate){
+       var date = new Date();
+       date.setDate(date.getDate()+endDate);
+       document.cookie = escape(name) + "=" + escape(value) + "; path=/; expires=" + date.toUTCString();
+     }
+     //쿠키 정보 획득
+     function getCooike(name){
+       let cookie = document.cookie;
+       console.log(cookie);
+       if(document.cookie != ""){
+          let cookieArray = cookie.split("; ");
+          for(let index in cookieArray){
+            let cookieName = cookieArray[index].split("-");
+            if(cookieName[0] == "popup"){
+              return cookieName[1];//쿠키 값
+            }
+          }
+       }
+       return;
+     }
+     $(function(){
+       $(".popup a").click(function(){
+        $(this).parent().hide(0);
+       });
+     });
+   </script>
 </head>
 <body>
   <div class="popup">
+    <a href="#">X</a><img src="/resource/image/profile.png">
+    <div class="pop_nav">
+      <input type="checkbox" class="chk">다시보지 않기
+    </div>
+  </div>
+  <div class="popup" style="left: 500px;">
     <a href="#">X</a><img src="/resource/image/profile.png">
     <div class="pop_nav">
       <input type="checkbox" class="chk">다시보지 않기
