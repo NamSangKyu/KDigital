@@ -8,10 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $(".thumnail img").not($(".thumnail img:first-child")).css("opacity","0.5");
       $(".thumnail img").click(function(){
         $(".main_img").attr("src",$(this).attr("src"));
+        $(this).css("opacity","1");
+        $(".thumnail img").not($(this)).css("opacity","0.5");
       });
-      
+      $(".right_arrow").click(function(){
+        $(".thumnail > img:last-child").css("margin-left", "-80px").prependTo($(".thumnail")).stop().animate({"margin-left":"0px"},100);
+      });
+      $(".left_arrow").click(function(){
+        $(".thumnail > img:first-child").stop().animate({"margin-left":"-80px"},100,function(){
+          $(this).appendTo(".thumnail").css("margin-left" , "0px");
+        });
+      });
     });
   </script>
   <style>
