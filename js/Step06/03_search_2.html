@@ -8,7 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-        
+        let index = $("li").index($("#select"));
+        console.log(index);
+        console.log($("#select").index());
+
+        $("li").mouseover(function(){
+          console.log($(this).index());
+        });
       });
     </script>
   </head>
