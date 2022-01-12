@@ -49,13 +49,13 @@
        document.cookie = escape(name) + "=" + escape(value) + "; path=/; expires=" + date.toUTCString();
      }
      //쿠키 정보 획득
-     function getCooike(name){
+     function getCookie(name){
        let cookie = document.cookie;
        console.log(cookie);
        if(document.cookie != ""){
           let cookieArray = cookie.split("; ");
           for(let index in cookieArray){
-            let cookieName = cookieArray[index].split("-");
+            let cookieName = cookieArray[index].split("=");
             if(cookieName[0] == "popup"){
               return cookieName[1];//쿠키 값
             }
@@ -64,6 +64,17 @@
        return;
      }
      $(function(){
+        var cookieCheck = getCookie("popup");
+        console.log(cookieCheck);
+        if(cookieCheck == "N"){
+          $(".popup").hide(0);
+        }
+        $(".chk").click(function(){
+          if($(this).is(":checked"))
+            cookieInit("popup","N",1);
+          else
+            cookieInit("popup","Y",1);
+        });
        $(".popup a").click(function(){
         $(this).parent().hide(0);
        });
