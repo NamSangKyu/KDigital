@@ -13,12 +13,28 @@
         $(".container").each(function(i){
           $(this).css("background-color",bgColor[i]);
         });
+
+        let slideNo = 0;
+        $("#next").click(function(){
+          if(slideNo == bgColor.length-1)  return; //마지막 슬라이드 일때 작업 멈춤
+          slideNo++;
+          $("html").scrollTop(slideNo*969);
+        });
+        $("#back").click(function(){
+          if(slideNo == 0)  return; //첫번째 슬라이드 일때 작업 멈춤
+          slideNo--;
+          $("html").scrollTop(slideNo*969);
+        });
+
       });
     </script>
     <style>
       *{
         margin:0;
         padding: 0;
+      }
+      html{
+        scroll-behavior: smooth;
       }
       .container{
         height: 969px;
