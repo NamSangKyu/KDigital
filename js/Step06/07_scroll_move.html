@@ -16,13 +16,11 @@
 
         let slideNo = 0;
         $("#next").click(function(){
-          if(slideNo == bgColor.length-1)  return; //마지막 슬라이드 일때 작업 멈춤
-          slideNo++;
+          if(slideNo < bgColor.length-1)  slideNo++;
           $("html").scrollTop(slideNo*969);
         });
         $("#back").click(function(){
-          if(slideNo == 0)  return; //첫번째 슬라이드 일때 작업 멈춤
-          slideNo--;
+          if(slideNo > 0)  slideNo--;
           $("html").scrollTop(slideNo*969);
         });
 
