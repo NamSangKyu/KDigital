@@ -8,6 +8,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(function(){
+      $(".thumnail img").click(function(){
+        $(".main_img").attr("src",$(this).attr("src"));
+      });
+      let index = 0;
+      $(".right_arrow").click(function(){
+        let maxCount =($(".thumnail").width() - $(".thumnail_bar").width()) / 80;
+        //alert(maxCount);
+        if(index < maxCount) index++;
+        let marginLeft = index * -80;
+        $(".thumnail").stop().animate({"margin-left":marginLeft+"px"},500);
+      });
+      $(".left_arrow").click(function(){
+        if(index > 0) index--;
+        let marginLeft = index * -80;
+        $(".thumnail").stop().animate({"margin-left":marginLeft+"px"},500);
+
+      });
     });
   </script>
   <style>
