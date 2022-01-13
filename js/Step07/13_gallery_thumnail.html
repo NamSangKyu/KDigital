@@ -14,7 +14,13 @@
 
     <script>
       $(document).ready(function () {
-       
+        $(".thumnail").bxSlider({
+          slideWidth:80,
+          maxSlides:5,
+          minSlides:1,
+          moveSlides : 3,
+          pager:true
+        });
       });
     </script>
     <style>
@@ -32,6 +38,15 @@
         .main_img{
             width: 400px;
             height: 400px;
+        }
+        .bx-wrapper .bx-prev{
+          left : -40px;
+        }
+        .bx-wrapper .bx-next{
+          right : -40px;
+        }
+        .bx-wrapper{
+          margin: 0 auto;
         }
     </style>
   </head>
