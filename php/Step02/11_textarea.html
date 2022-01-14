@@ -11,7 +11,7 @@
       //   console.log(str.charAt(i), str.charCodeAt(i));
       // }
       let str = $("textarea").val();
-      str = str.replaceAll('\n',"<br>");
+      str = str.replaceAll('\n',"<br>");//줄바꿈 처리
       $("textarea").val(str);
     });
   })
