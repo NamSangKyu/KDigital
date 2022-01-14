@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(function(){
+    $("form").submit(function(e){
+      // e.preventDefault();
+      // let str = $("textarea").val();
+      // for(i=0;i<str.length;i++){
+      //   console.log(str.charAt(i), str.charCodeAt(i));
+      // }
+      let str = $("textarea").val();
+      str = str.replaceAll('\n',"<br>");
+      $("textarea").val(str);
+    });
+  })
+</script>
+</head>
+<body>
+<form name="form1" method="post" action="view3.php">
+	글 내용 :<br>
+	<textarea rows="5" cols="60" name="content"></textarea>
+	<br><br>
+	<input type="submit" value="확인">
+</form>
+</body>
+</html>
