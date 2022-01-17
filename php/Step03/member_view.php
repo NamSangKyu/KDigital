@@ -18,8 +18,8 @@
     else{
       $row = mysqli_fetch_array($result);
   ?>
-      <form action="" method="post">
-      아이디 : <input type="text" name="mid" value="<?=$row['mid']?>"><br>
+      <form action="member_update.php" method="post">
+      아이디 : <input type="text" name="mid" value="<?=$row['mid']?>" readonly><br>
       암호 : <input type="password" name="passwd"><br>
       이름 : <input type="text" name="name" value="<?=$row['name']?>"><br>
       생년월일 : <input type="date" name="birth" value="<?=$row['birth']?>"><br>
