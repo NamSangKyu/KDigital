@@ -1,4 +1,8 @@
 <?php
+
+  error_reporting(E_ALL);
+  ini_set('display_errors', '1');
+
   $mid = $_POST['mid'];
   $passwd = $_POST['passwd'];
   $name = $_POST['name'];
@@ -14,9 +18,9 @@
   //SQL문 실행
   $result = mysqli_query($connection, $sql);
   echo $result;
-
   //close
   mysqli_close($connection);
-
-
 ?>
+<script>
+  location.href="member_list.php";
+</script>
