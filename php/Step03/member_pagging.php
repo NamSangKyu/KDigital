@@ -22,7 +22,7 @@
     if($count > 0) $page_first = $page_line * ($page-1);
     //현재 페이지의 마지막 데이터 번호
     $page_last = $page_line * $page - 1;
-    if($page_last > $count) $page_last = $count-1;
+    if($page_last >= $count) $page_last = $count-1;
 
     for($i=$page_first;$i <= $page_last;$i++){
       mysqli_data_seek($result,$i);
