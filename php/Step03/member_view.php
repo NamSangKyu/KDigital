@@ -28,7 +28,9 @@
       <?=$row['gender']==1?'checked':'' ?>>남
       <input type="radio" name="gender" value="1"
       <?=$row['gender']==0?'checked':'' ?>>여<br>
-      <button>수정</button><a href="">삭제</a><a href="member_list.php">목록</a>
+      <button>수정</button>
+      <a href="member_delete.php?mid=<?=$row['mid']?>">삭제</a>
+      <a href="member_list.php">목록</a>
     </form>
   <?php
     }
