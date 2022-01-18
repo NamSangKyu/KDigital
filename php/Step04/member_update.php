@@ -15,8 +15,11 @@
   $sql .= "tel='$tel',birth='$birth',gender=$gender where mid like '$mid'";
 
   $result = mysqli_query($conn, $sql);
-  if($result > 0)
+  if($result > 0){
+    //이름 최신화
+    session_start();
+    $_SESSION['name']=$name; 
     echo "<script>alert('회원정보 수정 완료');location.href='board_list.php'</script>";
-  else
+  }else
     echo "<script>alert('회원정보 수정 실패');history.back();</script>";
 ?>
