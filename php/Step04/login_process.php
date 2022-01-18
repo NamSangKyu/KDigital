@@ -20,6 +20,7 @@ if(mysqli_num_rows($result)==0){
   // 3-1. 조회 결과 회원이 있으면 세션에 아이디(id)와 이름(name)을 저장
   //    저장 후 board_list.php로 페이지 이동
   $row = mysqli_fetch_array($result);
+  session_start();
   $_SESSION['id'] = $row['mid'];
   $_SESSION['name'] = $row['name'];
   ?>
