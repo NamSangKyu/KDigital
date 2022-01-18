@@ -36,8 +36,14 @@
     </tr>
     <tr>
       <td colspan="5">
+        <?php
+          if($row['writer']==$_SESSION['id']){
+        ?>
         <button class='btn_update'>수정</button>
         <button class='btn_delete'>삭제</button>
+        <?php
+          }
+        ?>
         <button class='btn_back'>뒤로가기</button>
       </td>
     </tr>
