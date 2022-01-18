@@ -10,15 +10,6 @@
       margin:0;
       padding:0;
     }
-    header{
-      width: 1200px;
-      margin:0 auto;
-      margin-top: 50px;
-    }
-    .my_info{
-      width: 250px;
-      float: right;
-    }
     h2{
       width: 1200px;
       text-align: center;
@@ -29,6 +20,7 @@
       border-collapse: collapse;
       width: 1200px;
       margin:0 auto;
+      table-layout: fixed;
     }
     td,th{
       border:1px solid #e9e9e9;
@@ -52,13 +44,9 @@
 <body>
   <?php
     session_start();
+    require 'header.php';
   ?>
-    <header>
-      <div class="my_info">
-        <?=$_SESSION['name']?>님이 로그인 하셨습니다.<br>
-        <a href="logout.php">로그아웃</a> <a href="member_view.php">내 정보 수정</a>
-      </div>
-    </header>
+    
     <h2>게시판</h2>
     <table>
       <caption>
