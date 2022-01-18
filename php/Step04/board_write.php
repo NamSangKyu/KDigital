@@ -49,6 +49,14 @@
       text-align: right;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $(".btn_cancel").click(function(){
+        history.back();
+      });
+    });
+  </script>
 </head>
 <body>
   <?php
@@ -78,7 +86,9 @@
         </td>
       </tr>
     </table>
+    <input type="hidden" name="writer" value="<?=$_SESSION['id']?>">
   </form>
+
 </body>
 </html>
 
