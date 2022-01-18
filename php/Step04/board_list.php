@@ -79,7 +79,7 @@
       ?>
         <tr>
           <td><?=$row['bno']?></td>
-          <td class="title"><?=$row['title']?></td>
+          <td class="title"><a href="board_view.php?bno=<?=$row['bno']?>"><?=$row['title']?></a></td>
           <td><?=$row['writer']?></td>
           <td><?=$row['wdate']?></td>
           <td><?=$row['bcount']?></td>
