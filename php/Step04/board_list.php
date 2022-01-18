@@ -41,6 +41,12 @@
     caption{
       text-align: right;
     }
+    .title{
+      width: 600px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -60,7 +66,7 @@
       </caption>
       <tr>
         <th>글번호</th>
-        <th>제목</th>
+        <th class="title">제목</th>
         <th>작성자</th>
         <th>작성일</th>
         <th>조회수</th>
@@ -68,6 +74,25 @@
         <th>싫어요</th>
       </tr>
       <!--  글목록 -->
+      <?php
+        $conn = mysqli_connect("localhost","root","123456","nam2626");
+        $sql = "select * from board order by bno desc";
+        $result = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_array($result)){
+      ?>
+        <tr>
+          <td><?=$row['bno']?></td>
+          <td class="title"><?=$row['title']?></td>
+          <td><?=$row['writer']?></td>
+          <td><?=$row['wdate']?></td>
+          <td><?=$row['bcount']?></td>
+          <td><?=$row['blike']?></td>
+          <td><?=$row['bhate']?></td>
+        </tr>
+      <?php  
+        }
+      ?>
       <tr>
           <td colspan="7" class="pagging_bar">
             <!--페이징-->
