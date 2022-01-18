@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>회원가입</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!--
+      아이디 mid
+      암호 passwd
+      이름 name
+      생년월일 birth
+      연락처 tel
+      성별 gender
+      입력받아서 서버(member_insert.php)로 전송하는 폼을 작성
+    -->
+    <form action="member_insert.php" method="post">
+      아이디 : <input type="text" name="mid"><br>
+      암호 : <input type="password" name="passwd"><br>
+      이름 : <input type="text" name="name"><br>
+      생년월일 : <input type="date" name="birth"><br>
+      연락처 : <input type="text" name="tel"><br>
+      성별 : <input type="radio" name="gender" value="0">남
+      <input type="radio" name="gender" value="1">여<br>
+      <button>가입하기</button>
+
+
+    </form>
+</body>
+</html>
