@@ -75,7 +75,19 @@
         $sql = "select * from board order by bno desc";
         $result = mysqli_query($conn, $sql);
 
-        while($row = mysqli_fetch_array($result)){
+        $page = 1;
+        if(isset($_GET['page'])) $page = $_GET['page'];
+        $page_line = 10;
+        $page_block = 5;
+        $count = mysqli_num_rows($result);
+        $pages = ceil($count / $page_line);
+        $page_first = 0;
+        if($count > 0) $page_first = $page_line * ($page-1);
+        $page_last = $page_line * $page -1;
+        if($page_last >= $count) $page_last = $count - 1;
+        for($i=$page_first;$i <= $page_last;$i++){
+          mysqli_data_seek($result, $i);
+          $row = mysqli_fetch_array($result);
       ?>
         <tr>
           <td><?=$row['bno']?></td>
@@ -92,6 +104,33 @@
       <tr>
           <td colspan="7" class="pagging_bar">
             <!--페이징-->
+      <?php
+        $blocks = ceil($pages/$page_block);
+        $block = ceil($page/$page_block);
+
+        $page_s = $page_block * ($block -1) + 1;
+        $page_e = $page_block * $block;
+
+        if($blocks <= $block) $page_e = $pages;
+
+        if($block > 1){
+          $temp = $page_s-1;
+          echo "<a href='board_list.php?page=$temp'><<</a>";
+        }
+        for($i=$page_s;$i<=$page_e;$i++){
+          if($i == $page)
+            echo "<b>$page</b>&nbsp;";
+          else
+            echo "<a href='board_list.php?page=$i'>[$i]</a>&nbsp;";
+
+        }
+        if($block < $blocks){
+          $temp = $page_e+1;
+          echo "<a href='board_list.php?page=$temp'>>></a>";
+        }
+        
+        
+      ?>
           </td>
       </tr>
       <tr>
