@@ -62,6 +62,12 @@
   <?php
     session_start();
     require 'header.php';
+    $bno = $_GET['bno'];
+    $conn = mysqli_connect("localhost","root","123456","nam2626");
+    $sql = "select * from board where bno = $bno";
+    $result = mysqli_query($conn,$sql);
+
+    $row = mysqli_fetch_array($result);
   ?>
  
   <form action="board_update_process.php" method="post">
@@ -71,12 +77,12 @@
       </caption>
       <tr>
         <th>제목</th>
-        <td><input type="text" name="title" placeholder="제목을 입력하세요"></td>
+        <td><input type="text" name="title" placeholder="제목을 입력하세요" value="<?=$row['title']?>"></td>
       </tr>
       <tr>
         <th>내용</th>
         <td>
-          <textarea name="content" id="content" placeholder="내용을 입력하세요"></textarea>
+          <textarea name="content" id="content" placeholder="내용을 입력하세요"><?=$row['content']?></textarea>
         </td>
       </tr>
       <tr>
