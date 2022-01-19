@@ -57,7 +57,7 @@
     if(!isset($_SESSION['board'])){
       $_SESSION['board'] = array(-1);
     }
-    print_r($_SESSION['board']);
+    //print_r($_SESSION['board']);
     //방문한 적이 있는지 세션에 있는 board 배열에 체크 --> 값이 없으면 false 리턴
     //미리 -1을 넣어놨기 때문에 0 인덱스 번호가 나올일이 없다
     if(!array_search($bno,$_SESSION['board'])){
