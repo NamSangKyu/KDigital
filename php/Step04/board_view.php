@@ -48,5 +48,23 @@
       </td>
     </tr>
   </table>
+  <?php
+    //게시글 번호를 사용하여 해당 게시글의 조회수를 증가
+    //한번만 실행 ----> 새로고침을 했을때 조회수 증가를 막아야됨
+    //세션에 방문한 게시글 번호를 저장 ---> 세션에 해당 정보가 있으면 더이상 올라가지 않게끔
+    
+    //세션에 페이지를 저장할 배열이 있는지 확인 ---> 없으면 배열을 생성
+    if(!isset($_SESSION['board'])){
+      $_SESSION['board'] = array(-1);
+    }
+    print_r($_SESSION['board']);
+    //방문한 적이 있는지 세션에 있는 board 배열에 체크 --> 값이 없으면 false 리턴
+    //미리 -1을 넣어놨기 때문에 0 인덱스 번호가 나올일이 없다
+    if(!array_search($bno,$_SESSION['board'])){
+      $sql = "update board set bcount = bcount + 1 where bno = $bno";
+      mysqli_query($conn,$sql);
+      array_push($_SESSION['board'],$bno);//세션에 방문한 글번호 추가
+    }
+  ?>
 </body>
 </html>
