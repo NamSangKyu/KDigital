@@ -46,6 +46,12 @@
       $(".btn_write").click(function(){
         location.href="board_write.php";
       });
+      $(".btn_search").click(function(){
+        location.href="board_list.php?search="+$(".txt_search").val();
+      });
+      $(".btn_all").click(function(){
+        location.href="board_list.php";
+      });
     });
   </script>
 </head>
@@ -59,6 +65,7 @@
     <table>
       <caption>
         <button class="btn_write">글쓰기</button>
+        <button class="btn_all">전체 게시글</button>
       </caption>
       <tr>
         <th>글번호</th>
@@ -71,8 +78,12 @@
       </tr>
       <!--  글목록 -->
       <?php
+        $search = "";
+        if(isset($_GET['search'])){
+          $search = " where title like '%{$_GET['search']}%'";
+        }
         $conn = mysqli_connect("localhost","root","123456","nam2626");
-        $sql = "select * from board order by bno desc";
+        $sql = "select * from board $search order by bno desc";
         $result = mysqli_query($conn, $sql);
 
         $page = 1;
@@ -113,20 +124,25 @@
 
         if($blocks <= $block) $page_e = $pages;
 
+        $search = "";
+        if(isset($_GET['search'])){
+          $search = "search=".$_GET['search'];
+        }  
+
         if($block > 1){
           $temp = $page_s-1;
-          echo "<a href='board_list.php?page=$temp'><<</a>";
+          echo "<a href='board_list.php?page=$temp&$search'><<</a>";
         }
         for($i=$page_s;$i<=$page_e;$i++){
           if($i == $page)
             echo "<b>$page</b>&nbsp;";
           else
-            echo "<a href='board_list.php?page=$i'>[$i]</a>&nbsp;";
+            echo "<a href='board_list.php?page=$i&$search'>[$i]</a>&nbsp;";
 
         }
         if($block < $blocks){
           $temp = $page_e+1;
-          echo "<a href='board_list.php?page=$temp'>>></a>";
+          echo "<a href='board_list.php?page=$temp&$search'>>></a>";
         }
         
         
