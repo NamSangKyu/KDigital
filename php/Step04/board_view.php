@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>게시판</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
   <?php
     session_start();
     require 'header.php';
-
     $bno = $_GET['bno'];
     $conn = mysqli_connect("localhost","root","123456","nam2626");
     $sql = "select * from board where bno = $bno";
@@ -66,5 +66,23 @@
       array_push($_SESSION['board'],$bno);//세션에 방문한 글번호 추가
     }
   ?>
+  <script>
+    $(function(){
+      //뒤로가기 버튼 처리
+      $(".btn_back").click(function(){
+        history.back();
+      });
+      <?php
+      if($row['writer']==$_SESSION['id']){
+      ?>
+      //삭제 버튼 처리 ---> board_delete_process.php, 삭제할 글번호
+      $(".btn_delete").click(function(){
+        location.href = "board_delete_process.php?bno=<?=$_GET['bno']?>";
+      });
+      <?php
+      }
+      ?>
+    });
+  </script>
 </body>
 </html>
