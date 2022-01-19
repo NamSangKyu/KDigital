@@ -79,6 +79,10 @@
       $(".btn_delete").click(function(){
         location.href = "board_delete_process.php?bno=<?=$_GET['bno']?>";
       });
+      //게시글 수정할 페이지 이동 ---> board_update.php, 수정할 현재 게시글 번호
+      $(".btn_update").click(function(){
+        location.href = "board_update.php?bno=<?=$_GET['bno']?>";
+      });
       <?php
       }
       ?>
