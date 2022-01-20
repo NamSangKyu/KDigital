@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DataServlet
@@ -32,6 +33,8 @@ public class DataServlet extends HttpServlet {
 		request.setAttribute("hobby", hobby);
 		request.setAttribute("name", name);
 		request.setAttribute("age", age);
+		HttpSession session = request.getSession();
+		session.setAttribute("msg", "세션에 저장된 메세지");
 		request.getRequestDispatcher("el_jstl.jsp").forward(request, response);
 	}
 
