@@ -28,6 +28,8 @@ public class FowardServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//request에 데이터 셋팅
+		request.setAttribute("data", "request : " + request.getParameter("data"));
 		//사용자 요청에 필요한 데이터를 같이 전송
 		RequestDispatcher dispatcher = request.getRequestDispatcher("forward.jsp");
 		dispatcher.forward(request, response);

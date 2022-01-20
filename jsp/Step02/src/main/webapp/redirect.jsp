@@ -10,6 +10,8 @@
 <%
 	//url에 데이터가 없기 때문에 null을 반환
 	String data = request.getParameter("data");
+	//request 영역에 저장된 데이터를 읽어옴
+	data =(String) request.getAttribute("data");
 %>
 클라이언트가 전송한 데이터 : <%=data %>
 </body>
