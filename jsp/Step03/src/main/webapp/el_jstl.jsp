@@ -39,7 +39,23 @@
 			<p>성인입니다.</p>
 		</c:otherwise>
 	</c:choose>
-	
+	<!-- 반복문 -->
+	<h2>반복문</h2>
+	<p>
+		<c:forEach var="i" begin="1" end="10">
+			${i} 
+		</c:forEach>
+	</p>
+	<p>
+		<c:forEach var="i" begin="1" end="10" step="2">
+			${i} 
+		</c:forEach>
+	</p>
+	<p>
+		<c:forEach var="m" items="${requestScope.hobby }">
+			${m } 
+		</c:forEach>
+	</p>
 </body>
 </html>
 
