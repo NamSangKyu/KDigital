@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dto.StudentDTO;
+import service.StudentService;
 
 /**
  * Servlet implementation class LoginServlet
@@ -28,7 +32,15 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sno = request.getParameter("sno");
 		String name = request.getParameter("name");
-		System.out.println(sno + " " + name);
+		
+		StudentDTO dto = StudentService.getInstance().login(sno,name);
+		
+		//세션
+		HttpSession session = request.getSession();
+		session.setAttribute("dto", dto);
+		
+		response.sendRedirect("student_list.jsp");
+		
 	}
 
 	/**
