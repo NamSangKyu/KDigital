@@ -34,13 +34,18 @@ public class LoginServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		
 		StudentDTO dto = StudentService.getInstance().login(sno,name);
-		
-		//세션
-		HttpSession session = request.getSession();
-		session.setAttribute("dto", dto);
-		
-		response.sendRedirect("student_list.jsp");
-		
+		if(dto != null) {
+			//세션 처리
+			HttpSession session = request.getSession();
+			session.setAttribute("dto", dto);
+			
+			response.sendRedirect("student_list.jsp");
+		}else {
+			//응답, 한글 처리
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().write("<script>alert('학번과 이름을 확인하세요');"
+					+ "history.back();</script>");
+		}
 	}
 
 	/**
