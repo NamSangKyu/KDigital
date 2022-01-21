@@ -6,10 +6,43 @@
 <head>
 <meta charset="UTF-8">
 <title>학적 관리 프로그램</title>
+<style>
+	*{margin:0;padding:0}
+	
+	h2{
+		margin-top : 100px;
+		margin-bottom: 20px;
+		text-align: center;
+	}	
+	table{
+		border-collapse: collapse;
+		margin:0 auto;
+	}
+	th, td {
+		width: 100px;
+		padding:10px 0px;
+		text-align: center;
+		border:1px solid black;
+	}
+</style>
 </head>
 <body>
 	<h2>학생 정보 리스트</h2>
 	<table>
+		<tr>
+			<td colspan="4">
+				<form action="RegisterSevlet">
+					<input type="text" name="sno" placeholder="학번">
+					<input type="text" name="name" placeholder="이름">
+					<select name="major">
+						<!-- 학과명, 학과 번호를 출력 -->
+						<option value="0">학과명</option>
+					</select>
+					<input type="text" name="score" placeholder="평점">
+					<button>등록</button>
+				</form>
+			</td>
+		</tr>
 		<tr>
 			<th>학번</th>
 			<th>이름</th>
