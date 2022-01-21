@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 			//세션 처리
 			HttpSession session = request.getSession();
 			session.setAttribute("dto", dto);
-			
+			ArrayList<StudentDTO> list = StudentService.getInstance().selectAllStudnet();
 			response.sendRedirect("student_list.jsp");
 		}else {
 			//응답, 한글 처리
