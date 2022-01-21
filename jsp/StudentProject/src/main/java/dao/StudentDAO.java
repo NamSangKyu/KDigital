@@ -132,6 +132,35 @@ public class StudentDAO {
 		
 		return count;
 	}
+
+	public StudentDTO selectStudent(String sno) {
+		String sql = "select * from student where student_no like ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StudentDTO dto = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sno);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new StudentDTO(rs.getString(1), rs.getString(2), 
+						rs.getInt(3), rs.getDouble(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null)rs.close();
+				if(pstmt != null)pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return dto;
+	}
 }
 
 
