@@ -41,7 +41,10 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("dto", dto);
 			ArrayList<StudentDTO> list = StudentService.getInstance().selectAllStudnet();
+			//전체 학생 데이터 셋팅
+			request.setAttribute("list", list);
 			response.sendRedirect("student_list.jsp");
+			
 		}else {
 			//응답, 한글 처리
 			response.setContentType("text/html;charset=utf-8");
