@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import config.DBManager;
 import dto.StudentDTO;
@@ -75,6 +76,27 @@ public class StudentDAO {
 				e.printStackTrace();
 			}
 		}
+		return list;
+	}
+	public ArrayList<HashMap<String, Object>> selectAllMajor(){
+		String sql = "select * from major order by major_no asc";
+		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put("major_no", rs.getInt(1));
+				map.put("major_name", rs.getString(2));
+				list.add(map);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return list;
 	}
 }
