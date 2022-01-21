@@ -31,7 +31,7 @@
 	<table>
 		<tr>
 			<td colspan="4">
-				<form action="RegisterSevlet">
+				<form action="RegisterServlet">
 					<input type="text" name="sno" placeholder="학번">
 					<input type="text" name="name" placeholder="이름">
 					<select name="major">
