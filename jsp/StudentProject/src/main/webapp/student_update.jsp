@@ -30,7 +30,7 @@
 			</c:forEach>
 		</select>
 		<input type="text" name="score" placeholder="평점" value="${requestScope.obj.score }">
-		<button>등록</button>
+		<button>수정</button>
 	</form>
 </body>
 </html>

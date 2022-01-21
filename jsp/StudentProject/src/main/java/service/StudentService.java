@@ -41,7 +41,16 @@ public class StudentService {
 	public StudentDTO selectStudent(String sno) {
 		return StudentDAO.getInstance().selectStudent(sno);
 	}
+
+	public int updateStudent(StudentDTO studentDTO) {
+		return StudentDAO.getInstance().updateStudent(studentDTO);
+	}
 	
 	
 	
 }
+
+
+
+
+
