@@ -29,6 +29,10 @@ public class StudentService {
 	public ArrayList<HashMap<String, Object>> selectAllMajor() {
 		return StudentDAO.getInstance().selectAllMajor();
 	}
+
+	public int insertStudent(StudentDTO studentDTO) {
+		return StudentDAO.getInstance().insertStudent(studentDTO);
+	}
 	
 	
 	

@@ -99,6 +99,24 @@ public class StudentDAO {
 		
 		return list;
 	}
+
+	public int insertStudent(StudentDTO studentDTO) {
+		PreparedStatement pstmt = null;
+		String sql = "insert into student values(?,?,?,?)";
+		int count = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, studentDTO.getSno());
+			pstmt.setString(2, studentDTO.getName());
+			pstmt.setInt(3, studentDTO.getMajor());
+			pstmt.setDouble(4, studentDTO.getScore());
+			count = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
 }
 
 
