@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,8 +42,13 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("dto", dto);
 			ArrayList<StudentDTO> list = StudentService.getInstance().selectAllStudnet();
+			ArrayList<HashMap<String, Object>> major 
+						= StudentService.getInstance().selectAllMajor();
+			
 			//전체 학생 데이터 셋팅
 			request.setAttribute("list", list);
+			//전체 학과 목록 데이터 셋팅
+			request.setAttribute("major", major);
 			request.getRequestDispatcher("student_list.jsp").forward(request, response);
 			
 		}else {

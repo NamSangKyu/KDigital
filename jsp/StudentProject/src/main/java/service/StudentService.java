@@ -1,6 +1,7 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import dao.StudentDAO;
 import dto.StudentDTO;
@@ -23,6 +24,10 @@ public class StudentService {
 
 	public ArrayList<StudentDTO> selectAllStudnet() {
 		return StudentDAO.getInstance().selectAllStudent();
+	}
+
+	public ArrayList<HashMap<String, Object>> selectAllMajor() {
+		return StudentDAO.getInstance().selectAllMajor();
 	}
 	
 	
