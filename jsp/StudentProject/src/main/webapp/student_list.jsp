@@ -36,7 +36,10 @@
 					<input type="text" name="name" placeholder="이름">
 					<select name="major">
 						<!-- 학과명, 학과 번호를 출력 -->
-						<option value="0">학과명</option>
+						<option value="0">학과명 선택</option>
+						<c:forEach var="m" items="${requestScope.major }">
+							<option value="${m.major_no }">${m.major_name }</option>
+						</c:forEach>
 					</select>
 					<input type="text" name="score" placeholder="평점">
 					<button>등록</button>
