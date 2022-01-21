@@ -117,6 +117,21 @@ public class StudentDAO {
 		
 		return count;
 	}
+
+	public int deleteStudent(String sno) {
+		PreparedStatement pstmt = null;
+		String sql = "delete from student where student_no like ?";
+		int count = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sno);
+			count = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
 }
 
 

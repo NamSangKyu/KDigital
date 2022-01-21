@@ -33,6 +33,10 @@ public class StudentService {
 	public int insertStudent(StudentDTO studentDTO) {
 		return StudentDAO.getInstance().insertStudent(studentDTO);
 	}
+
+	public int deleteStudent(String sno) {
+		return StudentDAO.getInstance().deleteStudent(sno); 
+	}
 	
 	
 	

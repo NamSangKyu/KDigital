@@ -30,7 +30,7 @@
 	<h2>학생 정보 리스트</h2>
 	<table>
 		<tr>
-			<td colspan="4">
+			<td colspan="5">
 				<form action="RegisterServlet">
 					<input type="text" name="sno" placeholder="학번">
 					<input type="text" name="name" placeholder="이름">
@@ -51,6 +51,7 @@
 			<th>이름</th>
 			<th>학과번호</th>
 			<th>평점</th>
+			<th>비고</th>
 		</tr>
 		<!-- 학생정보 출력 -->
 		<c:forEach var="obj" items="${requestScope.list }">
@@ -59,6 +60,7 @@
 				<td>${obj.name}</td>
 				<td>${obj.major }</td>
 				<td>${obj.score }</td>
+				<td><a href="DeleteServlet?sno=${obj.sno }">삭제</a></td>
 			</tr>
 			
 		</c:forEach>
