@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 			ArrayList<StudentDTO> list = StudentService.getInstance().selectAllStudnet();
 			//전체 학생 데이터 셋팅
 			request.setAttribute("list", list);
-			response.sendRedirect("student_list.jsp");
+			request.getRequestDispatcher("student_list.jsp").forward(request, response);
 			
 		}else {
 			//응답, 한글 처리
