@@ -1,5 +1,8 @@
 package service;
 
+import dao.StudentDAO;
+import dto.StudentDTO;
+
 public class StudentService {
 	private static StudentService instance = new StudentService();
 
@@ -10,6 +13,10 @@ public class StudentService {
 		if(instance == null)
 			instance = new StudentService();
 		return instance;
+	}
+
+	public StudentDTO login(String sno, String name) {
+		return StudentDAO.getInstance().login(sno,name);
 	}
 	
 	
