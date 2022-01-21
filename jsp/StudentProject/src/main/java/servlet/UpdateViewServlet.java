@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,12 +35,15 @@ public class UpdateViewServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		String sno = request.getParameter("sno");
 		StudentDTO dto = StudentService.getInstance().selectStudent(sno);
+		ArrayList<HashMap<String, Object>> major 
+		= StudentService.getInstance().selectAllMajor();
 		if(dto == null) {
 			response.setContentType("text/html;charset=utf-8");
 			response.getWriter().write("<script>alert('수정할 학생정보가 없습니다.');"
 					+ "location.href='SelectAllServlet';</script>");
 		}else {
 			request.setAttribute("obj", dto);
+			request.setAttribute("major", major);
 			request.getRequestDispatcher("student_update.jsp").forward(request, response);
 		}
 	}
