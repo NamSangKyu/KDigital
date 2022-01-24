@@ -9,7 +9,9 @@
 <script>
 	$(function() {
 		$("#btnSearch").click(function() {
-			var data = "search="+$("input[name=search]").val();
+			/* var data = "search="+$("input[name=search]").val();
+			data += "&kind="+$("select[name=kind]").val(); */
+			var data = $("form").serialize();
 			console.log(data);
 			$.ajax({
 				url : "MemberListServlet",
@@ -50,6 +52,10 @@
 </head>
 <body>
 	<form>
+		<select name="kind">
+			<option value="id">아이디</option>
+			<option value="name">이름</option>
+		</select>
 		<input type="text" name="search" placeholder="검색어 입력">
 		<button id="btnSearch" type="button">조회</button>
 	</form>
