@@ -50,7 +50,7 @@ public class RegisterServlet extends HttpServlet {
 			JSONArray arr = new JSONArray(list);
 			result.put("list", arr);
 		}
-		response.getWriter().write(request.toString());
+		response.getWriter().write(result.toString());
 		
 		
 	}

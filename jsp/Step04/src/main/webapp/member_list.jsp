@@ -45,7 +45,24 @@
 				type: "post",
 				dataType : "json",
 				success : function(r) {
-					
+					if(r.count == 1){
+						alert("회원정보 등록 성공");
+						var table = "<table><tr><th>아이디</th>"
+							 + "<th>비밀번호</th><th>이름</th><th>나이</th></tr>";
+							for(i=0;i<r.list.length;i++){
+								table += "<tr>";
+								table += "<td>"+r.list[i].id+"</td>";
+								table += "<td>"+r.list[i].passwd+"</td>";
+								table += "<td>"+r.list[i].name+"</td>";
+								table += "<td>"+r.list[i].age+"</td>";
+								table += "</tr>";
+							}
+							table += "</table>";
+							$("#searchResult").html(table);
+							$("#frm_register")[0].reset();
+					}else{
+						alert("회원정보 등록 실패");
+					}
 				}
 			});
 		});
