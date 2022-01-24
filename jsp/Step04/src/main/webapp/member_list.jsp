@@ -12,7 +12,7 @@
 		$("#btnSearch").click(function() {
 			/* var data = "search="+$("input[name=search]").val();
 			data += "&kind="+$("select[name=kind]").val(); */
-			var data = $("form").serialize();
+			var data = $("#frm_search").serialize();
 			console.log(data);
 			$.ajax({
 				url : "MemberListServlet",
@@ -53,16 +53,16 @@
 </style>
 </head>
 <body>
-	<form>
+	<form id="frm_search">
 		<select name="kind">
 			<option value="id">아이디</option>
 			<option value="name">이름</option>
 		</select>
 		<input type="text" name="search" placeholder="검색어 입력">
 		<button id="btnSearch" type="button">조회</button>
-		<hr>
-		<div id="time"></div>
 	</form>
+	<hr>
+	<div id="time"></div>
 	<hr>
 	<div id="searchResult"></div>
 </body>
