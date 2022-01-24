@@ -22,13 +22,19 @@ public class MemberDAO {
 		return instance;
 	}
 	
-	public ArrayList<MemberDTO> selectMember(String kind, String searcg){
+	public ArrayList<MemberDTO> selectMember(String kind, String search){
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		String sql = "select * from member ";
+		if(search != "")
+			sql += "where "+kind+" like ?";//where 컬럼명 like ?
+		System.out.println(sql);
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
+			if(search != "") {
+				pstmt.setString(1, "%"+search+"%");
+			}
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
