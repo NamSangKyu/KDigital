@@ -29,8 +29,17 @@
 				url:"JsonServlet",
 				data : "data=json",
 				type : "post",
-				success : function(result) {
-					$("#resultJson").html(result);
+				dataType:"json",
+				success : function(r) {
+					//json을 문자열로 변경
+					$("#resultJson").html(JSON.stringify(r));
+					//단일값 출력
+					$("#resultJson").append("<p>"+r.result+"</p>");
+					$("#resultJson").append("<p>"+r.param+"</p>");
+					//배열 출력
+					for(i=0;i<r.arr.length;i++){
+						$("#resultJson").append("<p>"+r.arr[i]+"</p>");
+					}
 				}
 			})
 		});		

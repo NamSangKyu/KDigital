@@ -1,12 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -31,6 +34,14 @@ public class JsonServlet extends HttpServlet {
 		JSONObject json = new JSONObject();
 		json.put("result", 200);
 		json.put("param", "jsonData");
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("Hello"); 
+		list.add("World"); 
+		list.add("Test"); 
+		list.add("Json"); 
+		list.add("Array"); 
+		JSONArray arr = new JSONArray(list);
+		json.put("arr", arr);
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().write(json.toString());
 	}
