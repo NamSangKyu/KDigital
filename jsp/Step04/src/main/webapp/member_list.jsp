@@ -14,7 +14,7 @@
 				dataType:"json",
 				type:"post",
 				success:function(r){
-					
+					$("#searchResult").html(JSON.stringify(r));
 				}
 			});
 		});
