@@ -37,6 +37,18 @@
 				}
 			});
 		});
+		$("#btnRegister").click(function() {
+			var data = $("#frm_register").serialize();
+			$.ajax({
+				url : "RegisterServlet",
+				data : data,
+				type: "post",
+				dataType : "json",
+				success : function(r) {
+					
+				}
+			});
+		});
 	});
 </script>
 <style type="text/css">
@@ -60,6 +72,13 @@
 		</select>
 		<input type="text" name="search" placeholder="검색어 입력">
 		<button id="btnSearch" type="button">조회</button>
+	</form>
+	<form id="frm_register">
+		<input type="text" name="id" placeholder="아이디를 입력하세요">
+		<input type="password" name="passwd" placeholder="암호를 입력하세요">
+		<input type="text" name="name" placeholder="이름을 입력하세요">
+		<input type="text" name="age" placeholder="나이를 입력하세요">
+		<button id="btnRegister" type="button">등록</button>
 	</form>
 	<hr>
 	<div id="time"></div>

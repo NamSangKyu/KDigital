@@ -46,6 +46,24 @@ public class MemberDAO {
 		}
 		return list;
 	}
+
+	public int insertMember(MemberDTO memberDTO) {
+		int count = 0;
+		String sql = "insert into member values(?,?,?,?)";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberDTO.getId());
+			pstmt.setString(2, memberDTO.getPasswd());
+			pstmt.setString(3, memberDTO.getName());
+			pstmt.setInt(4, memberDTO.getAge());
+			count = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
 	
 }
 
