@@ -34,7 +34,11 @@ public class MemberListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		ArrayList<MemberDTO> list = MemberDAO.getInstance().selectMember();
+		request.setCharacterEncoding("utf-8");
+		String kind = request.getParameter("kind");
+		String search = request.getParameter("search");
+		System.out.println(kind + " " +search);
+		ArrayList<MemberDTO> list = MemberDAO.getInstance().selectMember(kind,search);
 		JSONArray arr = new JSONArray(list);
 		System.out.println(arr.toString());
 		response.getWriter().write(arr.toString());

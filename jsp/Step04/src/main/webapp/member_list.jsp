@@ -15,6 +15,7 @@
 			console.log(data);
 			$.ajax({
 				url : "MemberListServlet",
+				data : data,
 				dataType:"json",
 				type:"post",
 				success:function(r){

@@ -22,7 +22,7 @@ public class MemberDAO {
 		return instance;
 	}
 	
-	public ArrayList<MemberDTO> selectMember(){
+	public ArrayList<MemberDTO> selectMember(String kind, String searcg){
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		String sql = "select * from member ";
 		PreparedStatement pstmt = null;
