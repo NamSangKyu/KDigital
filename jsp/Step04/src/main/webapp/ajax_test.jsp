@@ -23,6 +23,17 @@
 				}				
 			});
 		});
+		
+		$("#btnAjax").click(function() {
+			$.ajax({
+				url:"JsonServlet",
+				data : "data=json",
+				type : "post",
+				success : function(result) {
+					$("#resultJson").html(result);
+				}
+			})
+		});		
 	});
 </script>
 </head>
@@ -30,6 +41,10 @@
 <button id="btnString">문자열 데이터 Ajax 요청</button>
 <hr>
 <div id="resultString"></div>
+<hr>
+<button id="btnAjax">json 데이터 Ajax 요청</button>
+<hr>
+<div id="resultJson"></div>
 </body>
 </html>
 
