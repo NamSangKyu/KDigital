@@ -15,6 +15,11 @@
 				type : "get",
 				success : function(result) {
 					$("#resultString").html(result);
+					var arr = result.split(",");//, 으로 자르기
+					for(i=0;i<arr.length;i++){
+						$("#resultString").append("<p>" + arr[i] +"</p>");
+					}
+					
 				}				
 			});
 		});
