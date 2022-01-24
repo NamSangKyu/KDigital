@@ -59,6 +59,8 @@
 		</select>
 		<input type="text" name="search" placeholder="검색어 입력">
 		<button id="btnSearch" type="button">조회</button>
+		<hr>
+		<div id="time"></div>
 	</form>
 	<hr>
 	<div id="searchResult"></div>
