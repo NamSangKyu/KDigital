@@ -1,12 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import dao.MemberDAO;
@@ -42,7 +45,11 @@ public class RegisterServlet extends HttpServlet {
 		
 		JSONObject result = new JSONObject();
 		result.put("count", count);
-		
+		if(count == 1) {
+			ArrayList<MemberDTO> list = MemberDAO.getInstance().selectMember("","");
+			JSONArray arr = new JSONArray(list);
+			result.put("list", arr);
+		}
 		response.getWriter().write(request.toString());
 		
 		
