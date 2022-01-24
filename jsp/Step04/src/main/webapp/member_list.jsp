@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 	$(function() {
+		$("#time").html((new Date()).toLocaleString());//페이지가 새로 로드되는지 확인
 		$("#btnSearch").click(function() {
 			/* var data = "search="+$("input[name=search]").val();
 			data += "&kind="+$("select[name=kind]").val(); */
