@@ -6,6 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import service.MemberService;
 
 /**
  * Servlet implementation class LoginServlet
@@ -30,7 +33,17 @@ public class LoginServlet extends HttpServlet {
 		String passwd = request.getParameter("passwd");
 		
 		System.out.println(id + " " + passwd);
-	
+		
+		id = MemberService.getInstance().login(id, passwd);
+		if(id != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("id", id);
+			response.sendRedirect("main.do");
+		}else {
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().write("<script>alert('아이디와 비밀번호를 확인하세요');"
+					+ "history.back();</script>");
+		}
 	}
 
 	/**
