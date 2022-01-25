@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dto.BoardDTO;
+import pagging.PaggingVO;
 import service.BoardService;
 
 /**
@@ -38,6 +39,9 @@ public class MainServlet extends HttpServlet {
 			pageNo = Integer.parseInt(page);
 		//전체 게시글 개수를 읽어옴
 		int count = BoardService.getInstance().selectCount();
+		//페이징 처리
+		PaggingVO vo = new PaggingVO(count, pageNo, 7, 4);
+		request.setAttribute("pagging", vo);
 		//게시글 목록 읽기
 		ArrayList<BoardDTO> list = BoardService.getInstance()
 				.selectPageBoard(pageNo);

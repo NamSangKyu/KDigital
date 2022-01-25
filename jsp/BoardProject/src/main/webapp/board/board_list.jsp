@@ -71,6 +71,26 @@
 				<td>${board.bhate}</td>
 			</tr>
 		</c:forEach>
+		<tr>
+			<td colspan="7">
+			<c:if test="${requestScope.pagging.isPriviousPageGroup() }">
+				<a href="main.do?page=${requestScope.pagging.getStartPageofPageGroup()-1 }"><<</a>&nbsp;
+			</c:if>
+			<c:forEach var="i" begin="${requestScope.pagging.getStartPageofPageGroup() }" end="${requestScope.pagging.getEndPageOfPageGroup() }">
+				<c:choose>
+					<c:when test="${i==requestScope.pagging.currentPageNo }">
+						${i}&nbsp;
+					</c:when>
+					<c:otherwise>
+						<a href="main.do?page=${i }">${i }</a>&nbsp;
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<c:if test="${requestScope.pagging.isNextPageGroup() }">
+				<a href="main.do?page=${requestScope.pagging.getEndPageOfPageGroup()+1}">>></a>
+			</c:if>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
