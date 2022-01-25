@@ -37,5 +37,9 @@ public class BoardService {
 		BoardDAO.getInstance().updateBoard(boardDTO);
 	}
 
+	public int selectCount() {
+		return BoardDAO.getInstance().selectCount();
+	}
+
 	
 }

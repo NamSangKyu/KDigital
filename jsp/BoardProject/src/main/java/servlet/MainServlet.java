@@ -36,6 +36,8 @@ public class MainServlet extends HttpServlet {
 		int pageNo = 1;
 		if(page != null)
 			pageNo = Integer.parseInt(page);
+		//전체 게시글 개수를 읽어옴
+		int count = BoardService.getInstance().selectCount();
 		//게시글 목록 읽기
 		ArrayList<BoardDTO> list = BoardService.getInstance()
 				.selectPageBoard(pageNo);
