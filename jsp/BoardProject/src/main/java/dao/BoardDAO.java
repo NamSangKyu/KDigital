@@ -56,6 +56,30 @@ public class BoardDAO {
 		
 		return list;
 	}
+
+	public void insertBoard(BoardDTO boardDTO) {
+		PreparedStatement pstmt = null;
+		String sql = "insert into board(bno,title,content,writer)"
+				+ " values(board_no.nextval,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardDTO.getTitle());
+			pstmt.setString(2, boardDTO.getContent());
+			pstmt.setString(3, boardDTO.getWriter());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
 	
 	
 	

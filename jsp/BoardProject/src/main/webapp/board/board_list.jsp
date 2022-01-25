@@ -45,6 +45,11 @@
 	<hr>
 	<table>
 		<tr>
+			<td colspan="7">
+				<a href="writeView.do">글쓰기</a>
+			</td>
+		</tr>
+		<tr>
 			<th>글번호</th>
 			<th class="title">제목</th>
 			<th>작성자</th>

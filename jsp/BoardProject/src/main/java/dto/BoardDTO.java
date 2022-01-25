@@ -9,6 +9,13 @@ public class BoardDTO {
 	private int blike;
 	private int bhate;
 	
+	public BoardDTO(String title, String content, String writer) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
+
 	public BoardDTO(int bno, String title, String content, String writer, String bdate, int bcount, int blike,
 			int bhate) {
 		super();
