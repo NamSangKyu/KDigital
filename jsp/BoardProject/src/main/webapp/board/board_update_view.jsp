@@ -29,6 +29,7 @@
 <body>
 	<h2>글 수정 페이지</h2>
 	<form action="update.do">
+		<input type="hidden" name="bno" value="${requestScope.dto.bno }">
 		<input type="text" name="title" placeholder="제목을 입력하세요" value="${requestScope.dto.title }" required>
 		<textarea name="content" placeholder="내용을 입력하세요" required>${requestScope.dto.content }</textarea>
 		<button>수정</button>

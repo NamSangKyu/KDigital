@@ -29,6 +29,13 @@ public class BoardDTO {
 		this.bhate = bhate;
 	}
 
+	public BoardDTO(int bno, String title, String content) {
+		super();
+		this.bno = bno;
+		this.title = title;
+		this.content = content;
+	}
+
 	public int getBno() {
 		return bno;
 	}

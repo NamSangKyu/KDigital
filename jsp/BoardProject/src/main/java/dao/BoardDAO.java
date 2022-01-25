@@ -129,6 +129,27 @@ public class BoardDAO {
 			}
 		}		
 	}
+
+	public void updateBoard(BoardDTO boardDTO) {
+		PreparedStatement pstmt = null;
+		String sql = "update board set title=?,content=? where bno=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardDTO.getTitle());
+			pstmt.setString(2, boardDTO.getContent());
+			pstmt.setInt(3, boardDTO.getBno());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 	
 	

@@ -33,5 +33,9 @@ public class BoardService {
 		BoardDAO.getInstance().deleteBoard(bno);
 	}
 
+	public void updateBoard(BoardDTO boardDTO) {
+		BoardDAO.getInstance().updateBoard(boardDTO);
+	}
+
 	
 }
