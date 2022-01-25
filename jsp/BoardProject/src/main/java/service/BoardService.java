@@ -25,5 +25,9 @@ public class BoardService {
 		BoardDAO.getInstance().insertBoard(boardDTO);
 	}
 
+	public BoardDTO selectBoard(int bno) {
+		return BoardDAO.getInstance().selectBoard(bno);
+	}
+
 	
 }
