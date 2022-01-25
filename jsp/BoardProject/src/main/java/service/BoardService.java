@@ -29,5 +29,9 @@ public class BoardService {
 		return BoardDAO.getInstance().selectBoard(bno);
 	}
 
+	public void deleteBoard(int bno) {
+		BoardDAO.getInstance().deleteBoard(bno);
+	}
+
 	
 }
