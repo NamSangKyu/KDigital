@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONArray;
 import org.mvc.dto.StudentDTO;
 import org.mvc.service.StudentService;
 import org.springframework.stereotype.Controller;
@@ -111,6 +112,22 @@ public class MainController {
 		
 		int count = studentService.updateStudent(new StudentDTO(sno, name, major, score));
 		return "redirect:list.do";
+	}
+	
+	@RequestMapping("/search.do")
+	public String search(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		System.out.println("search.do");
+		String name= request.getParameter("search");
+		System.out.println(name);
+		ArrayList<StudentDTO> list = studentService.selectListStudnet(name);
+		System.out.println(list.toString());
+		JSONArray arr = new JSONArray(list);
+		
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().write(arr.toString());
+		
+		
+		return null;
 	}
 }
 

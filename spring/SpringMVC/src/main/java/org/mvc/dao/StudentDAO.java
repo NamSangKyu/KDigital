@@ -175,6 +175,34 @@ public class StudentDAO {
 		
 		return count;
 	}
+
+	public ArrayList<StudentDTO> selectListStudent(String name) {
+		ArrayList<StudentDTO> list = new ArrayList<StudentDTO>();
+		String sql = "select * from student where name like ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + name + "%");
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new StudentDTO(rs.getString(1), rs.getString(2), 
+						rs.getInt(3), rs.getDouble(4)));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null)rs.close();
+				if(pstmt != null)pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
 }
 
 

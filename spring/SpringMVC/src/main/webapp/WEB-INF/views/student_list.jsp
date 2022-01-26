@@ -25,6 +25,35 @@
 		border:1px solid black;
 	}
 </style>
+<script src="/lib/jquery-3.6.0.min.js"></script>
+<script>
+	$(function() {
+		$("#btnSearch").click(function() {
+			var data = "search="+$("#txtSearch").val();
+			
+			$.ajax({
+				url : "search.do",
+				data : data,
+				type:"post",
+				dataType:"json",
+				success:function(r){
+					var str = "";
+					for(i=0;i<r.length;i++){
+						str += "<tr>";
+						str += "<td>"+r[i].sno+"</td>";
+						str += "<td>"+r[i].name+"</td>";
+						str += "<td>"+r[i].major+"</td>";
+						str += "<td>"+r[i].score+"</td>";
+						str += "<td><a href='delete.do?sno="+r[i].sno+"'>삭제</a> / <a href='updateView.do?sno="+r[i].sno+"'>수정</a></td>";
+						str += "</tr>";
+					}
+					$("tbody").html(str);
+				}
+			});
+			
+		});
+	});
+</script>
 </head>
 <body>
 	<h2>학생 정보 리스트</h2>

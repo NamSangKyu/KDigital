@@ -43,6 +43,10 @@ public class StudentService {
 	public int updateStudent(StudentDTO studentDTO) {
 		return dao.updateStudent(studentDTO);
 	}
+
+	public ArrayList<StudentDTO> selectListStudnet(String name) {
+		return dao.selectListStudent(name);
+	}
 	
 	
 	
