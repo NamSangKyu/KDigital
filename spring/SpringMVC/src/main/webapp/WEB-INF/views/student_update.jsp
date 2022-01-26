@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h2>학생정보 수정</h2>
-	<form action="UpdateServlet">
+	<form action="update.do">
 		<input type="text" name="sno" placeholder="학번" value="${requestScope.obj.sno }" readonly>
 		<input type="text" name="name" placeholder="이름" value="${requestScope.obj.name }">
 		<select name="major">

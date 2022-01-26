@@ -101,7 +101,22 @@ public class MainController {
 		
 		return "student_update";
 	}
+	
+	@RequestMapping("/update.do")
+	public String update(HttpServletRequest request) {
+		String sno = request.getParameter("sno");
+		String name= request.getParameter("name");
+		int major= Integer.parseInt(request.getParameter("major"));
+		double score = Double.parseDouble(request.getParameter("score"));
+		
+		int count = studentService.updateStudent(new StudentDTO(sno, name, major, score));
+		return "redirect:list.do";
+	}
 }
+
+
+
+
 
 
 
