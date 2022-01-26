@@ -60,7 +60,7 @@
 				<td>${obj.name}</td>
 				<td>${obj.major }</td>
 				<td>${obj.score }</td>
-				<td><a href="DeleteServlet?sno=${obj.sno }">삭제</a>
+				<td><a href="delete.do?sno=${obj.sno }">삭제</a>
 					/
 					<a href="UpdateViewServlet?sno=${obj.sno }">수정</a>
 				</td>

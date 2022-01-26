@@ -75,6 +75,19 @@ public class MainController {
 		return "redirect:list.do";
 	}
 	
+	@RequestMapping("/delete.do")
+	public String delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html;charset=utf-8");
+		String sno = request.getParameter("sno");
+		int count = studentService.deleteStudent(sno);
+		if(count == 0)
+			response.getWriter().write("<script>alert('학생정보 삭제 실패');"
+					+ "location.href='/list.do'</script>");
+		else
+			response.getWriter().write("<script>alert('학생정보 삭제 성공');"
+					+ "location.href='/list.do'</script>");
+		return null;
+	}
 }
 
 
