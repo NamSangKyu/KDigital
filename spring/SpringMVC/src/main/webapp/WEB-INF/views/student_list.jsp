@@ -29,6 +29,7 @@
 <body>
 	<h2>학생 정보 리스트</h2>
 	<table>
+		<thead>
 		<tr>
 			<td colspan="5">
 				<form action="register.do">
@@ -47,12 +48,20 @@
 			</td>
 		</tr>
 		<tr>
+			<td colspan="5">
+				<input type="text" id="txtSearch" placeholder="검색어를 입력하세요">
+				<button id="btnSearch">검색</button>
+			</td>
+		</tr>
+		<tr>
 			<th>학번</th>
 			<th>이름</th>
 			<th>학과번호</th>
 			<th>평점</th>
 			<th>비고</th>
 		</tr>
+		</thead>
+		<tbody>
 		<!-- 학생정보 출력 -->
 		<c:forEach var="obj" items="${requestScope.list }">
 			<tr>
@@ -65,8 +74,8 @@
 					<a href="updateView.do?sno=${obj.sno }">수정</a>
 				</td>
 			</tr>
-			
 		</c:forEach>
+		</tbody>
 	</table>
 </body>
 </html>
