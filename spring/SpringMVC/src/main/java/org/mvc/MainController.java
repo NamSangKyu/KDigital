@@ -59,6 +59,22 @@ public class MainController {
 		return "student_list";
 	}
 	
+	@RequestMapping("/register.do")
+	public String register(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String sno = request.getParameter("sno");
+		String name= request.getParameter("name");
+		int major= Integer.parseInt(request.getParameter("major"));
+		double score = Double.parseDouble(request.getParameter("score"));
+		
+		int count = studentService.insertStudent(new StudentDTO(sno, name, major, score));
+		if(count == 0) {
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().write("<script>alert('학생정보 등록 실패 입력하신 데이터를 확인하세요');history.back();</script>");
+			return null;//페이지 이동 X
+		}
+		return "redirect:list.do";
+	}
+	
 }
 
 
