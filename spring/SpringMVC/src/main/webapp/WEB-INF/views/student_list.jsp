@@ -62,7 +62,7 @@
 				<td>${obj.score }</td>
 				<td><a href="delete.do?sno=${obj.sno }">삭제</a>
 					/
-					<a href="UpdateViewServlet?sno=${obj.sno }">수정</a>
+					<a href="updateView.do?sno=${obj.sno }">수정</a>
 				</td>
 			</tr>
 			

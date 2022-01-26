@@ -88,6 +88,19 @@ public class MainController {
 					+ "location.href='/list.do'</script>");
 		return null;
 	}
+	
+	@RequestMapping("/updateView.do")
+	public String updateView(HttpServletRequest request) {
+		String sno = request.getParameter("sno"); 
+		
+		StudentDTO dto = studentService.selectStudent(sno);
+		ArrayList<HashMap<String, Object>> major = studentService.selectAllMajor();
+		
+		request.setAttribute("major", major);
+		request.setAttribute("obj", dto);
+		
+		return "student_update";
+	}
 }
 
 
