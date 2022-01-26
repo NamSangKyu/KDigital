@@ -3,11 +3,19 @@ package org.mvc;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mvc.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
+	private StudentService studentService;
+	
+	public MainController(StudentService studentService) {
+		this.studentService = studentService;
+		
+	}
+
 	@RequestMapping("/")
 	public String main() {
 		System.out.println("메인 페이지 이동");

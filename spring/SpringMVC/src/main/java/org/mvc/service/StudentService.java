@@ -5,45 +5,43 @@ import java.util.HashMap;
 
 import org.mvc.dao.StudentDAO;
 import org.mvc.dto.StudentDTO;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentService {
-	private static StudentService instance = new StudentService();
-
-	private StudentService() {
-	}
-
-	public static StudentService getInstance() {
-		if(instance == null)
-			instance = new StudentService();
-		return instance;
+	
+	private StudentDAO dao;
+	
+	public StudentService(StudentDAO dao) {
+		this.dao = dao;
 	}
 
 	public StudentDTO login(String sno, String name) {
-		return StudentDAO.getInstance().login(sno,name);
+		return dao.login(sno,name);
 	}
 
 	public ArrayList<StudentDTO> selectAllStudnet() {
-		return StudentDAO.getInstance().selectAllStudent();
+		return dao.selectAllStudent();
 	}
 
 	public ArrayList<HashMap<String, Object>> selectAllMajor() {
-		return StudentDAO.getInstance().selectAllMajor();
+		return dao.selectAllMajor();
 	}
 
 	public int insertStudent(StudentDTO studentDTO) {
-		return StudentDAO.getInstance().insertStudent(studentDTO);
+		return dao.insertStudent(studentDTO);
 	}
 
 	public int deleteStudent(String sno) {
-		return StudentDAO.getInstance().deleteStudent(sno); 
+		return dao.deleteStudent(sno); 
 	}
 
 	public StudentDTO selectStudent(String sno) {
-		return StudentDAO.getInstance().selectStudent(sno);
+		return dao.selectStudent(sno);
 	}
 
 	public int updateStudent(StudentDTO studentDTO) {
-		return StudentDAO.getInstance().updateStudent(studentDTO);
+		return dao.updateStudent(studentDTO);
 	}
 	
 	

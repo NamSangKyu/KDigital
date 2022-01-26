@@ -5,9 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBManager {
-	private static DBManager instance = new DBManager();
 	private Connection conn;
-	private DBManager() {
+	public DBManager() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", 
@@ -24,11 +23,5 @@ public class DBManager {
 		return conn;
 	}
 
-	public static DBManager getInstance() {
-		if(instance == null)
-			instance = new DBManager();
-		return instance;
-	}
-	
 	
 }

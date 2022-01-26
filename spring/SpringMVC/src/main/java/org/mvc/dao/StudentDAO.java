@@ -11,16 +11,11 @@ import org.mvc.config.DBManager;
 import org.mvc.dto.StudentDTO;
 
 public class StudentDAO {
-	private static StudentDAO instance = new StudentDAO();
 	private Connection conn;
-	private StudentDAO() {
-		conn = DBManager.getInstance().getConn();
-	}
-
-	public static StudentDAO getInstance() {
-		if(instance==null)
-			instance = new StudentDAO();
-		return instance;
+	private DBManager manager;
+	public StudentDAO(DBManager manager) {
+		this.manager = manager;
+		conn = manager.getConn();
 	}
 
 	public StudentDTO login(String sno, String name) {
