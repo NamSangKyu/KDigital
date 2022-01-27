@@ -55,6 +55,19 @@ public class MainController {
 		return "member_update";
 	}
 	
+	@RequestMapping("/update.do")
+	public String update(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		
+		int count = service.updateMember(new MemberDTO(id, passwd, name, age));
+		System.out.println("추가 결과 : "+count);
+		
+		return "redirect:/";
+	}
+	
 }
 
 

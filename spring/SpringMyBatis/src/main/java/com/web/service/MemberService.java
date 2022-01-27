@@ -36,6 +36,10 @@ public class MemberService {
 	public MemberDTO selectMember(String id) {
 		return mapper.selectMember(id);
 	}
+
+	public int updateMember(MemberDTO memberDTO) {
+		return mapper.updateMember(memberDTO);
+	}
 }
 
 

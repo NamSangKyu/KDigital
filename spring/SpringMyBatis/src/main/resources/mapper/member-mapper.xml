@@ -15,4 +15,16 @@
   <select id="selectMember" parameterType="String" resultType="com.web.dto.MemberDTO">
   	select * from member where id like #{id}
   </select>
+	<update id="updateMember" parameterType="com.web.dto.MemberDTO">
+		update member set passwd = #{passwd}, name = #{name}, age = #{age}
+		where id like #{id}
+	</update>  
 </mapper>
+
+
+
+
+
+
+
+
