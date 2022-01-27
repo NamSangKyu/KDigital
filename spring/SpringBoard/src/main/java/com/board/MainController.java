@@ -1,5 +1,7 @@
 package com.board;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,14 +19,21 @@ public class MainController {
 	private BoardService boardService;
 	
 	
+	
+	public MainController(MemberService memberService, BoardService boardService) {
+		super();
+		this.memberService = memberService;
+		this.boardService = boardService;
+	}
+
 	@RequestMapping("/")
 	public String main() {
-		return "index.jsp";
+		return "index";
 	}
 	
 	@RequestMapping("/login.do")
 	public String login(HttpServletRequest request, 
-			HttpServletResponse response, HttpSession session) {
+			HttpServletResponse response, HttpSession session) throws IOException {
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
 		
