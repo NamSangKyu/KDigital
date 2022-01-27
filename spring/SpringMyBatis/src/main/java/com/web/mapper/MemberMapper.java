@@ -9,4 +9,6 @@ import com.web.dto.MemberDTO;
 @Mapper
 public interface MemberMapper {
 	public List<MemberDTO> selectAllMember();
+
+	public int insertMember(MemberDTO memberDTO);
 }

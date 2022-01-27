@@ -5,6 +5,14 @@ public class MemberDTO {
 	private String passwd;
 	private String name;
 	private int age;
+	
+	public MemberDTO(String id, String passwd, String name, int age) {
+		super();
+		this.id = id;
+		this.passwd = passwd;
+		this.name = name;
+		this.age = age;
+	}
 	public MemberDTO() {	}
 	public String getId() {
 		return id;
