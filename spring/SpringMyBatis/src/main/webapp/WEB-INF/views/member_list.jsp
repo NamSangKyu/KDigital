@@ -26,7 +26,7 @@
 <body>
 	<table>
 		<tr>
-			<td colspan="4">
+			<td colspan="5">
 				<form action="insert.do">
 					<input type="text" name="id">
 					<input type="password" name="passwd">
@@ -40,6 +40,7 @@
 			<th>비밀번호</th>
 			<th>이름</th>
 			<th>나이</th>
+			<th>작업</th>
 		</tr>
 		<c:forEach var="obj" items="${requestScope.list }">
 			<tr>
@@ -47,6 +48,9 @@
 				<td>${obj.passwd }</td>
 				<td>${obj.name }</td>
 				<td>${obj.age }</td>
+				<td>
+					<button class="btnUpdate">수정</button> / <button class="btnDelete">삭제</button> 
+				</td>	
 			</tr>
 		</c:forEach>
 	

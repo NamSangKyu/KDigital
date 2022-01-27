@@ -19,7 +19,14 @@ public class MemberService {
 	}
 
 	public int insertMember(MemberDTO memberDTO) {
-		return mapper.insertMember(memberDTO);
+		int count = 0;
+		try {
+			count =mapper.insertMember(memberDTO); 
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return count;
 	}
 }
 
