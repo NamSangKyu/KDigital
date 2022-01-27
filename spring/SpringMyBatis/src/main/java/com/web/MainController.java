@@ -38,6 +38,14 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/delete.do")
+	public String delete(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		int count = service.deleteMember(id);
+		System.out.println("삭제 결과 : " + count);
+		return "redirect:/";
+	}
+	
 }
 
 

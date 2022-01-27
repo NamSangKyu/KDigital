@@ -22,6 +22,18 @@
 		background-color: #e9e9e9;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".btnDelete").click(function() {
+			var td = $(this).parent().parent().find("td:first");
+			//alert($(td).text());
+			location.href='delete.do?id='+$(td).text().trim();
+		});
+	});
+	
+</script>
+
 </head>
 <body>
 	<table>

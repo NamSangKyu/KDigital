@@ -28,6 +28,10 @@ public class MemberService {
 		
 		return count;
 	}
+
+	public int deleteMember(String id) {
+		return mapper.deleteMember(id);
+	}
 }
 
 
