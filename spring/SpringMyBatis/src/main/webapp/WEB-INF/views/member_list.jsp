@@ -30,6 +30,10 @@
 			//alert($(td).text());
 			location.href='delete.do?id='+$(td).text().trim();
 		});
+		$(".btnUpdate").click(function() {
+			var td = $(this).parent().parent().find("td:first");
+			location.href='updateView.do?id='+$(td).text().trim();
+		});
 	});
 	
 </script>

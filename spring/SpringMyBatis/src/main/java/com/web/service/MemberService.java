@@ -32,6 +32,10 @@ public class MemberService {
 	public int deleteMember(String id) {
 		return mapper.deleteMember(id);
 	}
+
+	public MemberDTO selectMember(String id) {
+		return mapper.selectMember(id);
+	}
 }
 
 

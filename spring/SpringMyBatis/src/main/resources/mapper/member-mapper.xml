@@ -12,4 +12,7 @@
   <delete id="deleteMember" parameterType="String">
   	delete from member where id like #{id}
   </delete>
+  <select id="selectMember" parameterType="String" resultType="com.web.dto.MemberDTO">
+  	select * from member where id like #{id}
+  </select>
 </mapper>

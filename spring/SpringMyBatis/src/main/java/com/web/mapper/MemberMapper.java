@@ -13,4 +13,6 @@ public interface MemberMapper {
 	public int insertMember(MemberDTO memberDTO);
 
 	public int deleteMember(String id);
+
+	public MemberDTO selectMember(String id);
 }

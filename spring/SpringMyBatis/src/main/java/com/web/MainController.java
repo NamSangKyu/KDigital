@@ -46,6 +46,15 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/updateView.do")
+	public String updateView(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		MemberDTO dto = service.selectMember(id);
+		request.setAttribute("dto", dto);	
+		
+		return "member_update";
+	}
+	
 }
 
 
