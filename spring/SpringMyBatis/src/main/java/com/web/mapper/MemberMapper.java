@@ -17,4 +17,6 @@ public interface MemberMapper {
 	public MemberDTO selectMember(String id);
 
 	public int updateMember(MemberDTO memberDTO);
+
+	public List<MemberDTO> selectListMember(String seach);
 }

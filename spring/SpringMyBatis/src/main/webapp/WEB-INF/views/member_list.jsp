@@ -34,6 +34,19 @@
 			var td = $(this).parent().parent().find("td:first");
 			location.href='updateView.do?id='+$(td).text().trim();
 		});
+		$("#btnSearch").click(function(){
+			var data = "search="+$("#txtSearch").val();
+			$.ajax({
+				url : "search.do",
+				data : data,
+				type : "get",
+				dataType:"json",
+				success:function(r){
+					for(i=0;i<r.length;i++)
+						console.log(r[i]);
+				}
+			});
+		});
 	});
 	
 </script>
@@ -49,6 +62,12 @@
 					<input type="text" name="name">
 					<input type="text" name="age"><button>추가</button>
 				</form>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+					<input type="text" id="txtSearch">
+					<button id="btnSearch">검색</button>
 			</td>
 		</tr>
 		<tr>

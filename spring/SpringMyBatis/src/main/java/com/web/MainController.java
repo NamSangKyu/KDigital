@@ -1,9 +1,12 @@
 package com.web;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -66,6 +69,15 @@ public class MainController {
 		System.out.println("추가 결과 : "+count);
 		
 		return "redirect:/";
+	}
+	@RequestMapping("/search.do")
+	public String search(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html;charset=utf-8");
+		String search = request.getParameter("search");
+		List<MemberDTO> list = service.selectListMember(search);
+		JSONArray arr = new JSONArray(list);
+		response.getWriter().write(arr.toString());
+		return null;
 	}
 	
 }

@@ -40,6 +40,10 @@ public class MemberService {
 	public int updateMember(MemberDTO memberDTO) {
 		return mapper.updateMember(memberDTO);
 	}
+
+	public List<MemberDTO> selectListMember(String search) {
+		return mapper.selectListMember(search);
+	}
 }
 
 
