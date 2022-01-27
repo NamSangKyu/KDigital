@@ -1,6 +1,7 @@
 package com.board;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.board.dto.BoardDTO;
 import com.board.dto.MemberDTO;
 import com.board.service.BoardService;
 import com.board.service.MemberService;
@@ -49,6 +51,18 @@ public class MainController {
 		return "redirect:boardList.do";
 	}
 	
+	@RequestMapping("boardList.do")
+	public String boardList(HttpServletRequest request) {
+		int page = 1;
+		
+		if(request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		}
+		
+		List<BoardDTO> list = boardService.selectBoardList(page);
+		request.setAttribute("list", list);
+		return "board_list";
+	}
 }
 
 

@@ -3,5 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.board.mapper.BoardMapper">
-
+	<select id="selectBoardList" parameterType="int" resultType="board">
+		select * from (select ceil(rownum / 7) as pageno, b.* from 
+				(select * from board_list order by bno desc) b) where pageno = #{no}
+	</select>
 </mapper>
