@@ -21,6 +21,9 @@
 	th{
 		background-color: #e9e9e9;
 	}
+	.back{
+		background-color: #D0FA58;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
@@ -42,8 +45,13 @@
 				type : "get",
 				dataType:"json",
 				success:function(r){
-					for(i=0;i<r.length;i++)
-						console.log(r[i]);
+					$("tbody tr").removeClass("back");
+					$("tbody tr").each(function(i, obj) {
+						for(i=0;i<r.length;i++){
+							if($(obj).find("td:first").text().trim() == r[i].id)
+								$(obj).addClass("back");
+						}
+					});
 				}
 			});
 		});
@@ -54,6 +62,7 @@
 </head>
 <body>
 	<table>
+	<thead>
 		<tr>
 			<td colspan="5">
 				<form action="insert.do">
@@ -77,6 +86,8 @@
 			<th>나이</th>
 			<th>작업</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach var="obj" items="${requestScope.list }">
 			<tr>
 				<td>${obj.id }</td>
@@ -88,7 +99,7 @@
 				</td>	
 			</tr>
 		</c:forEach>
-	
+		</tbody>
 	</table>
 </body>
 </html>
