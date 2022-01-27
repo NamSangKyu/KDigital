@@ -6,6 +6,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	table{
+		margin:0 auto;
+		table-layout: fixed;
+		border-collapse: collapse;
+	}
+	
+	th, td{
+		text-align: center;
+		border :1px solid black;
+		padding:10px;
+	}
+	th{
+		background-color: #e9e9e9;
+	}
+</style>
 </head>
 <body>
 	<table>
