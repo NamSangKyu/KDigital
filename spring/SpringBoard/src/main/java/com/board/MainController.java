@@ -137,6 +137,13 @@ public class MainController {
 		
 		return "redirect:boardView.do?bno="+bno;
 	}
+	
+	@RequestMapping("boardDelete.do")
+	public String boardDelete(HttpServletRequest request) {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		boardService.deleteBoard(bno);
+		return "redirect:main.do";
+	}
 }
 
 

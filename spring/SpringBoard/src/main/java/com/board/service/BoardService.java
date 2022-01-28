@@ -39,6 +39,10 @@ public class BoardService {
 	public void updateBoard(HashMap<String, Object> map) {
 		mapper.updateBoard(map);
 	}
+
+	public void deleteBoard(int bno) {
+		mapper.deleteBoard(bno);
+	}
 	
 	
 }

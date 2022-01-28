@@ -22,4 +22,6 @@ public interface BoardMapper {
 
 	void updateBoard(HashMap<String, Object> map);
 
+	void deleteBoard(int bno);
+
 }

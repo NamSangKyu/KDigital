@@ -23,6 +23,9 @@
 	<update id="updateBoard" parameterType="map">
 		update board set title = #{title}, content = #{content} where bno = #{bno} 
 	</update>	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where bno = #{bno}
+	</delete>
 </mapper>
 
 
