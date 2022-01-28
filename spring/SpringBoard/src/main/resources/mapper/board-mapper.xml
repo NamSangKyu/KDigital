@@ -14,4 +14,16 @@
 		insert into board(bno, title, content, writer) 
 		values(board_no.nextval,#{title},#{content},#{writer})
 	</insert>
+	<select id="selectBoard" parameterType="int" resultType="board">
+		select * from board_list where bno = #{bno}
+	</select>
+	<update id="addCount" parameterType="int">
+		update board set bcount = bcount + 1 where bno = #{bno}
+	</update>	
 </mapper>
+
+
+
+
+
+

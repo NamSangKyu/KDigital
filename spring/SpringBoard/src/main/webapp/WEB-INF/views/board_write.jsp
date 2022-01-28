@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,13 @@
 </style>
 </head>
 <body>
+	<c:if test="${sessionScope.member==null}">
+		<script>
+			alert('로그인해야 이용하실수 있습니다.');
+			location.href='/';
+		</script>
+	
+	</c:if>
 	<h2>글쓰기</h2>
 	<form action="write.do">
 		<input type="text" name="title" placeholder="제목을 입력하세요" required>

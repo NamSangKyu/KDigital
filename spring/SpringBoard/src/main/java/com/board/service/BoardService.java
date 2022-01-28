@@ -26,6 +26,14 @@ public class BoardService {
 	public int insertBoard(BoardDTO boardDTO) {
 		return mapper.insertBoard(boardDTO);
 	}
+
+	public BoardDTO selectBoard(int bno) {
+		return mapper.selectBoard(bno);
+	}
+
+	public void addCount(int bno) {
+		mapper.addCount(bno);
+	}
 	
 	
 }

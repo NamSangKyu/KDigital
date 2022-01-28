@@ -35,6 +35,14 @@
 </style>
 </head>
 <body>
+	<c:if test="${sessionScope.member==null}">
+		<script>
+			alert('로그인해야 이용하실수 있습니다.');
+			location.href='/';
+		</script>
+	
+	</c:if>
+
 	<header>
 		<div class="profile">
 			${sessionScope.member.name }님이 로그인하셨습니다.

@@ -84,6 +84,24 @@ public class MainController {
 		boardService.insertBoard(new BoardDTO(title, content, writer));
 		return "redirect:main.do";
 	}
+	
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	@RequestMapping("boardView.do")
+	public String boardView(HttpServletRequest request, HttpSession session) {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		
+		BoardDTO dto = boardService.selectBoard(bno);
+		request.setAttribute("dto", dto);
+
+		boardService.addCount(bno);
+		
+		return "board_view";
+	}
 }
 
 
