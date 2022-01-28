@@ -1,5 +1,6 @@
 package com.board.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -18,5 +19,7 @@ public interface BoardMapper {
 	BoardDTO selectBoard(int bno);
 
 	void addCount(int bno);
+
+	void updateBoard(HashMap<String, Object> map);
 
 }

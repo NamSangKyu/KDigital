@@ -1,6 +1,8 @@
 package com.board;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -98,9 +100,42 @@ public class MainController {
 		BoardDTO dto = boardService.selectBoard(bno);
 		request.setAttribute("dto", dto);
 
-		boardService.addCount(bno);
+		//게시글 중복 조회수 증가 제거
+		HashSet<Integer> set = (HashSet<Integer>) session.getAttribute("pageSet");
+		if(set == null) {
+			set = new HashSet<Integer>();
+			session.setAttribute("pageSet", set);
+		}
+		if(set.add(bno)) {		
+			boardService.addCount(bno);
+		}
 		
 		return "board_view";
+	}
+	
+	@RequestMapping("boardUpdateView.do")
+	public String boardUpdateView(HttpServletRequest request) {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		
+		BoardDTO dto = boardService.selectBoard(bno);
+		request.setAttribute("dto", dto);
+		return "board_update_view";
+	}
+	
+	@RequestMapping("update.do")
+	public String update(HttpServletRequest request) {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		String title = request.getParameter("title");		
+		String content = request.getParameter("content");
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("bno", bno);
+		map.put("title", title);
+		map.put("content", content);
+		
+		boardService.updateBoard(map);
+		
+		return "redirect:boardView.do?bno="+bno;
 	}
 }
 

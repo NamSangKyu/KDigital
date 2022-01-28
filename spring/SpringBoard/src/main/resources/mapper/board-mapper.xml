@@ -19,6 +19,9 @@
 	</select>
 	<update id="addCount" parameterType="int">
 		update board set bcount = bcount + 1 where bno = #{bno}
+	</update>
+	<update id="updateBoard" parameterType="map">
+		update board set title = #{title}, content = #{content} where bno = #{bno} 
 	</update>	
 </mapper>
 

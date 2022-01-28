@@ -18,7 +18,7 @@
 		${requestScope.dto.content}
 	</p>
 	<button id="btnBack">뒤로가기</button>
-	<c:if test="${requestScope.dto.writer == sessionScope.id }">
+	<c:if test="${requestScope.dto.writer == sessionScope.member.id }">
 		<button id="btnUpdate">수정</button>
 		<button id="btnDelete">삭제</button>
 	</c:if>

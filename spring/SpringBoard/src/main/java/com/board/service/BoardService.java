@@ -1,5 +1,6 @@
 package com.board.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -33,6 +34,10 @@ public class BoardService {
 
 	public void addCount(int bno) {
 		mapper.addCount(bno);
+	}
+
+	public void updateBoard(HashMap<String, Object> map) {
+		mapper.updateBoard(map);
 	}
 	
 	
