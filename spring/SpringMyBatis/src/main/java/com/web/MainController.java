@@ -80,6 +80,12 @@ public class MainController {
 		return null;
 	}
 	
+	@RequestMapping("/student.do")
+	public String student() {
+		
+		return "student_list";
+	}
+	
 }
 
 
