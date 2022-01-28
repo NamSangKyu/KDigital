@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.web.dto.MemberDTO;
+import com.web.dto.StudentDTO;
 import com.web.mapper.MemberMapper;
 @Service
 public class MemberService {
@@ -43,6 +44,10 @@ public class MemberService {
 
 	public List<MemberDTO> selectListMember(String search) {
 		return mapper.selectListMember(search);
+	}
+
+	public List<StudentDTO> selectStudent() {
+		return mapper.selectStudent();
 	}
 }
 

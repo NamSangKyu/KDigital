@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.web.dto.MemberDTO;
+import com.web.dto.StudentDTO;
 import com.web.service.MemberService;
 
 @Controller
@@ -81,8 +82,9 @@ public class MainController {
 	}
 	
 	@RequestMapping("/student.do")
-	public String student() {
-		
+	public String student(HttpServletRequest request) {
+		List<StudentDTO> list = service.selectStudent();
+		request.setAttribute("list", list);
 		return "student_list";
 	}
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.web.dto.MemberDTO;
+import com.web.dto.StudentDTO;
 
 @Mapper
 public interface MemberMapper {
@@ -19,4 +20,6 @@ public interface MemberMapper {
 	public int updateMember(MemberDTO memberDTO);
 
 	public List<MemberDTO> selectListMember(String seach);
+
+	public List<StudentDTO> selectStudent();
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<c:forEach var="obj" items="${requestScope.list }">
-		${obj.studentNo } ${obj.name } ${obj.majorNo} ${obj.score }<br>
+		${obj.sno } ${obj.name } ${obj.majorNo} ${obj.score }<br>
 	</c:forEach>
 </body>
 </html>

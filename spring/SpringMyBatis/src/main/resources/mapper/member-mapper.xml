@@ -3,6 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.web.mapper.MemberMapper">
+	<resultMap type="com.web.dto.StudentDTO" id="student">
+		<id column="student_no" property="sno"/>
+		<result column="name" property="name"/>
+		<result column="major_no" property="majorNo"/>
+		<result column="score" property="score"/>
+	</resultMap>
+	<select id="selectStudent" resultMap="student">
+		select * from student
+	</select>
+
   <select id="selectAllMember" resultType="member">
   	select * from member
   </select>
