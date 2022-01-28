@@ -26,6 +26,25 @@
 	<delete id="deleteBoard" parameterType="int">
 		delete from board where bno = #{bno}
 	</delete>
+	<insert id="insertBoardLike" parameterType="map">
+		insert into board_like values(#{bno},#{id})
+	</insert>
+	<delete id="deleteBoardLike" parameterType="map">
+		delete from board_like where writer like #{id} and bno = #{bno} 
+	</delete>
+	<select id="selectBoardLike" parameterType="int" resultType="int">
+		select count(*) from board_like where bno = #{bno}
+	</select>
+	<insert id="insertBoardHate" parameterType="map">
+		insert into board_hate values(#{bno},#{id})
+	</insert>
+	<delete id="deleteBoardHate" parameterType="map">
+		delete from board_hate where writer like #{id} and bno = #{bno} 
+	</delete>
+	<select id="selectBoardHate" parameterType="int" resultType="int">
+		select count(*) from board_hate where bno = #{bno}
+	</select>
+	
 </mapper>
 
 

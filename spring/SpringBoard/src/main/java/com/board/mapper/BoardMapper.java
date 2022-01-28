@@ -24,4 +24,16 @@ public interface BoardMapper {
 
 	void deleteBoard(int bno);
 
+	int insertBoardLike(HashMap<String, Object> map);
+
+	void deleteBoardLike(HashMap<String, Object> map);
+
+	int selectBoardLike(int bno);
+
+	int insertBoardHate(HashMap<String, Object> map);
+
+	void deleteBoardHate(HashMap<String, Object> map);
+
+	int selectBoardHate(int bno);
+
 }

@@ -1,5 +1,6 @@
 package com.board.service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,6 +43,31 @@ public class BoardService {
 
 	public void deleteBoard(int bno) {
 		mapper.deleteBoard(bno);
+	}
+
+	public int insertBoardLike(HashMap<String, Object> map) {
+		return mapper.insertBoardLike(map);
+	}
+
+	public void deleteBoardLike(HashMap<String, Object> map) {
+		mapper.deleteBoardLike(map);
+		
+	}
+
+	public int selectBoardLike(int bno) {
+		return mapper.selectBoardLike(bno);
+	}
+
+	public int insertBoardHate(HashMap<String, Object> map) {
+		return mapper.insertBoardHate(map);
+	}
+
+	public void deleteBoardHate(HashMap<String, Object> map) {
+		mapper.deleteBoardHate(map);
+	}
+
+	public int selectBoardHate(int bno) {
+		return mapper.selectBoardHate(bno);
 	}
 	
 	

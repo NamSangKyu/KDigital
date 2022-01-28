@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -143,6 +144,53 @@ public class MainController {
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		boardService.deleteBoard(bno);
 		return "redirect:main.do";
+	}
+	
+	@RequestMapping("boardLike.do")
+	public String boardLike(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		String id = ((MemberDTO)session.getAttribute("member")).getId();
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("bno", bno);
+		
+		int count = 0;
+		try {
+			count = boardService.insertBoardLike(map);
+		}catch (Exception e) {
+			boardService.deleteBoardLike(map);
+		}
+		JSONObject obj = new JSONObject();
+		obj.put("result", count);
+		obj.put("count", boardService.selectBoardLike(bno));
+		
+		response.getWriter().write(obj.toString());
+		
+		return null;
+	}
+	@RequestMapping("boardHate.do")
+	public String boardHate(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		String id = ((MemberDTO)session.getAttribute("member")).getId();
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("bno", bno);
+		
+		int count = 0;
+		try {
+			count = boardService.insertBoardHate(map);
+		}catch (Exception e) {
+			boardService.deleteBoardHate(map);
+		}
+		JSONObject obj = new JSONObject();
+		obj.put("result", count);
+		obj.put("count", boardService.selectBoardHate(bno));
+		
+		response.getWriter().write(obj.toString());
+		
+		return null;
 	}
 }
 
