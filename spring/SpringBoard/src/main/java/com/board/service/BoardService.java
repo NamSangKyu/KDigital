@@ -22,6 +22,10 @@ public class BoardService {
 	public int selectAllCount() {
 		return mapper.selectAllCount();
 	}
+
+	public int insertBoard(BoardDTO boardDTO) {
+		return mapper.insertBoard(boardDTO);
+	}
 	
 	
 }

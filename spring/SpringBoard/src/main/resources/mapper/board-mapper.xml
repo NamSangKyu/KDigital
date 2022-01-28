@@ -10,4 +10,8 @@
 	<select id="selectAllCount" resultType="int">
 		select count(*) from board_list
 	</select>
+	<insert id="insertBoard" parameterType="board">
+		insert into board(bno, title, content, writer) 
+		values(board_no.nextval,#{title},#{content},#{writer})
+	</insert>
 </mapper>

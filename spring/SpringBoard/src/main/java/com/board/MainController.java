@@ -70,7 +70,28 @@ public class MainController {
 		
 		return "board_list";
 	}
+	
+	@RequestMapping("writeView.do")
+	public String writeView() {
+		return "board_write";
+	}
+	
+	@RequestMapping("write.do")
+	public String write(HttpServletRequest request, HttpSession session) {
+		String title = request.getParameter("title");		
+		String content = request.getParameter("content");
+		String writer = ((MemberDTO)session.getAttribute("member")).getId();
+		boardService.insertBoard(new BoardDTO(title, content, writer));
+		return "redirect:main.do";
+	}
 }
+
+
+
+
+
+
+
 
 
 

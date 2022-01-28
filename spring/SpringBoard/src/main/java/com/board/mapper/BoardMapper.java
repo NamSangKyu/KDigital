@@ -13,4 +13,6 @@ public interface BoardMapper {
 
 	int selectAllCount();
 
+	int insertBoard(BoardDTO boardDTO);
+
 }
