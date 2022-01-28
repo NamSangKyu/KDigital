@@ -1,5 +1,6 @@
 package com.board.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -68,6 +69,10 @@ public class BoardService {
 
 	public int selectBoardHate(int bno) {
 		return mapper.selectBoardHate(bno);
+	}
+
+	public List<BoardDTO> selectSearchBoard(HashMap<String, String> map) {
+		return mapper.selectSearchBoard(map);
 	}
 	
 	

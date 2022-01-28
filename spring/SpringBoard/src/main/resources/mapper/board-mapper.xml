@@ -44,6 +44,21 @@
 	<select id="selectBoardHate" parameterType="int" resultType="int">
 		select count(*) from board_hate where bno = #{bno}
 	</select>
+	<select id="selectSearchBoard" parameterType="map" resultType="board">
+		select * from board_list
+		<choose>
+			<when test="kind.equals('id')">
+				where writer like #{search}
+			</when>
+			<when test="kind.equals('title')">
+				where title like '%' || #{search} || '%'
+			</when>
+			<otherwise>
+				where content like '%' || #{search} || '%'
+			</otherwise>
+		</choose>		
+		 order by bno desc
+	</select>
 	
 </mapper>
 

@@ -33,6 +33,15 @@
 		
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		$("#btnSearch").click(function() {
+			var data = "kind="+$("#kind").val()+"&search="+$("#txtSearch").val();
+			location.href="search.do?"+data;
+		});
+	});
+</script>
 </head>
 <body>
 	<c:if test="${sessionScope.member==null}">
@@ -79,6 +88,7 @@
 				<td>${board.bhate}</td>
 			</tr>
 		</c:forEach>
+		<c:if test="${requestScope.pagging!=null}">
 		<tr>
 			<td colspan="7">
 			<c:if test="${requestScope.pagging.isPriviousPageGroup() }">
@@ -99,9 +109,27 @@
 			</c:if>
 			</td>
 		</tr>
+		</c:if>
+		<tr>
+			<td colspan="7">
+				<select id="kind">
+					<option value="id">아이디</option>
+					<option value="title">제목</option>
+					<option value="content">내용</option>
+				</select>
+				<input type="text" id="txtSearch"><button id="btnSearch">검색</button>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

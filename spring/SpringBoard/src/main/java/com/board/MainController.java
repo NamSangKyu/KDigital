@@ -1,6 +1,7 @@
 package com.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -74,6 +75,20 @@ public class MainController {
 		return "board_list";
 	}
 	
+	@RequestMapping("search.do")
+	public String search(HttpServletRequest request) {
+		String kind = request.getParameter("kind");
+		String search = request.getParameter("search");
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("kind", kind);
+		map.put("search", search);
+		
+		List<BoardDTO> list = boardService.selectSearchBoard(map);
+		
+		request.setAttribute("list", list);
+		
+		return "board_list";
+	}
 	@RequestMapping("writeView.do")
 	public String writeView() {
 		return "board_write";

@@ -1,5 +1,6 @@
 package com.board.mapper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -35,5 +36,7 @@ public interface BoardMapper {
 	void deleteBoardHate(HashMap<String, Object> map);
 
 	int selectBoardHate(int bno);
+
+	List<BoardDTO> selectSearchBoard(HashMap<String, String> map);
 
 }
