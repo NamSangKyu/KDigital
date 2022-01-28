@@ -11,8 +11,8 @@ import org.json.JSONObject;
 
 public class PaPaGoMain {
 	public static String papagoTranslate(String target, String text) {
-		String clientId = "KHkektMREM4uRRubtXSl";// 애플리케이션 클라이언트 아이디값";
-		String clientSecret = "trD4iQ7zjS";// 애플리케이션 클라이언트 시크릿값";
+		String clientId = "CLIENT_ID";// 애플리케이션 클라이언트 아이디값";
+		String clientSecret = "CLIENT_SECRET_ID";// 애플리케이션 클라이언트 시크릿값";
 		String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
 		String msg = null;
 		HttpURLConnection con = null;
