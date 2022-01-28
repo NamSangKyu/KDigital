@@ -14,6 +14,7 @@ import com.board.dto.BoardDTO;
 import com.board.dto.MemberDTO;
 import com.board.service.BoardService;
 import com.board.service.MemberService;
+import com.board.vo.PaggingVO;
 
 @Controller
 public class MainController {
@@ -48,10 +49,10 @@ public class MainController {
 			return null;
 		}
 		session.setAttribute("member", dto);
-		return "redirect:boardList.do";
+		return "redirect:main.do";
 	}
 	
-	@RequestMapping("boardList.do")
+	@RequestMapping("main.do")
 	public String boardList(HttpServletRequest request) {
 		int page = 1;
 		
@@ -61,6 +62,12 @@ public class MainController {
 		
 		List<BoardDTO> list = boardService.selectBoardList(page);
 		request.setAttribute("list", list);
+		//페이징 데이터 셋팅
+		int count = boardService.selectAllCount();
+		
+		PaggingVO vo = new PaggingVO(count, page, 7, 4);
+		request.setAttribute("pagging", vo);
+		
 		return "board_list";
 	}
 }

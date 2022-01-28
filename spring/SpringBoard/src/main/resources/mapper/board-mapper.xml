@@ -7,4 +7,7 @@
 		select * from (select ceil(rownum / 7) as pageno, b.* from 
 				(select * from board_list order by bno desc) b) where pageno = #{no}
 	</select>
+	<select id="selectAllCount" resultType="int">
+		select count(*) from board_list
+	</select>
 </mapper>
