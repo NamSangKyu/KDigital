@@ -8,15 +8,21 @@
     android:padding="10dp"
     tools:context=".MainActivity" >
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="229dp">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <ScrollView
+            android:id="@+id/scroll1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +30,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
@@ -32,7 +38,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
@@ -45,7 +51,7 @@
         android:layout_height="229dp" >
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </ScrollView>
