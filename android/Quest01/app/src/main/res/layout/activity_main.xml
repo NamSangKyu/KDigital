@@ -46,13 +46,19 @@
             android:textSize="24sp" />
     </LinearLayout>
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="229dp" >
+        android:layout_height="229dp">
 
-        <ImageView
-            android:id="@+id/imgView2"
+        <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+    </HorizontalScrollView>
+
 </LinearLayout>

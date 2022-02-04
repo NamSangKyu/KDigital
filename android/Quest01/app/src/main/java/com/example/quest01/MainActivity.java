@@ -13,16 +13,13 @@ import android.widget.ScrollView;
 public class MainActivity extends AppCompatActivity {
     ImageView imgView1;
     ImageView imgView2;
-    ScrollView scroll1;
+
     BitmapDrawable bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //가로 스크롤바 설정
-        scroll1 = findViewById(R.id.scroll1);
-        scroll1.setHorizontalScrollBarEnabled(true);
 
         //이미지뷰 연결
         imgView1 = findViewById(R.id.imgView1);
@@ -34,8 +31,5 @@ public class MainActivity extends AppCompatActivity {
         //이미지 설정
         imgView1.setImageDrawable(bitmap);
         imgView2.setImageDrawable(null);
-
-
-
     }
 }
