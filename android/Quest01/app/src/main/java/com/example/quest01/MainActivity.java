@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -32,4 +33,21 @@ public class MainActivity extends AppCompatActivity {
         imgView1.setImageDrawable(bitmap);
         imgView2.setImageDrawable(null);
     }
+
+    public void buttonUp(View view){
+        imgView1.setImageDrawable(bitmap);
+        imgView2.setImageDrawable(null);
+    }
+    public void buttonDown(View view){
+        imgView1.setImageDrawable(null);
+        imgView2.setImageDrawable(bitmap);
+    }
 }
+
+
+
+
+
+
+
+
