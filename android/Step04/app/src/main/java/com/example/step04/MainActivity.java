@@ -3,6 +3,11 @@ package com.example.step04;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.button);
         EditText txt = findViewById(R.id.txt);
 
-        //버튼 이벤트 처리
+        //버튼 클릭 이벤트 처리
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //버튼 클릭 이벤트 처리
         Button btnExit = findViewById(R.id.btnExit);
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +41,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //EditText 이벤트 처리
+        //setOnKeyListener는 PC 키보드 눌렀을때 이벤트
+//        txt.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+//                Toast.makeText(MainActivity.this,i+"",Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
+        //입력된 텍스트가 변했을때 이벤트 처리
+        txt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d("TextEvent", "beforeTextChanged: "+charSequence);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d("TextEvent", "onTextChanged: "+charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
     public void onClick(View view){
         Toast.makeText(this,"메세지",Toast.LENGTH_LONG).show();
