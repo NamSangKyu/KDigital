@@ -45,7 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                int count = charSequence.length();
+                if(charSequence.length() > 80){
+                    //80글자까지 입력 되게끔 설정, 매번 80글자까지만 잘라내서 다시 셋팅
+                    edtContent.setText(charSequence.subSequence(0,80));
+                    //커서위치 설정
+                    edtContent.setSelection(80);
+                }
+
+                int count = edtContent.getText().length();
                 Log.d("SMSInput", "onTextChanged: 글자 개수 : "+count);
                 txtLength.setText(count + " / 80 글자");
             }
