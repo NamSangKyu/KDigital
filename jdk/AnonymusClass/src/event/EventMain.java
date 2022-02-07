@@ -16,9 +16,12 @@ public class EventMain {
 		btn1.onClick();//이벤트 처리
 		
 		btnSearch(btn2);
+		ClickEvent click = new ClickEvent();
+		btn3.setOnClickListener(click);
+		btn3.onClick();
 	}
 
 	public static void btnSearch(View view) {
-		System.out.println(view.name + " 클릭이벤트");
+		System.out.println(view.name + " 클릭 이벤트");
 	}
 }
