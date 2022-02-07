@@ -52,14 +52,18 @@ public class MainActivity extends AppCompatActivity {
 //        });
         //입력된 텍스트가 변했을때 이벤트 처리
         txt.addTextChangedListener(new TextWatcher() {
+
+            //charSequence 입력된 내용
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //내용이 변하기 전
                 Log.d("TextEvent", "beforeTextChanged: "+charSequence);
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Log.d("TextEvent", "onTextChanged: "+charSequence);
+                //입력된 내용용
+               Log.d("TextEvent", "onTextChanged: "+charSequence);
             }
 
             @Override
