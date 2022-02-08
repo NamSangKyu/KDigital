@@ -1,7 +1,9 @@
 package com.example.toastsnackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -53,6 +55,41 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 snackbar.show();
+            }
+        });
+
+        Button btnAlert = findViewById(R.id.btnAlert);
+        btnAlert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("title");
+                builder.setMessage("alert content");
+                builder.setIcon(android.R.drawable.ic_dialog_alert);
+                
+                builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //예 버튼 눌렀을때 처리할 일
+                        Toast.makeText(MainActivity.this,"예 버튼 클릭",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this,"아니오 버튼 클릭",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this,"취소 버튼 클릭",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }
