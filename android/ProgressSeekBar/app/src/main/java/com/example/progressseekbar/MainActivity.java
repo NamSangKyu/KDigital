@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
                 seekBar.incrementProgressBy(5);
             }
         });
+        Button btnReset = findViewById(R.id.btnReset);
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                seekBar.setProgress(0);
+            }
+        });
     }
 }
 
