@@ -1,5 +1,6 @@
 package com.example.lifecycle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.edtText);
         Button button = findViewById(R.id.btnSave);
 
-        Toast.makeText(MainActivity.this, str + " 읽어왔습니다.",Toast.LENGTH_SHORT).show();
-
+        if(savedInstanceState != null) {
+            str = savedInstanceState.getString("str");
+            Toast.makeText(MainActivity.this, str + " 읽어왔습니다.", Toast.LENGTH_SHORT).show();
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d("LIFE_TAG", "onResume");
+    }
+
+    @Override
+    //액티비티가 종료되기전의 상태를 저장
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("str",str);
     }
 }
 
