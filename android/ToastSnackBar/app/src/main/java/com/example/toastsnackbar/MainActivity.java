@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -36,6 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 toast.setGravity(Gravity.TOP | Gravity.LEFT,x,y);
                 toast.setView(layout);
                 toast.show();
+            }
+        });
+        Button btnSnack = findViewById(R.id.btnSnack);
+        btnSnack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "Snack Bar", Snackbar.LENGTH_INDEFINITE);
+                snackbar.setAction("닫기", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        snackbar.dismiss();//스낵바 닫기
+                    }
+                });
+                snackbar.show();
             }
         });
     }
