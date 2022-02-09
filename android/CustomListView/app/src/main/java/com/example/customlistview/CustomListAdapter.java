@@ -1,6 +1,7 @@
 package com.example.customlistview;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,11 @@ public class CustomListAdapter extends BaseAdapter {
     private ArrayList<ListViewItem> list;
 
     public CustomListAdapter() { list = new ArrayList<ListViewItem>(); }
+
+    //리스트 항목 추가
+    public void addItem(Drawable img, String txt){
+        list.add(new ListViewItem(img, txt));
+    }
 
     @Override
     public int getCount() { return list.size(); }
