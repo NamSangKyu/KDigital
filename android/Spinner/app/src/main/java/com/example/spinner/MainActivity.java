@@ -42,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
 
         customSpinner.setAdapter(adapter);
 
+        customSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                SpinnerItem item = (SpinnerItem) adapter.getItem(i);
+                textView2.setText(item.getText());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 }
 
