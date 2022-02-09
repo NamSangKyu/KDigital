@@ -30,5 +30,27 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Spinner customSpinner = findViewById(R.id.spinner2);
+        TextView textView2 = findViewById(R.id.textView2);
+
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter();
+        adapter.addItem(getDrawable(R.drawable.china),"중국");
+        adapter.addItem(getDrawable(R.drawable.fance),"프랑스");
+        adapter.addItem(getDrawable(R.drawable.united),"미국");
+        adapter.addItem(getDrawable(R.drawable.japan),"일본");
+
+        customSpinner.setAdapter(adapter);
+
     }
 }
+
+
+
+
+
+
+
+
+
+
