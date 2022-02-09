@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                intent.putExtra("data","Hello");
                 startActivity(intent);//다른 액티비티 시작
             }
         });
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d("RUNACTIVITY", "onResume");
+        TextView txtTime = findViewById(R.id.txtTime);
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        txtTime.setText(sdf.format(date));
     }
 
     @Override
