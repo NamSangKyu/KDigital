@@ -81,9 +81,17 @@ public class MainActivity extends AppCompatActivity {
        protected Integer doInBackground(Integer... integers) {
            //태스크 처리 부분
            while(!isCancelled()){
-               
+               value++;
+               if(value>=100) break;
+               else
+                   publishProgress(value);
+               try {
+                   Thread.sleep(500);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
            }
-           return null;
+           return value;
        }
    }
 }
