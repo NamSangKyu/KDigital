@@ -2,6 +2,7 @@ package com.example.asynctask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }*/
+   //스레드 실행에 필요한 데이터 타입, 진행 중에 필요한 데이터 타입, 스레드 결과값 데이타입
+    public class ProgressTask extends AsyncTask<Integer,Integer,Integer>{
+
+   }
 }
 
 
