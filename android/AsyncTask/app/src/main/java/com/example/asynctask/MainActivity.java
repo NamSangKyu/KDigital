@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar bar;
     Button btnRun;
     Button btnStop;
-
+    ProgressTask task;
     int value=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                ProgressThread thread = new ProgressThread(bar);
 //                thread.start();
+                task = new ProgressTask();
+                task.execute();
             }
         });
         btnStop = findViewById(R.id.btnStop);
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(task != null)
+                    task.cancel(true);
+            }
+        });
     }
 
    /* public class ProgressThread extends Thread{
