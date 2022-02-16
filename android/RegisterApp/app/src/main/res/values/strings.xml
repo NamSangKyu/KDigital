@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RegisterApp</string>
+    <array name="host_list">
+        <item>gmail.com</item>
+        <item>naver.com</item>
+        <item>hanmail.net</item>
+        <item>nate.com</item>
+    </array>
+</resources>
